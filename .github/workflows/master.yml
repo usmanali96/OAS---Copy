@@ -1,7 +1,7 @@
 on:
    push:
         branches:
-              -dev
+              - main
 
 name: 🚀 Deploy website on push
 jobs:
@@ -16,5 +16,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: onlineauctions.click
-        username: test_oas@onlineauctions.click
+        username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
