@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ips7#p6vm4+m13+-(^mem$*dt*7wdpw_bw*h8mem)lrkl-%5%@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['onlineauctions.click']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,9 +77,16 @@ WSGI_APPLICATION = 'oas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+
+        'NAME' : 'py_oas_pro',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST' : 'localhost',
+        'DATABASE' : 'py_oas_pro',
+        'USER' : 'root',
+        'PASSWORD' : '',
+        'PORT' : '3306'
     }
 }
 
