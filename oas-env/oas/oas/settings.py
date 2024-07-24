@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['onlineauctions.click']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
