@@ -159,11 +159,7 @@ body{
 }
 
 
-
-
-
-
-  .cards-5{
+.cards-5{
     position: relative;
     display: flex;
     flex-direction: row;
@@ -172,9 +168,8 @@ body{
     gap: 50px;
     margin-top: 50px;
   }
-    
     @media screen and (max-width: 767px){
-      .cards-5{
+      .product-banners{
         flex-wrap: wrap;
       }
 }
