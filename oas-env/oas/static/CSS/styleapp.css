@@ -168,7 +168,7 @@ body{
     gap: 50px;
     margin-top: 50px;
   }
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 967px){
       .product-banners {
         flex-wrap: wrap;
       }
@@ -198,7 +198,7 @@ body{
   transform: translate(-170px, -100px);
 }
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 967px){
     .banner-1-content .banner-2-content {
       flex-wrap: wrap;
     }
