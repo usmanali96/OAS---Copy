@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ips7#p6vm4+m13+-(^mem$*dt*7wdpw_bw*h8mem)lrkl-%5%@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['onlineauctions.click']
 
 
 
