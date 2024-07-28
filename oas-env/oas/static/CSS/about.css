@@ -40,7 +40,37 @@
 
 
 
-ft: 45%;
+body {
+    color: #1A1A1A;
+}
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+}
+.row {
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 19px;
+    line-height: 33px;
+}
+
+.row-big-card .cont {
+    box-shadow: 0 0 30px 0 rgba(0,0,0,.15);
+    margin: 30px auto;
+    width: calc(100% - 40px);
+    max-width: 1760px;
+    padding: 0;
+    position: relative;
+}
+
+a.card-link {
+    color: #1A1A1A;
+    display: block;
+    text-decoration: none;
+}
+
+.card-img {
+    padding-left: 45%;
     position: relative;
 }
 
@@ -249,3 +279,4 @@ a.card-link:hover span.cta-card {
 		line-height: calc(34px  + (60 - 34)*(100vw - 320px)/(610 - 320));
 	}
  }
+}
