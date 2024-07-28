@@ -1,15 +1,15 @@
 .inner-banner-content{
     position: absolute;
-    content: url(../images/bg/inner-vector-left.png);
     top: 0;
     bottom: 0;
     left: 0;
     z-index: -1;
+    transform: translate(70px, 160px);
 }
 .inner-banner-content h2{
     font-size: 50px;
     color: white;
-    
+
 
 }
 .inner-banner {
