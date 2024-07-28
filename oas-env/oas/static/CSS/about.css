@@ -281,14 +281,17 @@ a.card-link:hover span.cta-card {
  }
 }
 
-.card-inner{
+.row{
     margin-top: 50px;
 
 }
 
 
 
+.integ{
+    text-align: center;
 
+}
 .bar{
     text-align: center;
     }
