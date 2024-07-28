@@ -304,13 +304,13 @@ a.card-link:hover span.cta-card {
    border-color:#aaa ;
     }
     .tabs button:hover{
-       border-color: #00a3c8;
+       border-color: green;
        background-color: white;
     }
     #btn-still{
        border: 0px;
        border-bottom: 4px solid;
-       border-color: #00a3c8;
+       border-color: green;
     }
     .tabs{
        text-align: center;
