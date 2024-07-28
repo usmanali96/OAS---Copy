@@ -25,7 +25,6 @@
     </div><!-- /.inner-banner -->
 
     <div class="row row-big-card">
-        <canvas id="test"></canvas>
         <div class="cont">
             <a href="#" class="card-link">
 
@@ -44,24 +43,44 @@
                         <img src="{% static 'img/about-img.png' %}" alt="">
                     </div>
                 </div>
-                
             </a>
-            
         </div>
     </div>
 
+
+
+    <div class="bar">
+        <h1>Why <span>Choose us</span></h1>
+        <p>Explore on the world's best & largest Bidding marketplace with our beautiful Bidding products. We want to be a part of your smile, success and future growth.</p>
+      </div><!-- /.bar -->
+    
+      <div class="tabs">
+
+        <button type="button" class="btn btn-primary " id="btn-still"><img src="{% static 'img/bell1.png' %}" alt=""> 
+            <h1>High Quality Products</h1>
+           <p>Blood test</p>
+        </button>
+        <button type="button" class="btn btn-secondary btn-lg" ><img src="{% static 'img/bell1.png' %}" alt="">
+          <p>urology</p>
+        </button>
+        <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/bell1.png' %}" alt="">
+        <p>Dental</p>  
+        </button>
+        <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/bell1.png' %}" alt="">
+        <p>neurology</p>  
+        </button>
+        <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/bell1.png' %}" alt="">`
+         <p>cardiology</p></button>
+      </div><!-- /.tabs -->
+     </div><!-- /.lower-content-inner -->
+   </div><!-- /.container -->
+    
     
 
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- owl carousel -->
-<script src = "{% static 'JAVASCRIPT/owl.carousel.js' %}"></script>
-<script src = "{% static 'JAVASCRIPT/owl.carousel.min.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{% static 'JAVASCRIPT/theme.js' %}"></script>
+    {% include 'footer.html' %}
+    
 </body>
 </html>
