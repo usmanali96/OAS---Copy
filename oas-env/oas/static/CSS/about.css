@@ -6,6 +6,12 @@
     z-index: -1;
     transform: translate(70px, 160px);
 }
+.inner-banner-content button{
+    padding: 20px;
+    color: aqua;
+    background-color: blueviolet;
+    border-radius: 22px;
+}
 .inner-banner-content h2{
     font-size: 50px;
     color: white;
