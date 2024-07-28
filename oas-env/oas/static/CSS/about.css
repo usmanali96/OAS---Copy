@@ -6,12 +6,12 @@
     left: 0;
     z-index: -1;
 }
+.inner-banner-content h2{
+    font-size: 50px;
+    color: white;
+    
 
-
-
-
-
-
+}
 .inner-banner {
     background: rgba(12, 3, 33, 0.9);
 }
@@ -26,5 +26,5 @@
     align-items: center;
 }
 .inner-banner-img{
-    justify-content: right;
+    text-align: right;
 }
