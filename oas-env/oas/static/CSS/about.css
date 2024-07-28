@@ -280,3 +280,8 @@ a.card-link:hover span.cta-card {
 	}
  }
 }
+
+.row .row-big-card{
+    margin-top: 40px;
+
+}
