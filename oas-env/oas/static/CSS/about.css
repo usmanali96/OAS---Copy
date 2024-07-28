@@ -285,3 +285,41 @@ a.card-link:hover span.cta-card {
     margin-top: 50px;
 
 }
+
+
+
+
+.bar{
+    text-align: center;
+    }
+    .tabs button{
+   background-color: white;
+   color: black;
+   border-radius: 1px;
+   padding: 30px 55px;
+   border-top: 0px;
+   border-bottom: 5px solid;
+   border-right: 0px;
+   border-left: 0px;
+   border-color:#aaa ;
+    }
+    .tabs button:hover{
+       border-color: #00a3c8;
+       background-color: white;
+    }
+    #btn-still{
+       border: 0px;
+       border-bottom: 4px solid;
+       border-color: #00a3c8;
+    }
+    .tabs{
+       text-align: center;
+    }
+    .tabs button img{
+       height: 80px;
+       width: 80px;
+       align-items: center;
+    }
+    .tabs button p{
+       text-align: center;
+    }
