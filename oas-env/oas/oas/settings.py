@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ips7#p6vm4+m13+-(^mem$*dt*7wdpw_bw*h8mem)lrkl-%5%@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['onlineauctions.click']
+ALLOWED_HOSTS = ['onlineauctions.click', "127.0.0.1"]
+
 
 
 
@@ -49,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'oas.urls'
