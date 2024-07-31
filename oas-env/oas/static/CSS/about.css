@@ -1,3 +1,7 @@
+
+body {
+    background-color: black;
+}
 .inner-banner-content{
     position: absolute;
     top: 0;
@@ -40,9 +44,7 @@
 
 
 
-body {
-    color: #1A1A1A;
-}
+
 h1, h2, h3, h4, h5, h6 {
     clear: both;
     font-family: 'Montserrat', sans-serif;
@@ -81,7 +83,6 @@ a.card-link {
     top: 0;
     left: 0;
     bottom: 0;
-    background: white;
     width: 40%;
 }
 
@@ -195,7 +196,7 @@ a.card-link:hover span.cta-card {
 
 @media (max-width: 1100px) {
 .card-img div {
-		padding-bottom: 80%;
+		padding-bottom: 20%;
 	}
 	.card-inner h3 {
 		font-size: calc(24px  + (40 - 24)*(100vw - 610px)/(1100 - 610));
@@ -260,7 +261,7 @@ a.card-link:hover span.cta-card {
 
 	}
 	.card-img div {
-		padding-bottom: 64%;
+		padding-bottom: 20%;
 	}
 	.card-inner h3 {
 		font-size: calc(30px  + (48 - 30)*(100vw - 320px)/(610 - 320));
@@ -284,3 +285,51 @@ a.card-link:hover span.cta-card {
 
 
 
+.tabs{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+ .bar{
+ text-align: center;
+ border-bottom: 55px;
+ }
+ .tabs button{
+    background-color: black;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 1px;
+    border-top: 0px;
+    border-bottom: 5px solid;
+    border-right: 0px;
+    border-left: 0px;
+    border-color:#aaa ;
+    width: 400px;
+    height: 300px;
+    
+ }
+ .tabs button:hover{
+    border-color: green;
+    background-color: black;
+    h1{
+        color: green;
+        }
+ }
+ 
+ #btn-still{
+    border: 0px;
+    background-color: black;
+    border-bottom: 4px solid;
+    border-color: green;
+ }
+ .tabs{
+    text-align: center;
+ }
+ .tabs button img{
+    height: 80px;
+    width: 80px;
+    align-items: center;
+ }
+ .tabs button p{
+    text-align: center;
+ }

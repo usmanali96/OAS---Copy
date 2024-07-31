@@ -1,57 +1,117 @@
-{% load static %}
-{% include 'header.html' %}
+{% load static %} {% include 'header.html' %}
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'CSS/about.css' %}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700" />
-    
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700"
+    />
+  </head>
+  <body>
     <div class="inner-banner">
-        <div class="container">
-            <div class="inner-banner-content">
-                <h2 data-wow-duration="1.5s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.2s;"><b>
-                    About Us</b></h2>
-                    </div><!-- /.inner-banner-content -->
-            <div class="inner-banner-img">
-                <img src="{% static 'img/breadcrumb.png'%}" alt="">
-            </div><!-- /.inner-banner-img -->
-
-        </div><!-- /.container -->
-    </div><!-- /.inner-banner -->
+      <div class="container">
+        <div class="inner-banner-content">
+          <h2
+            data-wow-duration="1.5s"
+            data-wow-delay=".2s"
+            style="
+              visibility: visible;
+              animation-duration: 1.5s;
+              animation-delay: 0.2s;
+            "
+          >
+            <b> About Us</b>
+          </h2>
+        </div>
+        <!-- /.inner-banner-content -->
+        <div class="inner-banner-img">
+          <img src="{% static 'img/breadcrumb.png'%}" alt="" />
+        </div>
+        <!-- /.inner-banner-img -->
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.inner-banner -->
 
     <div class="row row-big-card">
-        <div class="cont">
-            <a href="#" class="card-link">
+      <div class="cont">
+        <a href="#" class="card-link">
+          <div class="card-inner">
+            <h3>We Work For Your Increadible Success</h3>
+            <h4>WHO WE ARE</h4>
+            <div class="inner-text">
+              <p>
+                Auction sites present consumers with a thrilling, competitive
+                way to buy the goods and services they need most.But getting
+                your own auction site up and running has always required
+                learning complex coding languages, or hiring an expensive design
+                firm for thousands of dollars and months of work.
+              </p>
+            </div>
+            <span class="cta-card">More About</span>
+          </div>
 
-                <div class="card-inner">
-                    <h3>We Work For Your Increadible Success</h3>
-                    <h4>WHO WE ARE</h4>
-                    <div class="inner-text">
-                        <p>Auction sites present consumers with a thrilling, competitive way to buy the goods and services they need most.But getting your own auction site up and running has always required learning complex coding languages, or hiring an expensive design firm for thousands of dollars and months of work.
-                        </p>
-                    </div>
-                    <span class="cta-card">More About</span>
-                </div>
-
-                <div class="card-img">
-                    <div class="background-image">
-                        <img src="{% static 'img/about-img.png' %}" alt="">
-                    </div>
-                </div>
-            </a>
-        </div>
+          <div class="card-img">
+            <div class="background-image">
+              <img src="{% static 'img/about-img.png' %}" alt="" />
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
+
+
+    <div class="lower-content">
+      <div class="container">
+       <div class="lower-content-inner">
+
+
+  
+    <div class="bar">
+      <h1><b>Why Choose Us</b></h1>
+      <p>Explore on the world's best & largest Bidding marketplace with our beautiful Bidding<br> products. We want to be a part of your smile, success and future growth.</p>
+    </div><!-- /.bar -->
+  
+    <div class="tabs">
+
+      <button type="button" class="btn btn-primary " id="btn-still"><img src="{% static 'img/bell1.png' %}" alt="">
+        <h1>High Quality Products</h1> 
+         <p>Voluptate aut blanditiis accusantium offic expedita dolorem inventore</p>
+      </button>
+      <button type="button" class="btn btn-secondary btn-lg" ><img src="{% static 'img/party1.png' %}" alt="">
+        <h1>Creator's Royalty</h1>
+        <p>Voluptate aut blanditiis accusantium offic expedita dolorem inventore</p>
+      </button>
+      <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/coin1.png' %}" alt="">
+        <h1>Top Calss Product Price</h1>
+      <p>Voluptate aut blanditiis accusantium offic expedita dolorem inventore</p>  
+      </button>
+      <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/bandage.png' %}" alt="">
+        <h1>Support Multiple Currency</h1>
+      <p>Voluptate aut blanditiis accusantium offic expedita dolorem inventore</p>  
+      </button>
+      <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/5th.png' %}" alt="">
+        <h1>Show All Bidders History</h1>
+       <p>cardiologyVoluptate aut blanditiis accusantium offic expedita dolorem inventore</p>
+      </button>
+       <button type="button" class="btn btn-secondary btn-lg"><img src="{% static 'img/customer.png' %}" alt="">
+        <h1>100% Happy Customer</h1>
+        <p>Voluptate aut blanditiis accusantium offic expedita dolorem inventore</p></button>
+    </div><!-- /.tabs -->
+   </div><!-- /.lower-content-inner -->
+ </div><!-- /.container -->
+
+
+
+
 
 
 
 
 
     {% include 'footer.html' %}
-    
-</body>
+  </body>
 </html>
