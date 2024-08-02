@@ -8,11 +8,16 @@ def aboutPage(request):
 def register(request):
     return render(request, 'register.html')
 
+def login(request):
+    return render(request, 'login.html')
+
+
 
 def registerUser(request):
-    uname = request.POST('username')
-    uemail = request.POST('email')
-    upassword = request.POSt('password')
+    uname = request.POST['username']
+    uemail = request.POST['email']
+    upassword = request.POST['password']
 
     user = User.objects.create_user(username=uname, email=uemail, password=upassword)
     return render(request, 'register.html')
+

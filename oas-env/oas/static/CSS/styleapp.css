@@ -59,6 +59,7 @@ body{
     display: flex;
     justify-content: space-between;
     height: 100px;
+    background-color: black;
 }
 .header-logo img{
     width: 200px;
@@ -74,7 +75,6 @@ body{
     color: white;
 }
   .navbaar ul li :hover{
-    padding: 12px;
     color: green !important;
   }
   
