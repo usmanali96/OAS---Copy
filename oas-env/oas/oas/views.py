@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from products.models import Products
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 def index(request):
     return render(request, 'index.html')
@@ -10,6 +12,28 @@ def register(request):
 
 def login(request):
     return render(request, 'login.html')
+
+
+
+
+def  home(request):
+
+    productsData = Products.objects.all()
+    products = Paginator(productsData, 2)
+    page = request.GET['page']
+    products = products.get_page(page)
+
+    data = {
+        "products":  productsData,
+        }
+             
+    return render(request, 'home.html', data)
+
+
+
+
+
+
 
 
 

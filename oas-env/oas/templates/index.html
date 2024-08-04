@@ -40,6 +40,9 @@
     </div>
 
 
+    
+
+
     <div class="banner1-content">
       <div class="container">
         <div class="banner1-content-inner">
@@ -54,6 +57,46 @@
     </div><!-- /.banner-1-content -->
 
 
+
+
+  <div class="bid-cards">
+
+  
+    <div class="row">
+    {% for product in products %}
+    {% if product.category == '1st-Auction' %}
+      <div class="col-md-3">
+        <div class="card">
+        <img src="media/{{product.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <a href="#" class="btn btn-primary">BUY NOW</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div><!-- /.row -->
+
+</div><!-- /.bbid-cards -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {% if products.has_previous %}
+       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    {% endif %}
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    {% if products.has_previous %}
+       <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+
+     
     <div class="cards-5">
       <div class="container">
         <div class="product-banners">
@@ -79,6 +122,10 @@
           </div><!-- /.product-banners -->
       </div><!-- /.container -->
     </div><!-- /.2-cards -->
+
+
+
+
 
 
 

@@ -195,10 +195,15 @@ body{
   margin-bottom: 12px;
   top: 50%;
   left: 20%;
-  transform: translate(-170px, -100px);
+  transform: translate(-155px, -100px);
+
+
+
+
+  
 }
 
-  @media screen and (max-width: 967px){
+  @media  screen  and (max-width: 967px){
     .banner-1-content .banner-2-content {
       flex-wrap: wrap;
     }
@@ -218,7 +223,7 @@ body{
   margin-bottom: 12px;
   top: 60%;
   left: 50%;
-  transform: translate( 20px, -150px);
+  transform: translate( 45px, -150px);
 }
 .banner-2 img{
   position: relative;
@@ -294,3 +299,106 @@ footer .footer-strip-inner a{
 
 }
 
+
+
+
+
+
+
+
+
+@import "compass/css3";
+
+* {box-sizing: border-box;}
+
+.index-cards{background-color: #eee;}
+
+.index-cards .container {
+  padding: 1rem 1rem;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.index-cards ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+.index-cards li {
+  padding: 1rem; 
+  background: #fff;
+  color: #202020;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  opacity: 0.9;
+}
+
+li:hover{
+box-shadow: 1px 2px 3px 0px rgba(25,25,25,0.6);
+opacity: 1;
+transition:all 0.5s ease;  
+}
+
+
+.index-cards h1 {
+  background-color: darken(steelblue, 10%);
+  color: #fff;
+  padding: 1.25rem;
+}
+.index-cards h2 {margin: 0;
+}
+.index-cards p {
+  color: #555; line-height: 1.5;
+}
+.index-cards img {
+ width: 100%; margin-bottom:1.5rem; border-radius: 5px;
+}
+
+
+
+/* Flexbox Styling */
+
+/* Inspired by https://www.aaron-gustafson.com/notebook/playing-with-flexbox-and-quantity-queries/ */
+
+.item-list {
+  display: flex; 
+  flex-wrap: wrap;
+  }
+.item {
+  flex: 100%;
+  margin: 0 0 1.25rem;
+}
+
+@media (min-width: 36em) {
+
+.item { 
+  flex: 0 0 calc( 50% - 1.25rem / 2 );
+  margin-left: 1.25rem;
+}
+ 
+ .item:nth-child(odd){ 
+   margin-left: 0;
+ }  
+  
+}
+
+@media (min-width: 60em) {
+.item {flex: 0 0 calc(100% / 3 - 0.875rem);
+}
+  
+.item:nth-child(odd), item:nth-child(even) { 
+    margin-left: 1.25rem;
+}
+  
+ .item:nth-child(3n+1) { 
+  margin-left: 0;} 
+}
+
+.index-cards h1{
+  text-align: center;
+}
+
+
+  
