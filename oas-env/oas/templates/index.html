@@ -164,26 +164,7 @@
     </div>
     <!-- /.2-cards -->
 
-    <div class="upcoming-auction">
-      <div class="container">
-        <div class="row">
-          {% for product in products %} 
-          {% if product.category == 'upcoming-auction' %}
-          <div class="col-md-4">
-            <div class="card">
-              <img src="media/{{product.image}}" class="card-img-top"alt="..."/>
-              <div class="card-body">
-                <h5 class="card-title">{{product.title}}</h5>
-                <p class="card-text"><b>{{product.description}}</b></p>
-                <a href="#" class="btn btn-success">View Details</a>
-                <i class="bi bi-share-fill justify-content-end"></i>
-              </div>
-            </div>
-          </div>
-          {% endif %} 
-          {% endfor %}
-      </div><!-- /.container -->
-    </div><!-- /.upcoming-auction -->
+  
   
 
 
@@ -234,10 +215,10 @@
   
 
   <div class="counter-box">
-    <h2 class="counter">{{counter_app.number_of_feature}}</h2>
-    <span class="counterapp-span">{{counter_app.sign_of_feature}}</span>
+    <h2 class="counter"> BidNow</h2>
+    <span class="counterapp-span">Lorem, ipsum dolor.</span>
   </div>
-  <h4>{{counter_app.feature}}</h4>
+  <h4>Lorem, ipsum.</h4>
 </div>
   
   
