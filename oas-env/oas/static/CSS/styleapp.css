@@ -263,16 +263,9 @@ body{
 
 }
 
-.upcoming-auction .container{
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow-x: hidden;
-}
-.upcoming-auction .row{
-  display: flex;
-  width: calc(250px * 18);
-  animation: scroll 20s linear infinite;
+.upcoming-auction .card{
+  background-color: #000000;
+
 }
 
 @keyframes scroll {
@@ -285,18 +278,6 @@ body{
   
 
 }
-.upcoming-auction .row img{
-  height: 250px;
-  width: 250px;
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  perspective: 100px;
-
-
-
-}
-
 
 
 
