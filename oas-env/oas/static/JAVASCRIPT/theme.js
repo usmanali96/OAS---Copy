@@ -51,7 +51,11 @@ $('.owl-carousel-1').owlCarousel({
             autoplayHoverPause: true,
           });
 
-
+          $('.counter').counterUp({
+            delay: 10,
+            time: 2000
+          });
+          $('h3').addClass('animated fadeIn');
 
 
 
