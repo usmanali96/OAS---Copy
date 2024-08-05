@@ -267,13 +267,13 @@ body{
   display: grid;
   place-items: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .upcoming-auction .row{
   display: flex;
   width: calc(250px * 18);
   animation: scroll 20s linear infinite;
-
+}
 
 @keyframes scroll {
   0%{
@@ -283,15 +283,17 @@ body{
     transform: translateX(calc(-250px * 9));
   }
   
+
 }
-}
-.upcoming-auction .row .img{
+.upcoming-auction .row img{
   height: 250px;
   width: 250px;
   display: flex;
   align-items: center;
   padding: 15px;
   perspective: 100px;
+
+
 
 }
 
