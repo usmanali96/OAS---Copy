@@ -79,13 +79,6 @@ body{
   }
   
 
-  
-
-
-
-
-
-
   .carousel-wrap {
     margin: 90px auto;
     padding: 0 5%;
@@ -125,7 +118,33 @@ body{
   .carousel-i img{
     box-shadow: #2f2f2f;
 }
+
+
+.product-content-inner{
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+.bid-cards .card{
+  transition: all 0.3s;
   
+
+}
+.card:hover{
+  transform: scale(1.15);
+  border-bottom: 3px solid;
+  border-color: white;
+  
+}
+
+
+
+
+
+
+
+
+
 
   .banner1-content-inner{
     position: absolute;
@@ -150,7 +169,7 @@ body{
 .banner1-content-inner h2{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
-#hi{
+#main-heading{
   font-size: 80px;
 }
 
@@ -196,9 +215,6 @@ body{
   top: 50%;
   left: 20%;
   transform: translate(-155px, -100px);
-
-
-
 
   
 }
@@ -399,5 +415,10 @@ transition:all 0.5s ease;
 .index-cards h1{
   text-align: center;
 }
+
+
+
+
+
 
 

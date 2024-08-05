@@ -1,12 +1,30 @@
 {% load static %}
 {% include 'header.html' %}
 <head>
-
-
+<title>Onlineauctions</title>
 </head>
 
 <body>
   <main>
+
+
+    <div class="banner1-content">
+      <div class="container">
+        <div class="banner1-content-inner">
+          <span>Welcome To Auction House</span>
+          <h2 id="main-heading"><b>Build, sell & collect digital items.</b></h2>
+          <p>Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis. Nullam
+            dapibus on erat in dolor posuere, none hendrerit lectus ornare.
+            Suspendisse sit amet turpina sagittis, ultrices dui et, aliquam none hendrerit lectus.</p>
+            <button id='btn1' class="btn btn-success btn-1">Start Exploring</button>
+        </div><!-- /.banner1-content-inner -->
+      </div><!-- /.container -->
+    </div><!-- /.banner-1-content -->
+
+
+
+
+
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -40,45 +58,40 @@
     </div>
 
 
-    
 
-
-    <div class="banner1-content">
+    <div class="product-content d-flex">
       <div class="container">
-        <div class="banner1-content-inner">
-          <span>Welcome To Auction House</span>
-          <h2 id="hi"><b>Build, sell & collect digital items.</b></h2>
-          <p>Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis. Nullam
-            dapibus on erat in dolor posuere, none hendrerit lectus ornare.
-            Suspendisse sit amet turpina sagittis, ultrices dui et, aliquam none hendrerit lectus.</p>
-            <button id='btn1' class="btn btn-success btn-1">Start Exploring</button>
-        </div><!-- /.banner1-content-inner -->
-      </div><!-- /.container -->
-    </div><!-- /.banner-1-content -->
-
-
-
+        <div class="product-content-inner">
+          <h1><b>Live Auction</b></h1>
+          <p style="color: grey;">Explore on the world's best & largest Bidding marketplace with our beautiful Bidding<br> products. We want to be a part of your smile, success and future growth.</p>
+        </div><!-- /.product-content-inner -->
+      </div>
+    </div><!-- /.product-content -->
 
   
 
   
   <div class="bid-cards"> 
+    <div class="container">
     <div class="row">
     {% for product in products %}
     {% if product.category == '1st-Auction' %}
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="card">
         <img src="media/{{product.image}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{product.title}}</h5>
-          <p class="card-text">{{product.description}}</p>
-          <a href="#" class="btn btn-primary">BUY NOW</a>
+          <p class="card-text"><b>{{product.description}}</b></p>
+          <a href="#" class="btn btn-success">BUY NOW</a> <i class="bi bi-share-fill justify-content-end"></i>
+          
         </div>
       </div>
     </div>
     {% endif %}
     {% endfor %}
+
 </div><!-- /.row -->
+</div><!-- /.container -->
 
 </div><!-- /.bid-cards -->
 
@@ -126,7 +139,6 @@
           </div><!-- /.product-banners -->
       </div><!-- /.container -->
     </div><!-- /.2-cards -->
-
 
 
 
