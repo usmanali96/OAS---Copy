@@ -8,6 +8,7 @@ body{
 }
 .top-bar{
     background-color: gray;
+    color: white;
 }
 .top-bar-inner{
     display: flex;
@@ -147,7 +148,7 @@ body{
 
 
 
-  .banner1-content-inner{
+  .main-banner-content-inner{
     position: absolute;
     width: 100%;
     max-width: 760px;
@@ -159,7 +160,7 @@ body{
     left: 45%;
     transform: translate(-300px, -10px);
 }
-.banner1-content-inner span{
+.main-banner-content-inner{
     font-size: 1.25rem;
     font-weight: 600;
     color: #eee;
@@ -167,14 +168,14 @@ body{
     margin-bottom: 10px;
     display: block;
 }
-.banner1-content-inner h2{
+.main-banner-content-inner h2{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 #main-heading{
   font-size: 80px;
 }
 
-.banner1-content-inner #btn1:hover{
+.main-banner-content-inner #btn1:hover{
   transform: scale(1.1);
 }
 
@@ -248,12 +249,90 @@ body{
   max-height: 600px;
   max-width: 600px;
 }
-.f-section{
-  background-image: url(footer-map.jpg);
-}
 .banner-2-content button{
   padding: 10px 10px;
   margin-top: 20px;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.slider{
+  max-width: 1100px;
+  display: flex;
+}
+.slider .card{
+  flex: 7;
+  margin: 0 10px;
+  background: #fff;
+}
+.slider .card .img{
+  height: 200px;
+  width: 100%;
+}
+.slider .card .img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.upcomingt-auction .slider .card .content{
+  padding: 10px 20px;
+}
+.upcomingt-auction .card .content .title{
+  font-size: 25px;
+  font-weight: 600;
+}
+.card .content .sub-title{
+  font-size: 20px;
+  font-weight: 600;
+  color: #e74c3c;
+  line-height: 20px;
+}
+.card .content p{
+  text-align: justify;
+  margin: 10px 0;
+}
+.card .content .btn{
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+.card .content .btn button{
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card .content .btn button:hover{
+  transform: scale(0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+.f-section{
+  background-image: url(footer-map.jpg);
 }
 .footer-f ul li{
   display: block;

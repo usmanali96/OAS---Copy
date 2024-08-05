@@ -1,166 +1,203 @@
-{% load static %}
-{% include 'header.html' %}
+{% load static %} {% include 'header.html' %}
 <head>
-<title>Onlineauctions</title>
+  <title>Onlineauctions</title>
 </head>
 
 <body>
   <main>
-
-
-    <div class="banner1-content">
+    <div class="main-banner-content">
       <div class="container">
-        <div class="banner1-content-inner">
+        <div class="main-banner-content-inner">
           <span>Welcome To Auction House</span>
           <h2 id="main-heading"><b>Build, sell & collect digital items.</b></h2>
-          <p>Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis. Nullam
-            dapibus on erat in dolor posuere, none hendrerit lectus ornare.
-            Suspendisse sit amet turpina sagittis, ultrices dui et, aliquam none hendrerit lectus.</p>
-            <button id='btn1' class="btn btn-success btn-1">Start Exploring</button>
-        </div><!-- /.banner1-content-inner -->
-      </div><!-- /.container -->
-    </div><!-- /.banner-1-content -->
-
-
-
-
+          <p>
+            Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis.
+            Nullam dapibus on erat in dolor posuere, none hendrerit lectus
+            ornare. Suspendisse sit amet turpina sagittis, ultrices dui et,
+            aliquam none hendrerit lectus.
+          </p>
+          <button id="btn1" class="btn btn-success btn-1">
+            Start Exploring
+          </button>
+        </div>
+        <!-- /.banner1-content-inner -->
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.banner-1-content -->
 
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{% static 'img/banner-bg1.jpg' %}" class="d-block w-100" alt="...">
+          <img
+            src="{% static 'img/banner-bg1.jpg' %}"
+            class="d-block w-100"
+            alt="..."
+          />
         </div>
         <div class="carousel-item">
-          <img src="{% static 'img/car2.jpg' %}" class="d-block w-100" alt="...">
+          <img
+            src="{% static 'img/car2.jpg' %}"
+            class="d-block w-100"
+            alt="..."
+          />
         </div>
         <div class="carousel-item">
-          <img src="{% static 'img/car3.jpg' %}" class="d-block w-100" alt="...">
+          <img
+            src="{% static 'img/car3.jpg' %}"
+            class="d-block w-100"
+            alt="..."
+          />
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
 
-
-
     <div class="product-content d-flex">
       <div class="container">
         <div class="product-content-inner">
           <h1><b>Live Auction</b></h1>
-          <p style="color: grey;">Explore on the world's best & largest Bidding marketplace with our beautiful Bidding<br> products. We want to be a part of your smile, success and future growth.</p>
-        </div><!-- /.product-content-inner -->
-      </div>
-    </div><!-- /.product-content -->
-
-  
-
-  
-  <div class="bid-cards"> 
-    <div class="container">
-    <div class="row">
-    {% for product in products %}
-    {% if product.category == '1st-Auction' %}
-      <div class="col-md-4">
-        <div class="card">
-        <img src="media/{{product.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{product.title}}</h5>
-          <p class="card-text"><b>{{product.description}}</b></p>
-          <a href="#" class="btn btn-success">BUY NOW</a> <i class="bi bi-share-fill justify-content-end"></i>
-          
+          <p style="color: grey">
+            Explore on the world's best & largest Bidding marketplace with our
+            beautiful Bidding<br />
+            products. We want to be a part of your smile, success and future
+            growth.
+          </p>
         </div>
+        <!-- /.product-content-inner -->
       </div>
     </div>
-    {% endif %}
-    {% endfor %}
+    <!-- /.product-content -->
 
-</div><!-- /.row -->
-</div><!-- /.container -->
+    <div class="bid-cards">
+      <div class="container">
+        <div class="row">
+          {% for product in products %} 
+          {% if product.category == '1st-Auction' %}
+          <div class="col-md-4">
+            <div class="card">
+              <img src="media/{{product.image}}" class="card-img-top"alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text"><b>{{product.description}}</b></p>
+                <a href="#" class="btn btn-success">BUY NOW</a>
+                <i class="bi bi-share-fill justify-content-end"></i>
+              </div>
+            </div>
+          </div>
+          {% endif %} 
+          {% endfor %}
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.bid-cards -->
 
-</div><!-- /.bid-cards -->
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    {% if products.has_previous %}
-       <li class="page-item"><a class="page-link" href="/?page={products.previous_page_number}">Previous</a></li>
-    {% endif %}
-
-    {% for p in totalPages %}
-       <li class="page-item"><a class="page-link" href="/?page={{p}}">{{p}}</a></li>
-    {% endfor %}
-      
-    {% if products.has_previous %}
-       <li class="page-item"><a class="page-link" href="/?page={products.next_page_number}">Next</a></li>
-    {% endif %}
-  </ul>
-</nav>
-
-
-
-     
     <div class="cards-5">
       <div class="container">
         <div class="product-banners">
           <div class="banner-1">
-            <img src="{% static 'img/camera.png' %}" alt="">
+            <img src="{% static 'img/camera.png' %}" alt="" />
             <div class="banner-1-content">
               <h4>Upcoming Auction</h4>
-              <h2>The product Coming <br>In next Month</h2>
-              <button  class="btn btn-success btn-1">Place Bid</button>
-            </div><!-- /.banner-1-content -->
-          </div><!-- /.banner-1 -->
-
+              <h2>The product Coming <br />In next Month</h2>
+              <button class="btn btn-success btn-1">Place Bid</button>
+            </div>
+            <!-- /.banner-1-content -->
+          </div>
+          <!-- /.banner-1 -->
 
           <div class="banner-2">
-            <img src="{% static 'img/ring.jpg' %}" alt="">
+            <img src="{% static 'img/ring.jpg' %}" alt="" />
             <div class="banner-2-content">
               <h4>Best Selling Item</h4>
-              <h2>Hand Ring: Product is <br>Available in stock</h2>
-              <button  class="btn btn-success btn-1">Place Bid</button>
-            </div><!-- /.banner-2-content -->
-          </div><!-- /.banner-2 -->
-          
-          </div><!-- /.product-banners -->
-      </div><!-- /.container -->
-    </div><!-- /.2-cards -->
+              <h2>Hand Ring: Product is <br />Available in stock</h2>
+              <button class="btn btn-success btn-1">Place Bid</button>
+            </div>
+            <!-- /.banner-2-content -->
+          </div>
+          <!-- /.banner-2 -->
+        </div>
+        <!-- /.product-banners -->
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /.2-cards -->
 
+    <div class="upcoming-auction">
+      <div class="slider owl-carousel">
+        {% for product in products %} 
+        {% if product.category == 'upcoming-auction' %}
+         <div class="card">
+           <div class="img">
+            <img src="media/{{product.image}}" alt="" />
+          </div>
+          <div class="content">
+            <div class="title">{{product.title}}</div>
+            <div class="sub-title">{{product.description}}</div>
+            <p>drum music online education</p>
+            <div class="btn">
+              <button>open drum stats</button>
+            </div>
+          </div>
+        </div>
+        {% endif %} 
+        {% endfor %}
+        </div>
 
-
-
-
-
-
-
-
-
-
-
- 
+    
+     
+        
+    
+   
+    </div><!-- /.upcoming-auction -->
   </main>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"
+  ></script>
 
-  
-  
-  
-    {% include 'footer.html' %}
+  {% include 'footer.html' %}
 </body>
