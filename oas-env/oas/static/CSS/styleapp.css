@@ -129,6 +129,7 @@ body{
 .bid-cards .card{
   transition: all 0.3s;
   margin-top: 30px;
+  background-color: black;
   
 
 }
@@ -283,6 +284,7 @@ body{
   height: 100%;
   width: 100%;
   object-fit: cover;
+  image-resolution: fit-content;
 }
 .upcomingt-auction .slider .card .content{
   padding: 10px 20px;
@@ -291,22 +293,22 @@ body{
   font-size: 25px;
   font-weight: 600;
 }
-.card .content .sub-title{
+.upcomingt-auction .card .content .sub-title{
   font-size: 20px;
   font-weight: 600;
   color: #e74c3c;
   line-height: 20px;
 }
-.card .content p{
+.upcomingt-auction .card .content p{
   text-align: justify;
   margin: 10px 0;
 }
-.card .content .btn{
+.upcomingt-auction .card .content .btn{
   display: block;
   text-align: left;
   margin: 10px 0;
 }
-.card .content .btn button{
+.upcomingt-auction .card .content .btn button{
   background: #e74c3c;
   color: #fff;
   border: none;
@@ -317,7 +319,7 @@ body{
   cursor: pointer;
   transition: 0.2s;
 }
-.card .content .btn button:hover{
+.upcomingt-auction .card .content .btn button:hover{
   transform: scale(0.9);
 }
 
