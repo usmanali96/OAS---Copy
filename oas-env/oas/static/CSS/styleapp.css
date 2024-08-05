@@ -124,6 +124,7 @@ body{
   text-align: center;
   color: white;
   padding: 20px;
+  height: 80%;
 }
 .bid-cards .card{
   transition: all 0.3s;
@@ -131,7 +132,7 @@ body{
 
 }
 .card:hover{
-  transform: scale(1);
+  transform: scale(1.1);
   border-bottom: 3px solid;
   border-color: white;
   
