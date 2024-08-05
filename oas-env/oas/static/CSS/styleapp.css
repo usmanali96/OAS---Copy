@@ -133,7 +133,7 @@ body{
   
 
 }
-.card:hover{
+.bid-cards .card:hover{
   transform: scale(1.15);
   border-bottom: 3px solid;
   border-color: white;
