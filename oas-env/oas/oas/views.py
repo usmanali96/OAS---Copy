@@ -19,15 +19,19 @@ def login(request):
 def  home(request):
 
     productsData = Products.objects.all()
-    products = Paginator(productsData, 2)
+    productsData = Paginator(productsData, 2)
     page = request.GET['page']
-    products = products.get_page(page)
+    products = productsData.get_page(page)
+
+
+    totalPages =[x+1 for x in range (productsData.num_pages)]
 
     data = {
         "products":  productsData,
+        "totalPages":totalPages,
         }
              
-    return render(request, 'home.html', data)
+    return render(request, 'index.html', data)
 
 
 

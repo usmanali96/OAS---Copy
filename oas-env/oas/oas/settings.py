@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'products',
-    'carousel'
+    'products'
 ]
 
 
@@ -136,7 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
