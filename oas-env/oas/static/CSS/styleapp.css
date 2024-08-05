@@ -283,6 +283,15 @@ body{
   }
   
 }
+.upcoming-auction .img{
+  height: 250px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  perspective: 100px;
+
+}
 
 
 
