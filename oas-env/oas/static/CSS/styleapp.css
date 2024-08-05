@@ -267,6 +267,7 @@ body{
   display: grid;
   place-items: center;
   position: relative;
+  overflow: hidden;
 }
 .upcoming-auction .row{
   display: flex;
