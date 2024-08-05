@@ -131,7 +131,7 @@ body{
 
 }
 .card:hover{
-  transform: scale(1.15);
+  transform: scale(1);
   border-bottom: 3px solid;
   border-color: white;
   
