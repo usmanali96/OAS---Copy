@@ -290,6 +290,7 @@ a.card-link:hover span.cta-card {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    color: white;
 }
  .bar{
  text-align: center;
