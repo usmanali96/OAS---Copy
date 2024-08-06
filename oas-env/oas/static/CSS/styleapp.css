@@ -582,10 +582,16 @@ transition:all 0.5s ease;
 
 
 
+
+
+
+
+
 .third-strip-inner{
+  margin-top: 50px;
   text-align: center;
-}.third-strip span{
-  color: #00a3c8;
+  color: white;
+  padding: 20px;
 }
 .third-strip-inner-content .container{
   display: flex;

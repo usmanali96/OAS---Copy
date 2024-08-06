@@ -187,13 +187,13 @@
       </div>
     </a>
     
-    <a href="{% static 'img/bid-now-logo.jpg' %}" alt="Mythrill" target="_blank">
+    <a href="{% static 'img/Bid-now-logo.jpg' %}" alt="Mythrill" target="_blank">
       <div class="card">
         <div class="wrapper">
-          <img src="{% static 'img/bid-now-logo.jpg' %}" class="cover-image" />
+          <img src="{% static 'img/Bid-now-logo.jpg' %}" class="cover-image" />
         </div>
-        <img src="{% static 'img/bid-now-logo.jpg' %}" class="title" />
-        <img src="{% static 'img/bid-now-logo.jpg' %}" class="character" />
+        <img src="{% static 'img/Bid-now-logo.jpg' %}" class="title" />
+        <img src="{% static 'img/Bid-now-logo.jpg' %}" class="character" />
       </div>
     </a>
 
@@ -213,19 +213,12 @@
   
   
 
-  <div class="counter-box">
-    <h2 class="counter"> 123</h2>
-    <span class="counterapp-span">Lorem, ipsum dolor.</span>
-  </div>
-  <h4>Lorem, ipsum.</h4>
-</div>
-
+  
 
 <div class="third-strip">
   <div class="container">
    <div class="third-strip-inner">
-    <h1>Why<span>Choose</span>Us</h1>
-    <img src="assets/images/dna.png" alt="">
+    <h1>Why Choose Us </h1>
     <p>Explore Our Completed Services! Consectetur adipiscing elitt elit tellus, luctus pulvinar dapibus leoconsectetur luctus nec.</p>
    </div> <!-- /.third-strip-inner -->
 
@@ -234,18 +227,17 @@
    <div class="third-strip-inner-content">  
     <div class="container"> 
       <div class="row">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
         {% for product in products %} 
-        {% if product.category == 'whys-choose-us' %}
-         <div class="card">
-              <img src="media/{{product.image}}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">{{product.title}}</h5>
-                <p class="card-text">{{product.description}}</p>
-              </div>
-            </div>
-          </div>
+          {% if product.category == 'why-choose-us' %}
+          <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
           
         {% endif %} 
         {% endfor %}
@@ -259,6 +251,8 @@
 
 
 
+
+ 
 
 
   
