@@ -582,6 +582,19 @@ transition:all 0.5s ease;
 
 
 
+.third-strip-inner{
+  text-align: center;
+}.third-strip span{
+  color: #00a3c8;
+}
+.third-strip-inner-content .container{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
 
 
 
