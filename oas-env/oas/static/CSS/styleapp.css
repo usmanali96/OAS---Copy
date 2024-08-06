@@ -591,7 +591,11 @@ transition:all 0.5s ease;
   margin-top: 50px;
   text-align: center;
   color: white;
-  padding: 20px;
+  background-color: black;
+  color: white;
+}
+.second-strip-inner .card{
+  line-height: normal;
 }
 
 
