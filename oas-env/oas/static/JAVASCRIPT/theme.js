@@ -44,20 +44,6 @@ $('.owl-carousel-1').owlCarousel({
 
 
 
-          $(".slider").owlCarousel({
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 2000, //2000ms = 2s;
-            autoplayHoverPause: true,
-          });
-
-          $('.counter').counterUp({
-            delay: 10,
-            time: 2000
-          });
-          $('h3').addClass('animated fadeIn');
-
-
 
 
 
