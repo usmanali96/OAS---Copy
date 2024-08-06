@@ -586,7 +586,9 @@ transition:all 0.5s ease;
 
 
 
-
+.third-strip-inner-content{
+  display: flex;
+}
 .third-strip-inner{
   margin-top: 50px;
   text-align: center;
