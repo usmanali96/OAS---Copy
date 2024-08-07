@@ -758,4 +758,91 @@ transition:all 0.5s ease;
 
 
 
+.review-section body{
+  font-family: Arial, sans-serif;
+  background-color: #2d2d2d;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.review-section{
+  text-align: center;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: #3a3a3a;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.review-section p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.review-section {
+  display: flex;
+  gap: 10px;
+  animation: slide 15s infinite linear;
+}
+
+.review-section .card {
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 300px;
+  text-align: left;
+  position: relative;
+}
+
+.review-section .card img {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.review-section .card p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.review-section .card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.review-section .card .position {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Making the slider responsive */
+@media screen and (max-width: 768px) {
+  .review-section-card {
+      flex-direction: column;
+      animation: none; /* Disable animation for better UX on smaller screens */
+  }
+
+  .card {
+      min-width: auto;
+      margin-bottom: 20px;
+  }
+}
+
+
+
 
