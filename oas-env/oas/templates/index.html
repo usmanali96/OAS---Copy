@@ -136,9 +136,9 @@
     <div class="cards-5">
       <div class="container">
         <div class="product-banners">
-          <div class="banner-1">
+          <div class="banner">
             <img src="{% static 'img/camera.png' %}" alt="" />
-            <div class="banner-1-content">
+            <div class="banner-content">
               <h4>Upcoming Auction</h4>
               <h2>The product Coming <br />In next Month</h2>
               <button class="btn btn-success btn-1">Place Bid</button>
@@ -147,9 +147,9 @@
           </div>
           <!-- /.banner-1 -->
 
-          <div class="banner-2">
+          <div class="banner">
             <img src="{% static 'img/ring.jpg' %}" alt="" />
-            <div class="banner-2-content">
+            <div class="banner-content">
               <h4>Best Selling Item</h4>
               <h2>Hand Ring: Product is <br />Available in stock</h2>
               <button class="btn btn-success btn-1">Place Bid</button>
@@ -232,6 +232,22 @@
           {% if product.category == 'why-choose-us' %}
           <div class="col-md-4">
       <div class="card">
+        <div id="christmascounter" class="wallcounter">
+
+          <div class="wrapper">
+            <div class=" fields days"></div>
+            <div class="fields hours"></div>
+            
+            <div class="fields minutes"></div>
+            
+            <div class="fields seconds"></div>
+          </div>
+        
+        </div>
+        
+        <p id="tagline1"><a href="http://www.dynamicdrive.com/dynamicindex6/countdownwall.htm">CSS Flexbox and Vanilla JavaScript Counter</a> @ddrivegeorge</p>
+        
+        <p id="tagline2">Left until Christmas!</p>
         <img src="media/{{product.image}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{product.title}}</h5>
