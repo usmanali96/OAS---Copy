@@ -759,11 +759,10 @@ transition:all 0.5s ease;
 
 
 .review-section {
-  max-width: 1200px;
   margin: auto;
   padding: 40px;
   text-align: center;
-  background-color: #3a3a3a;
+  background-image: url(../img/client-bg.png);
   border-radius: 8px;
   color: white;
   overflow: hidden;
