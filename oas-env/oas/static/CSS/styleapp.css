@@ -787,7 +787,7 @@ transition:all 0.5s ease;
   animation: slide 15s linear infinite;
 }
 
-.card {
+.review-section .card {
   background-color: #1c1c1c;
   border-radius: 8px;
   padding: 20px;
@@ -797,19 +797,19 @@ transition:all 0.5s ease;
   color: white;
 }
 
-.card img {
+.review-section .card img {
   border-radius: 50%;
   margin-bottom: 15px;
   max-width: 100px;
   height: auto;
 }
 
-.card p {
+.review-section .card p {
   font-size: 0.9rem;
   margin-bottom: 15px;
 }
 
-.card h3 {
+.review-section .card h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
 }
@@ -832,7 +832,7 @@ transition:all 0.5s ease;
       align-items: center; /* Center the cards on small screens */
   }
 
-  .card {
+  .review-section .card {
       width: 100%; /* Make the cards full-width on small screens */
       max-width: 300px; /* Maintain a maximum width */
   }
