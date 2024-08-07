@@ -766,6 +766,7 @@ transition:all 0.5s ease;
   background-color: #3a3a3a;
   border-radius: 8px;
   color: white;
+  overflow: hidden;
 }
 
 .review-section h2 {
@@ -780,9 +781,10 @@ transition:all 0.5s ease;
 
 .review-section-inner {
   display: flex;
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center the cards horizontally */
-  flex-wrap: wrap; /* Allow the cards to wrap onto the next line on smaller screens */
+  gap: 20px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+  animation: slide 15s linear infinite;
 }
 
 .card {
