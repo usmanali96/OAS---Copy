@@ -758,25 +758,14 @@ transition:all 0.5s ease;
 
 
 
-.review-section body{
-  font-family: Arial, sans-serif;
-  background-color: #2d2d2d;
-  color: white;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.review-section{
-  text-align: center;
+.review-section {
   max-width: 1200px;
+  margin: auto;
   padding: 40px;
+  text-align: center;
   background-color: #3a3a3a;
   border-radius: 8px;
-  position: relative;
-  overflow: hidden;
+  color: white;
 }
 
 .review-section h2 {
@@ -789,62 +778,49 @@ transition:all 0.5s ease;
   margin-bottom: 30px;
 }
 
-.review-section {
+.review-section-inner {
   display: flex;
-  gap: 10px;
-  animation: slide 15s infinite linear;
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the cards horizontally */
+  flex-wrap: wrap; /* Allow the cards to wrap onto the next line on smaller screens */
 }
 
-.review-section .card {
+.card {
   background-color: #1c1c1c;
   border-radius: 8px;
   padding: 20px;
-  min-width: 300px;
+  width: 300px;
+  flex-shrink: 0;
   text-align: left;
-  position: relative;
+  color: white;
 }
 
-.review-section .card img {
+.card img {
   border-radius: 50%;
   margin-bottom: 15px;
-  max-width: fit-content;
-  max-height: fit-content;
+  max-width: 100px;
+  height: auto;
 }
 
-.review-section .card p {
+.card p {
   font-size: 0.9rem;
   margin-bottom: 15px;
 }
 
-.review-section .card h3 {
+.card h3 {
   font-size: 1.1rem;
   margin-bottom: 5px;
 }
 
-.review-section .card .position {
-  font-size: 0.8rem;
-  color: #999;
-}
-
-/* Animation */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Making the slider responsive */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-  .review-section-card {
+  .review-section-inner {
       flex-direction: column;
-      animation: none; /* Disable animation for better UX on smaller screens */
+      align-items: center; /* Center the cards on small screens */
   }
 
   .card {
-      min-width: auto;
-      margin-bottom: 20px;
+      width: 100%; /* Make the cards full-width on small screens */
+      max-width: 300px; /* Maintain a maximum width */
   }
 }
-
-
-
-
