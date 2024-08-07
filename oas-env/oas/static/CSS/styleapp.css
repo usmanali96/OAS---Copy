@@ -783,7 +783,7 @@ transition:all 0.5s ease;
   display: flex;
   gap: 20px; 
   justify-content: center; 
-  flex-wrap: wrap; 
+  flex-wrap: nowrap; 
   animation: slide 15s linear infinite;
 }
 
@@ -816,17 +816,11 @@ transition:all 0.5s ease;
 
 @keyframes slide {
   0% {
-      
+      transform: translateX(0);
   }
   100% {
-      transform: translateX(calc(-100% - 20px));
+      transform: translateX(calc(-50% - 20px));
   }
-  100% {
-    transform: translateX(calc(-100% - 20px));
-}
-0% {
-  transform: translateX(0);
-}
 }
 
 
