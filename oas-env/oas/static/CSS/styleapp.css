@@ -329,6 +329,7 @@ transform: scale(1.1);
 
 .cards-5 {
   padding: 20px;
+  margin-top: 50px;
 }
 
 .product-banners {
@@ -741,12 +742,6 @@ transition:all 0.5s ease;
 }
 
 
-
-
-
-
-
-
 .second-strip-inner{
   margin-top: 50px;
   text-align: center;
@@ -787,7 +782,7 @@ transition:all 0.5s ease;
 }
 
 .review-section .card {
-  background-color: #1c1c1c;
+  background-color: black;
   border-radius: 8px;
   padding: 20px;
   width: 300px;
