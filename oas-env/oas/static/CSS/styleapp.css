@@ -720,8 +720,6 @@ transition:all 0.5s ease;
 
 }
 .second-strip-inner .card-body{
-  border: 3px;
-  border-color: white;
   background-color: black;
   color: white;
 }
