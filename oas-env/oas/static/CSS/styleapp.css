@@ -717,8 +717,7 @@ transition:all 0.5s ease;
 .second-strip-inner{
   margin-top: 50px;
   text-align: center;
-  color: white;
-  background-color: black;
+
 }
 .second-strip-inner .card{
   border: 3px;
