@@ -1,63 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-
-section{
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    background-size: 400% 400%;
-    height: 100vh;
-    position: relative;
-    width: 100%;
+  
+.register-form-container{
     display: grid;
-    place-items: center;
-
-    animation: gradient 10s linear infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-
-
-
-
-
-.custom-shape-divider-bottom-1678428448 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1678428448 svg {
+    grid-template-columns: 1fr 2fr;
+    background-color: red;
+    background: linear-gradient(to bottom, rgb(6, 108, 100),  rgb(14, 48, 122));
+    width: 800px;
+    height: 400px;
+    margin: 10% auto;;
+    border-radius: 5px;
+  }
+  
+  .register-form .content-holder
+  {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    margin-top: 15%;
+    padding: 50px;
+  }
+  
+  .register-form .content-holder h2
+  {
+    font-size: 34px;
+    margin: 20px auto;
+  }
+  
+  .register-form .content-holder p
+  {
+    margin: 30px auto;
+  }
+  
+  .register-form .content-holder button
+  {
+    border:none;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: white;
+    width: 150px;
+    margin: 20px auto;
+  }
+  
+  
+  .register-form .box-2{
+    background-color: white;
+  
+    margin: 5px;
+  }
+  
+  .register-form .login-form-container
+  {
+    text-align: center;
+    margin-top: 10%;
+  
+  }
+  
+  .register-form .login-form-container h1
+  {
+    color: black;
+    font-size: 24px;
+    padding: 20px;
+  }
+  
+  .register-form .input-field
+  {
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(168, 168, 168);
+    width: 250px;
+    outline: none;
+  }
+  
+  .register-form .login-button{
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    outline: none;
+    background-color: rgb(56, 102, 189);
+  }
+  
+  
+  
+  .register-form .button-2
+  {
+    display: none;
+  }
+  
+  
+  
+  
+  
+  .register-form .signup-form-container
+  {
     position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-}
-
-.custom-shape-divider-bottom-1678428448 .shape-fill {
-    fill: #FFFFFF;
-}
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    text-align: center;
+    display: none;
+  }
+  
+  
+  .register-form .signup-form-container h1
+  {
+    color: black;
+    font-size: 24px;
+    padding: 20px;
+  }
+  
+  .register-form .signup-button{
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    padding: 13px;
+    border-radius: 7px;
+    border: none;
+    width: 250px;
+    outline: none;
+    background-color: rgb(56, 189, 149);  
+  }

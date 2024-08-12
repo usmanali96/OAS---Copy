@@ -60,6 +60,7 @@ body{
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  color: white;
 }
 .header-logo img{
     width: 200px;
