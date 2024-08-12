@@ -291,7 +291,10 @@ a.card-link:hover span.cta-card {
     flex-wrap: wrap;
     justify-content: space-around;
     color: white;
+    text-align: center;
+    margin-bottom: 50px;
 }
+
  .bar{
  text-align: center;
  border-bottom: 55px;
@@ -324,9 +327,7 @@ a.card-link:hover span.cta-card {
     border-bottom: 4px solid;
     border-color: green;
  }
- .tabs{
-    text-align: center;
- }
+
  .tabs button img{
     height: 80px;
     width: 80px;
