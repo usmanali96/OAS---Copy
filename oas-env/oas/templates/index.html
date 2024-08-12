@@ -6,92 +6,68 @@
 
 <body>
   <main>
-    <div class="main-banner-content">
-      <div class="container">
-        <div class="main-banner-content-inner">
-          <span>Welcome To Auction House</span>
-          <h2 id="main-heading"><b>Build, sell & collect digital items.</b></h2>
-          <p>
-            Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis.
-            Nullam dapibus on erat in dolor posuere, none hendrerit lectus
-            ornare. Suspendisse sit amet turpina sagittis, ultrices dui et,
-            aliquam none hendrerit lectus.
-          </p>
-          <button id="btn1" class="btn btn-success btn-1">
-            Start Exploring
-          </button>
-        </div>
-        <!-- /.banner1-content-inner -->
-      </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.banner-1-content -->
-
     <div id="carouselExampleIndicators" class="carousel slide">
       <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src="{% static 'img/banner-bg1.jpg' %}"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="{% static 'img/banner-bg1.jpg' %}" class="d-block w-100" alt="..." />
+          <div class="main-banner-content">
+            <div class="container">
+              <div class="main-banner-content-inner">
+                <span>Welcome To Auction House</span>
+                <h2 id="main-heading"><b>Build, sell & collect digital items.</b></h2>
+                <p>
+                  Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis.
+                  Nullam dapibus on erat in dolor posuere, none hendrerit lectus
+                  ornare. Suspendisse sit amet turpina sagittis, ultrices dui et,
+                  aliquam none hendrerit lectus.
+                </p>
+                <button id="btn1" class="btn btn-success btn-1">Start Exploring</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="carousel-item">
-          <img
-            src="{% static 'img/car2.jpg' %}"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="{% static 'img/car2.jpg' %}" class="d-block w-100" alt="..." />
+          <div class="main-banner-content">
+            <span>Welcome To Auction House</span>
+            <h2 id="main-heading"><b>Build, sell & collect digital items.</b></h2>
+            <p>
+              Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis.
+              Nullam dapibus on erat in dolor posuere, none hendrerit lectus
+              ornare. Suspendisse sit amet turpina sagittis, ultrices dui et,
+              aliquam none hendrerit lectus.
+            </p>
+            <button id="btn1" class="btn btn-success btn-1">Start Exploring</button></div>
         </div>
         <div class="carousel-item">
-          <img
-            src="{% static 'img/car3.jpg' %}"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="{% static 'img/car3.jpg' %}" class="d-block w-100" alt="..." />
+          <div class="main-banner-content">
+            <span>Welcome To Auction House</span>
+            <h2 id="main-heading"><b>Build, sell & collect digital items.</b></h2>
+            <p>
+              Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis.
+              Nullam dapibus on erat in dolor posuere, none hendrerit lectus
+              ornare. Suspendisse sit amet turpina sagittis, ultrices dui et,
+              aliquam none hendrerit lectus.
+            </p>
+            <button id="btn1" class="btn btn-success btn-1">Start Exploring</button></div>
         </div>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    
 
     <div class="product-content d-flex">
       <div class="container">
