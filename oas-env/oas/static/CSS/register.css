@@ -1,131 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+* {
+  font-family: Arial;
+}
 
-  
-.register-form-container{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background-color: red;
-    background: linear-gradient(to bottom, rgb(6, 108, 100),  rgb(14, 48, 122));
-    width: 800px;
-    height: 400px;
-    margin: 10% auto;;
-    border-radius: 5px;
-  }
-  
-  .register-form .content-holder
-  {
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    font-weight: lighter;
-    letter-spacing: 2px;
-    margin-top: 15%;
-    padding: 50px;
-  }
-  
-  .register-form .content-holder h2
-  {
-    font-size: 34px;
-    margin: 20px auto;
-  }
-  
-  .register-form .content-holder p
-  {
-    margin: 30px auto;
-  }
-  
-  .register-form .content-holder button
-  {
-    border:none;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: white;
-    width: 150px;
-    margin: 20px auto;
-  }
-  
-  
-  .register-form .box-2{
-    background-color: white;
-  
-    margin: 5px;
-  }
-  
-  .register-form .login-form-container
-  {
-    text-align: center;
-    margin-top: 10%;
-  
-  }
-  
-  .register-form .login-form-container h1
-  {
-    color: black;
-    font-size: 24px;
-    padding: 20px;
-  }
-  
-  .register-form .input-field
-  {
-    box-sizing: border-box;
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid rgb(168, 168, 168);
-    width: 250px;
-    outline: none;
-  }
-  
-  .register-form .login-button{
-    box-sizing: border-box;
-    color: white;
-    font-size: 14px;
-    padding: 13px;
-    border-radius: 7px;
-    border: none;
-    width: 250px;
-    outline: none;
-    background-color: rgb(56, 102, 189);
-  }
-  
-  
-  
-  .register-form .button-2
-  {
-    display: none;
-  }
-  
-  
-  
-  
-  
-  .register-form .signup-form-container
-  {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-60%);
-    text-align: center;
-    display: none;
-  }
-  
-  
-  .register-form .signup-form-container h1
-  {
-    color: black;
-    font-size: 24px;
-    padding: 20px;
-  }
-  
-  .register-form .signup-button{
-    box-sizing: border-box;
-    color: white;
-    font-size: 14px;
-    padding: 13px;
-    border-radius: 7px;
-    border: none;
-    width: 250px;
-    outline: none;
-    background-color: rgb(56, 189, 149);  
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #222;
+}
+
+.box {
+  width: 600px;
+  height: 300px;
+  background: #333;
+  margin: 0 auto;
+  position: relative;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  display: block;
+  height: 100%;
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+#signup + label {
+  background: #393939;
+}
+
+input[type="radio"] + label:after {
+  display: block;
+  position: absolute;
+  width: 50%;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 30px;
+  opacity: 0.6;
+}
+
+input[type="radio"] + label:hover:after,
+input[type="radio"]:checked + label:after {
+  opacity: 1;
+}
+
+#signup + label:after {
+  content: "Sign Up";
+}
+
+#login + label:after {
+  content: "Login";
+}
+
+.form {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  background: #fff;
+  bottom: 20px;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  top: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.form label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px 0px 4px;
+  color: #333;
+}
+
+.form input {
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  padding: 5px 0px;
+  margin-bottom: 6px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+}
+
+.form button {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+  background: #faac12;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.form button:hover {
+  background: #e5a320;
+}
+
+.form button:before {
+  content: "Sign Up";
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form button:after {
+  content: "Login";
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+#signup:checked + label + input + label + .form {
+  left: 30px;
+}
+
+#login:checked + label + .form {
+  left: 330px;
+}
+
+#login:checked + label + .form > button:before {
+  top: -40px;
+}
+
+#login:checked + label + .form > button:after {
+  top: 0px;
+}
+
+#login:checked + label + .form .content {
+  top: 0px; /* Keep both Username and Password visible */
+}
+
+#login:checked + label + .form .content label[for="email"],
+#login:checked + label + .form .content input#email {
+  display: none; /* Hide email field for login form */
+}

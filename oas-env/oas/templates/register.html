@@ -10,63 +10,31 @@
    <link rel="stylesheet" href="{% static 'CSS/register.css' %}" />
 </head>
 
-<div class="register-form">
-  <form method="post" action="{% url 'register-user' %}">
-    {% csrf_token %}
-  <div class="register-form-container">
-  <!--Data or Content-->
-  <div class="box-1">
-    <div class="content-holder">
-      <h2>Hello!</h2>
-      <button class="button-1" onclick="signup()">Sign up</button>
-        <button class="button-2" onclick="login()">Login</button>
+<body>
+  <div class="container">
+    <div class="box">
+      <input id="signup" type="radio" name="form" value="signup" checked>
+      <label for="signup"></label>
+      <input id="login" type="radio" name="form" value="login">
+      <label for="login"></label>
+
+      <div class="form">
+        <div class="content">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username">
+          
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password">
+          
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <button></button>
+      </div>
     </div>
   </div>
-  <!--Forms-->
-  <div class="box-2">
-    <div class="login-form-container">
-      <h1>Login Form</h1>
-      <input type="text" placeholder="Username" class="input-field" id="username" name="username">
-      <br><br>
-      <input type="password" placeholder="Password" class="input-field" id="password" name="password">
-      <br><br>
-      <button class="login-button" type="button">Login</button>
-      <br>
-      <a>Don't have a Account</a><br><b onclick="signup()">SIGNUP</b>
-  </div>
-  <!--Create Container for Signup form-->
-  <div class="signup-form-container">
-    <br>
-                    <h1>Sign Up Form</h1>
-                    <input type="text" placeholder="Username" class="input-field" id="username" name="username">
-                    <br><br>
-                    <input type="email" placeholder="Email" class="input-field" id="email" name="email">
-                    <br><br>
-                    <input type="password" placeholder="Password" class="input-field" id="password" name="password">
-                    <br><br>
-                    <button class="signup-button" href="{% url 'register-user' %}"
-                     type="submit" onclick="login()">Sign Up</button>
-                     <br>
-                     <a>Already have an Account</a><br><b onclick="login()">LOGIN</b>
-                </div>
-                
-          
-          
-          
-              </div>
-            </div>
-          </form>
-                
-</div><!-- /.register-form -->              
 
-{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
-
+</body>
 
 
 
