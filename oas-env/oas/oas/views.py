@@ -57,6 +57,6 @@ def loginUser(request):
         else:
              print("user doesn't exist")
              
-        return render(request, 'login')
+        return render(request, 'login.html')
              
 
