@@ -11,14 +11,17 @@
 </head>
 
 <body>
+  <div class="register-page">
   <div class="container">
-    <div class="box">
+
+    <form class="box">
       <input id="signup" type="radio" name="form" value="signup" checked>
       <label for="signup"></label>
       <input id="login" type="radio" name="form" value="login">
       <label for="login"></label>
 
-      <div class="form">
+      <form method="post" action="{% url 'register-user' %}">
+        {% csrf_token %}
         <div class="content">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="username">
@@ -31,6 +34,7 @@
         </div>
         <button></button>
       </div>
+    </form>
     </div>
   </div>
 
