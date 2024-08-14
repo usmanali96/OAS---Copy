@@ -11,7 +11,7 @@
 
 
    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-         <form method="post" action="{% url 'register-user' %}">
+         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
                <div class="row mb-3">
                   <label for="username" class="col-sm-12 col-form-label">Username</label>
