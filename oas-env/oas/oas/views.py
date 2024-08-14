@@ -47,7 +47,7 @@ def registerUser(request):
         return render(request, 'register.html')
 
 
-def registerUser(request):
+def loginUser(request):
         uname = request.POST.get('username')
         upassword = request.POST.get('password')
         user = authenticate(request, username=uname, password=upassword)
