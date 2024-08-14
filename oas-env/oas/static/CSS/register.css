@@ -1,169 +1,47 @@
-* {
-  font-family: Arial;
+section{
+  background: #4b6cb7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background-size: 400% 400%;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    animation: gradient 10s linear infinite;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #222;
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.box {
-  width: 600px;
-  height: 300px;
-  background: #333;
-  margin: 0 auto;
-  position: relative;
+.custom-shape-divider-bottom-1678428448 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
 }
 
-input[type="radio"] {
-  display: none;
+.custom-shape-divider-bottom-1678428448 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
 }
 
-input[type="radio"] + label {
-  display: block;
-  height: 100%;
-  width: 50%;
-  float: left;
-  position: relative;
-}
-
-#signup + label {
-  background: #393939;
-}
-
-input[type="radio"] + label:after {
-  display: block;
-  position: absolute;
-  width: 50%;
-  bottom: 50px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  color: #fff;
-  text-align: center;
-  border: 1px solid #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 10px 30px;
-  opacity: 0.6;
-}
-
-input[type="radio"] + label:hover:after,
-input[type="radio"]:checked + label:after {
-  opacity: 1;
-}
-
-#signup + label:after {
-  content: "Sign Up";
-}
-
-#login + label:after {
-  content: "Login";
-}
-
-.form {
-  position: absolute;
-  width: 200px;
-  height: 300px;
-  padding: 20px;
-  background: #fff;
-  bottom: 20px;
-  transition: all 0.2s ease-in-out;
-  overflow: hidden;
-}
-
-.content {
-  position: relative;
-  top: 0px;
-  transition: all 0.2s ease-in-out;
-}
-
-.form label {
-  font-size: 11px;
-  text-transform: uppercase;
-  font-weight: bold;
-  display: block;
-  width: 100%;
-  padding: 10px 0px 4px;
-  color: #333;
-}
-
-.form input {
-  font-size: 14px;
-  display: block;
-  width: 100%;
-  padding: 5px 0px;
-  margin-bottom: 6px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  color: #666;
-}
-
-.form button {
-  width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  border: none;
-  background: #faac12;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.form button:hover {
-  background: #e5a320;
-}
-
-.form button:before {
-  content: "Sign Up";
-  display: block;
-  height: 40px;
-  line-height: 40px;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0px;
-  transition: all 0.3s ease-in-out;
-}
-
-.form button:after {
-  content: "Login";
-  display: block;
-  height: 40px;
-  line-height: 40px;
-  position: absolute;
-  width: 100%;
-  top: 40px;
-  left: 0px;
-  transition: all 0.3s ease-in-out;
-}
-
-#signup:checked + label + input + label + .form {
-  left: 30px;
-}
-
-#login:checked + label + .form {
-  left: 330px;
-}
-
-#login:checked + label + .form > button:before {
-  top: -40px;
-}
-
-#login:checked + label + .form > button:after {
-  top: 0px;
-}
-
-#login:checked + label + .form .content {
-  top: 0px; /* Keep both Username and Password visible */
-}
-
-#login:checked + label + .form .content label[for="email"],
-#login:checked + label + .form .content input#email {
-  display: none; /* Hide email field for login form */
+.custom-shape-divider-bottom-1678428448 .shape-fill {
+    fill: #FFFFFF;
 }
