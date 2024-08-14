@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from products.models import Products
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+from django.contrib.auth import authenticate, login
 
 #def index(request):
    # return render(request, 'index.html')
@@ -37,14 +38,25 @@ def  index(request):
 
 
 
-
-
-
-
-
 def registerUser(request):
         uname = request.POST.get('username')
         uemail = request.POST.get('email')
         upassword = request.POST.get('password')
         user = User.objects.create_user(username=uname, email=uemail, password=upassword)
+
         return render(request, 'register.html')
+
+
+def registerUser(request):
+        uname = request.POST.get('username')
+        upassword = request.POST.get('password')
+        user = authenticate(request, username=uname, password=upassword)
+        if user is not None:
+             login(request, user)
+             return redirect('/')
+        else:
+             print("user doesn't exist")
+             
+        return render(request, 'login')
+             
+
