@@ -43,21 +43,8 @@ def  index(request):
 
 
 def registerUser(request):
-    if request.method == 'POST':
         uname = request.POST.get('username')
         uemail = request.POST.get('email')
         upassword = request.POST.get('password')
-
-        if not uname or not uemail or not upassword:
-            messages.error(request, "All fields are required.")
-            return render(request, 'register.html')
-        
-        try:
-            user = User.objects.create_user(username=uname, email=uemail, password=upassword)
-            messages.success(request, "Registration successful.")
-            return redirect('login')  # Redirect to the login page or another appropriate page
-        except Exception as e:
-            messages.error(request, f"An error occurred: {str(e)}")
-            return render(request, 'register.html')
-    else:
+        user = User.objects.create_user(username=uname, email=uemail, password=upassword)
         return render(request, 'register.html')
