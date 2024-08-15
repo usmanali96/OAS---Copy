@@ -4,6 +4,7 @@ from products.models import Products
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login
+from contact.models import Contact
 
 #def index(request):
    # return render(request, 'index.html')
@@ -47,6 +48,8 @@ def registerUser(request):
         return render(request, 'register.html')
 
 
+
+
 def loginUser(request):
         uname = request.POST.get('username')
         upassword = request.POST.get('password')
@@ -60,3 +63,15 @@ def loginUser(request):
         return render(request, 'login.html')
              
 
+
+
+def contactPage(request):
+    if request.method=='POST':
+          cname = request.POST.get('contactname')
+          cemail = request.POST.get('contactemail')
+          cphone = request.POST.get('phone')
+          content = request.POST.get('content')
+          print(cname, cemail, content, cphone)
+          contact = Contact(name = cname, email = cemail, content = content, phone = cphone)
+          contact.save()
+    return render(request, 'contact.html')
