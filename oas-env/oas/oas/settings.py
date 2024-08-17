@@ -90,7 +90,7 @@ DATABASES = {
         'HOST' : 'localhost',
         'DATABASE' : 'onlinea1_bids',
         'USER' : 'onlinea1_bids',
-        'PASSWORD' : '^N@$kh0Ppbpo',
+        'PASSWORD' : 'n2w@ukh@u',
         'PORT' : '3306'
     }
 }
