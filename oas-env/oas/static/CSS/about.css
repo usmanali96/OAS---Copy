@@ -340,7 +340,177 @@ a.card-link:hover span.cta-card {
 
 
 
+ .inner-banner {
+    background: rgba(12, 3, 33, 0.9);
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+  }
 
+  .inner-banner-content {
+    position: absolute;
+    z-index: 1;
+    transform: translate(70px, 160px);
+  }
+
+  .inner-banner h2 {
+    font-size: 50px;
+    color: white;
+  }
+
+  .inner-banner-img {
+    text-align: right;
+  }
+
+  .row {
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 19px;
+    line-height: 33px;
+  }
+
+  .row-big-card .cont {
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .15);
+    margin: 30px auto;
+    width: calc(100% - 40px);
+    max-width: 1760px;
+    padding: 0;
+    position: relative;
+  }
+
+  a.card-link {
+    color: #1A1A1A;
+    display: block;
+    text-decoration: none;
+  }
+
+  .card-img {
+    padding-left: 45%;
+    position: relative;
+  }
+
+  .card-img div {
+    display: block;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding-bottom: 64%;
+    transition: all .2s ease-in-out;
+  }
+
+  .row-big-card .cont:hover .card-img div {
+    -webkit-clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+    clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+  }
+
+  .row-big-card .cont .card-inner {
+    padding: 40px 20px 0 60px;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 40%;
+  }
+
+  .card-inner h3 {
+    font-size: 76px;
+    line-height: 82px;
+    margin: 0 0 1.5%;
+    transition: all .1s ease-in-out;
+  }
+
+  .card-inner h4 {
+    font-size: 24px;
+    margin: 0;
+    transition: all .1s ease-in-out;
+  }
+
+  .inner-text p {
+    margin: 1.5% 0 0;
+    transition: all .1s ease-in-out;
+  }
+
+  .inner-text {
+    margin: 4.5% 0;
+    padding: 3% 0 0;
+    position: relative;
+  }
+
+  .inner-text:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 6px;
+    background: #1A1A1A;
+    top: 0;
+    left: 0;
+  }
+
+  span.cta-card {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 82px;
+    text-transform: uppercase;
+    padding: 0 13%;
+    border: 1px solid #1A1A1A;
+    color: #1A1A1A;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: all .2s ease-in-out;
+  }
+
+  a.card-link:hover span.cta-card {
+    background: #1A1A1A;
+    color: white;
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .tabs button {
+    background-color: black;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px;
+    transition: all .2s ease-in-out;
+  }
+
+  .tabs button img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  .tabs button p {
+    text-align: center;
+    margin: 0;
+  }
+
+  .bar {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
 
 
