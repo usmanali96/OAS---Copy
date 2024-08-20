@@ -1,30 +1,33 @@
-.contact-form{
+.contact-form {
     padding-top: 85px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-.container {
+
+.contact-form .container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
-h1 {
+.contact-form h1 {
     font-family: 'Poppins', sans-serif, 'arial';
     font-weight: 600;
-    font-size: 72px;
+    font-size: 48px; /* Reduced for better display on mobile */
     color: white;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-h4 {
+.contact-form h4 {
     font-family: 'Roboto', sans-serif, 'arial';
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px; /* Slightly smaller font */
     color: #9b9b9b;
     line-height: 1.5;
 }
@@ -41,16 +44,10 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 
 .styled-input {
     float: left;
-    width: 293px;
+    width: 100%;
     margin: 1rem 0;
     position: relative;
     border-radius: 4px;
-}
-
-@media only screen and (max-width: 768px){
-    .styled-input {
-        width:100%;
-    }
 }
 
 .styled-input label {
@@ -64,14 +61,14 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     pointer-events: none;
 }
 
-.styled-input.wide { 
-    width: 650px;
+.styled-input.wide {
+    width: 100%;
     max-width: 100%;
 }
 
 input,
 textarea {
-    padding: 30px;
+    padding: 20px; /* Reduced padding for smaller screens */
     border: 0;
     width: 100%;
     font-size: 1rem;
@@ -83,16 +80,9 @@ textarea {
 input:focus,
 textarea:focus { outline: 0; }
 
-input:focus ~ span,
-textarea:focus ~ span {
-    width: 100%;
-    -webkit-transition: all 0.075s ease;
-    transition: all 0.075s ease;
-}
-
 textarea {
     width: 100%;
-    min-height: 15em;
+    min-height: 10em; /* Reduced height for mobile */
 }
 
 .input-container {
@@ -102,17 +92,19 @@ textarea {
 }
 
 .submit-btn {
-    padding: 7px 35px;
+    padding: 10px 20px; /* Adjusted padding for better fit on mobile */
     border-radius: 60px;
     display: inline-block;
     background-color: #4b8cfb;
     color: white;
-    font-size: 18px;
+    font-size: 16px; /* Reduced font size */
     cursor: pointer;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
               0 2px 10px 0 rgba(0,0,0,0.07);
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
+    width: 100%; /* Full-width on mobile */
+    text-align: center; /* Center text */
 }
 
 .submit-btn:hover {
@@ -121,11 +113,9 @@ textarea {
               0 1px 1px 0 rgba(0,0,0,0.09);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
     .submit-btn {
-        width:100%;
-        float: none;
-        text-align:center;
+        width: auto; /* Back to original width on larger screens */
     }
 }
 
