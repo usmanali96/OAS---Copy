@@ -82,16 +82,16 @@ WSGI_APPLICATION = 'oas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
 
-        # 'NAME' : 'onlinea1_bids',
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'HOST' : 'localhost',
-        # 'DATABASE' : 'onlinea1_bids',
-        # 'USER' : 'onlinea1_bids',
-        # 'PASSWORD' : 'n2w@ukh@u',
-        # 'PORT' : '3306'
+        'NAME' : 'py_oas_pro',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST' : 'localhost',
+        'DATABASE' : 'py_oas_pro',
+        'USER' : 'FTP2_USERNAME',
+        'PASSWORD' : 'FTP2_PASSWORD',
+        'PORT' : '3306'
     }
 }
 
