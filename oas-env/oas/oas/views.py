@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login
 from contact.models import Contact
+from django import forms
 
 #def index(request):
    # return render(request, 'index.html')
