@@ -13,7 +13,7 @@
          <div class="container">
         <div class="row">
             {{form}}
-                <h1>contact us</h1>
+                <h1>Contact Us</h1>
         </div>
         <div class="row">
                 <h4 style="text-align:center">We'd love to hear from you!</h4>
@@ -22,25 +22,25 @@
                 <div class="col-xs-12">
                     <div class="styled-input wide">
                         <input type="text" id="name"  name="contactname">
-                        <label>Name</label> 
+                        <label>{{form.name.label}}</label> 
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="styled-input">
                         <input type="email"  id="email" name="contactemail"/>
-                        <label>Email</label> 
+                        <label>{{form.email.label}}</label> 
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="styled-input" style="float:right;">
                         <input type="phone" id="phone" name="phone" />
-                        <label>Phone Number</label> 
+                        <label>{{form.phone.label}}</label> 
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="styled-input wide">
                         <textarea required i name="content" id="content"></textarea>
-                        <label>Message</label>
+                        <label>{{form.content.label}}</label>
                     </div>
                 </div>
                 <div class="col-xs-12">
