@@ -74,12 +74,15 @@ def contactPage(request):
           cemail = request.POST.get('contactemail')
           cphone = request.POST.get('phone')
           content = request.POST.get('content')
-          print(cname, cemail, content, cphone)
           contact = Contact(name = cname, email = cemail, content = content, phone = cphone)
           contact.save()
 
-          if request.method == 'POST':
-               form = contactForm(request.POST)
-          else:
-               form = contactForm()
+        
+    if request.method == 'POST':
+        form = contactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact.html')  # Redirect after successful submission
+    else:
+        form = contactForm()
     return render(request, 'contact.html' ,{"form":form})

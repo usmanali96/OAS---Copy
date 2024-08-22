@@ -1,7 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from contact.models import Contact
-import contact
 
 
 class contactForm(UserCreationForm):
@@ -13,5 +12,5 @@ class contactForm(UserCreationForm):
 
 
     class Meta:
-        model = contact
+        model = Contact
         fields = ['name', 'email,' 'phone', 'content']
