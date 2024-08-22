@@ -8,7 +8,6 @@ class contactForm(UserCreationForm):
     email = forms.CharField(max_length=100)
     phone = forms.CharField(max_length=13)
     content = forms.CharField()
-    timestamp = forms.DateTimeField(auto_now_add=True)
 
 
     class Meta:
