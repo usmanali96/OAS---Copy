@@ -56,7 +56,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 19px;
     line-height: 33px;
 }
-
+.card{
+  color: white;
+}
 .row-big-card .cont {
     box-shadow: 0 0 30px 0 rgba(0,0,0,.15);
     margin: 30px auto;
