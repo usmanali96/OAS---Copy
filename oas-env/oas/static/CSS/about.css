@@ -49,7 +49,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     clear: both;
     font-family: 'Montserrat', sans-serif;
-    color: white;
 }
 .row {
     width: 100%;
@@ -505,6 +504,7 @@ a.card-link:hover span.cta-card {
     height: 80px;
     width: 80px;
     margin-bottom: 10px;
+    color: white;
   }
 
   .tabs button p {
@@ -515,6 +515,7 @@ a.card-link:hover span.cta-card {
   .bar {
     text-align: center;
     margin-bottom: 30px;
+    color: white;
   }
 
 
