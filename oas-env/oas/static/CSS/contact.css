@@ -163,7 +163,7 @@ textarea:not(:placeholder-shown) ~ label {
     color: #999;
 }
 
-/* Input and textarea styles */
+/* Adjust input styles */
 input,
 textarea {
     padding: 20px;
@@ -173,6 +173,8 @@ textarea {
     background-color: #2d2d2d;
     color: white;
     border-radius: 4px;
+    outline: 0;
+    box-sizing: border-box; /* Ensure padding and width are calculated together */
 }
 
 input:focus,
@@ -180,21 +182,14 @@ textarea:focus {
     outline: 0;
 }
 
-/* Wide input fields */
-.styled-input.wide {
-    width: 100%;
-}
-
 /* Textarea specifics */
 textarea {
     min-height: 10em;
 }
 
-/* Responsive adjustments */
-@media (min-width: 769px) {
-    .submit-btn {
-        width: auto; /* Back to original width on larger screens */
-    }
+/* Wide input fields */
+.styled-input.wide {
+    width: 100%;
 }
 
 /* Submit button styles */
@@ -217,4 +212,11 @@ textarea {
     transform: translateY(1px);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
                 0 1px 1px 0 rgba(0,0,0,0.09);
+}
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+    .submit-btn {
+        width: auto; /* Back to original width on larger screens */
+    }
 }
