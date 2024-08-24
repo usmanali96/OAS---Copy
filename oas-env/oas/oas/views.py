@@ -8,6 +8,9 @@ from contact.models import Contact
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from contact.forms import contactForm
+from contact.models import Contact  
+
+
 
 #def index(request):
    # return render(request, 'index.html')
@@ -69,20 +72,12 @@ def loginUser(request):
 
 
 def contactPage(request):
-    if request.method=='POST':
-          cname = request.POST.get('contactname')
-          cemail = request.POST.get('contactemail')
-          cphone = request.POST.get('phone')
-          content = request.POST.get('content')
-          contact = Contact(name = cname, email = cemail, content = content, phone = cphone)
-          contact.save()
-
-        
     if request.method == 'POST':
         form = contactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contact.html')  # Redirect after successful submission
+            return redirect('success_url')  # Redirect to a success page or another URL after submission
     else:
         form = contactForm()
-    return render(request, 'contact.html' ,{"form":form})
+
+    return render(request, 'contact.html', {"form": form})
