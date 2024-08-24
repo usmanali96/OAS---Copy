@@ -7,58 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="contact-form">
-        <form  method="post" action="{% url 'contact' %}">
-            {% csrf_token %}
-         <div class="container">
-        <div class="row">
-            {{form}}
-                <h1>Contact Us</h1>
-        </div>
-        <div class="row">
-                <h4 style="text-align:center">We'd love to hear from you!</h4>
-        </div>
-        <div class="row input-container">
-                <div class="col-xs-12">
-                    <div class="styled-input wide">
-                        <!--<input type="text" id="name"  name="contactname">-->
-                        <label>{{form.name.label}}</label> 
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="styled-input">
-                        <input type="email"  id="email" name="contactemail"/>
-                        <label>{{form.email.label}}</label> 
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="styled-input" style="float:right;">
-                        <input type="phone" id="phone" name="phone" />
-                        <label>{{form.phone.label}}</label> 
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <div class="styled-input wide">
-                        <textarea required i name="content" id="content"></textarea>
-                        <label>{{form.content.label}}</label>
-                    </div>
-                </div>
-                <div class="col-xs-12">
-                    <button type="submit" class="btn-lrg submit-btn" >Send Message</button>
-                </div>
-        </div>
-    </div>
-</form>
-</div><!-- /.contact-form -->
     
-
-
-
-
-
-
-
-
 
 
 
