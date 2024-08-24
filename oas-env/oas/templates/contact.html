@@ -51,6 +51,61 @@
 </form>
 </div><!-- /.contact-form -->
     
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="contact-form">
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="row">
+                <h4 style="text-align:center">We'd love to hear from you!</h4>
+            </div>
+            <div class="row input-container">
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        {{ form.name.label_tag }}
+                        {{ form.name }}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float:right;">
+                        {{ form.phone.label_tag }}
+                        {{ form.phone }}
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        {{ form.content.label_tag }}
+                        {{ form.content }}
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <button type="submit" class="btn-lrg submit-btn">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div><!-- /.contact-form -->
+
     {% include 'footer.html'%}
 </body>
 </html>
