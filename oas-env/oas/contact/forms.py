@@ -3,7 +3,7 @@ from django import forms
 from contact.models import Contact
 
 
-class contactForm(forms.ModelForm):
+class contactForm(forms.Form):
     name = forms.CharField(max_length=30, label='Your Name')
     email = forms.CharField(max_length=100, label='Your Email')
     phone = forms.CharField(max_length=13, label='Your Phone')
