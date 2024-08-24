@@ -76,7 +76,7 @@ def contactPage(request):
         form = contactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_url')  # Redirect to a success page or another URL after submission
+            return redirect('contact')  # Redirect to a success page or another URL after submission
     else:
         form = contactForm()
 
