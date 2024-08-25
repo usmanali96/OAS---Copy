@@ -22,6 +22,11 @@ def register(request):
 def login(request):
     return render(request, 'login.html')
 
+def cartPage(request):
+    return render(request, 'cart.html')
+
+
+
 
 
 
@@ -88,3 +93,6 @@ def contactPage(request):
         form = contactForm()
 
     return render(request, 'contact.html', {"form": form})
+
+
+

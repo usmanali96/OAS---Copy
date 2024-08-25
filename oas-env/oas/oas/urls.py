@@ -28,6 +28,7 @@ urlpatterns = [
     path('register-user/', views.registerUser, name='register-user'),
     path('login/', views.login, name='login'),
     path('contact/', views.contactPage, name='contact'),
+    path('cart/', views.cartPage, name='cart'),
 ]
 
 
