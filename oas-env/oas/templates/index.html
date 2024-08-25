@@ -121,23 +121,19 @@
           {% if product.category == '1st-Auction' %}
           <div class="col-md-4">
             <div class="card">
-              <div class="timer-overlay">
+              <div class="timer-overlay" id="timer-{{ forloop.counter }}">
                 <div class="count">
                   <div class="co">
-                    <span id="days1">00</span>
-                    DAYS
+                    <span class="days">00</span> DAYS
                   </div>
                   <div class="co">
-                    <span id="hours1">00</span>
-                    HOURS
+                    <span class="hours">00</span> HOURS
                   </div>
                   <div class="co">
-                    <span id="minutes1">00</span>
-                    MINUTES
+                    <span class="minutes">00</span> MINUTES
                   </div>
                   <div class="co">
-                    <span id="seconds1">00</span>
-                    SECONDS
+                    <span class="seconds">00</span> SECONDS
                   </div>
                 </div>
               </div>
@@ -156,7 +152,6 @@
       </div>
     </div>
     
-
 
 
 

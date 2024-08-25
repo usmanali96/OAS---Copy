@@ -145,34 +145,37 @@ $('.owl-carousel-1').owlCarousel({
 
 
 
-// Set the date we're counting down to
-var countDownDate = new Date("Aug 30, 2024 15:00:00").getTime();
-
-// Update the count down every 1 second
-var countdownfunction1 = setInterval(function() {
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the countdown date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes, and seconds
-  var days1 = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours1 = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes1 = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds1 = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Output the result in an element with id="days1", etc.
-  document.getElementById("days1").innerHTML = days1;
-  document.getElementById("hours1").innerHTML = hours1;
-  document.getElementById("minutes1").innerHTML = minutes1;
-  document.getElementById("seconds1").innerHTML = seconds1;
-
-  // If the countdown is over, display "EXPIRED"
-  if (distance < 0) {
-    clearInterval(countdownfunction1);
-    document.querySelector(".count").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-
+          document.addEventListener("DOMContentLoaded", function() {
+            // Set the date we're counting down to for each timer
+            var countDownDates = {
+              'timer-1': new Date("Aug 30, 2024 15:00:00").getTime(),
+              // Add more timers here if needed
+            };
+          
+            function updateTimer(timerId, countDownDate) {
+              var countdownfunction = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+          
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+                document.querySelector(`#${timerId} .days`).innerHTML = days;
+                document.querySelector(`#${timerId} .hours`).innerHTML = hours;
+                document.querySelector(`#${timerId} .minutes`).innerHTML = minutes;
+                document.querySelector(`#${timerId} .seconds`).innerHTML = seconds;
+          
+                if (distance < 0) {
+                  clearInterval(countdownfunction);
+                  document.querySelector(`#${timerId} .count`).innerHTML = "EXPIRED";
+                }
+              }, 1000);
+            }
+          
+            for (var timerId in countDownDates) {
+              updateTimer(timerId, countDownDates[timerId]);
+            }
+          });
+          
