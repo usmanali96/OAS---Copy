@@ -139,14 +139,9 @@ $('.owl-carousel-1').owlCarousel({
 
 
 
-
           document.addEventListener("DOMContentLoaded", function() {
             function updateTimer(timerElement) {
               var countDownDate = new Date(timerElement.dataset.countdown).getTime();
-              console.log("Countdown Date (raw):", timerElement.dataset.countdown);
-              console.log("Parsed Countdown Date:", new Date(countDownDate));
-              console.log("Parsed Timestamp:", countDownDate);
-          
               if (isNaN(countDownDate)) {
                 console.error("Invalid date format: ", timerElement.dataset.countdown);
                 return;
@@ -155,9 +150,6 @@ $('.owl-carousel-1').owlCarousel({
               var countdownFunction = setInterval(function() {
                 var now = new Date().getTime();
                 var distance = countDownDate - now;
-          
-                console.log("Current Time:", now);
-                console.log("Time Difference:", distance);
           
                 if (distance < 0) {
                   clearInterval(countdownFunction);
