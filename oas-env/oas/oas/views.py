@@ -12,7 +12,7 @@ from contact.models import Contact
 from datetime import datetime
 
 
-#def index(request):
+#def index(request)
    # return render(request, 'index.html')
 def aboutPage(request):
     return render(request, 'about.html')

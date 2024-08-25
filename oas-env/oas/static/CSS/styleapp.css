@@ -384,6 +384,7 @@ body{
 
 .timer-overlay {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -426,7 +427,9 @@ body{
   padding: 10px;
   border-radius: 5px;
 }
-
+.btn-success {
+  z-index: 2;
+}
 
 
 
