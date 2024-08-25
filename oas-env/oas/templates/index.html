@@ -110,6 +110,71 @@
     </div>
     <!-- /.bid-cards -->
 
+
+
+
+
+    <div class="bid-cards">
+      <div class="container">
+        <div class="row">
+          {% for product in products %} 
+          {% if product.category == '1st-Auction' %}
+          <div class="col-md-4">
+            <div class="card">
+              <div class="timer-overlay">
+                <div class="count">
+                  <div class="co">
+                    <span id="days">00</span>
+                    DAYS
+                  </div>
+                  <div class="co">
+                    <span id="hours">00</span>
+                    HOURS
+                  </div>
+                  <div class="co">
+                    <span id="minutes">00</span>
+                    MINUTES
+                  </div>
+                  <div class="co">
+                    <span id="seconds">00</span>
+                    SECONDS
+                  </div>
+                </div>
+              </div>
+              <img src="media/{{product.image}}" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text"><b>{{product.description}}</b></p>
+                <a href="#" class="btn btn-success">BUY NOW</a>
+                <i class="bi bi-share-fill justify-content-end"></i>
+              </div>
+            </div>
+          </div>
+          {% endif %} 
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="cards-5">
       <div class="container">
         <div class="product-banners">
