@@ -146,36 +146,72 @@ $('.owl-carousel-1').owlCarousel({
 
 
           document.addEventListener("DOMContentLoaded", function() {
-            // Set the date we're counting down to for each timer
+            // Example countdown dates, replace with dynamic dates as needed
             var countDownDates = {
               'timer-1': new Date("Aug 30, 2024 15:00:00").getTime(),
+              'timer-2': new Date("Sep 01, 2024 12:00:00").getTime(),
+              'timer-3': new Date("Sep 05, 2024 18:00:00").getTime()
               // Add more timers here if needed
             };
           
             function updateTimer(timerId, countDownDate) {
-              var countdownfunction = setInterval(function() {
+              var countdownFunction = setInterval(function() {
                 var now = new Date().getTime();
                 var distance = countDownDate - now;
+          
+                if (distance < 0) {
+                  clearInterval(countdownFunction);
+                  document.querySelector(`#${timerId} .count`).innerHTML = "EXPIRED";
+                  return;
+                }
           
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
           
-                document.querySelector(`#${timerId} .days`).innerHTML = days;
-                document.querySelector(`#${timerId} .hours`).innerHTML = hours;
-                document.querySelector(`#${timerId} .minutes`).innerHTML = minutes;
-                document.querySelector(`#${timerId} .seconds`).innerHTML = seconds;
-          
-                if (distance < 0) {
-                  clearInterval(countdownfunction);
-                  document.querySelector(`#${timerId} .count`).innerHTML = "EXPIRED";
-                }
+                document.querySelector(`#${timerId} .days`).textContent = days;
+                document.querySelector(`#${timerId} .hours`).textContent = hours;
+                document.querySelector(`#${timerId} .minutes`).textContent = minutes;
+                document.querySelector(`#${timerId} .seconds`).textContent = seconds;
               }, 1000);
             }
           
             for (var timerId in countDownDates) {
-              updateTimer(timerId, countDownDates[timerId]);
+              if (countDownDates.hasOwnProperty(timerId)) {
+                updateTimer(timerId, countDownDates[timerId]);
+              }
             }
+          });
+
+
+
+
+          document.addEventListener("DOMContentLoaded", function() {
+            function updateTimer(timerElement) {
+              var countDownDate = new Date(timerElement.dataset.countdown).getTime();
+              var countdownFunction = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+          
+                if (distance < 0) {
+                  clearInterval(countdownFunction);
+                  timerElement.querySelector('.count').innerHTML = "EXPIRED";
+                  return;
+                }
+          
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+                timerElement.querySelector('.days').textContent = days;
+                timerElement.querySelector('.hours').textContent = hours;
+                timerElement.querySelector('.minutes').textContent = minutes;
+                timerElement.querySelector('.seconds').textContent = seconds;
+              }, 1000);
+            }
+          
+            document.querySelectorAll('.timer-overlay').forEach(updateTimer);
           });
           

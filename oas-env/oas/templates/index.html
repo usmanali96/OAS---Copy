@@ -117,11 +117,11 @@
     <div class="bid-cards">
       <div class="container">
         <div class="row">
-          {% for product in products %} 
+          {% for product in products %}
           {% if product.category == '1st-Auction' %}
           <div class="col-md-4">
             <div class="card">
-              <div class="timer-overlay" id="timer-{{ forloop.counter }}">
+              <div class="timer-overlay" id="timer-{{ forloop.counter }}" data-countdown="{{ product.countdown_date }}">
                 <div class="count">
                   <div class="co">
                     <span class="days">00</span> DAYS
@@ -146,14 +146,11 @@
               </div>
             </div>
           </div>
-          {% endif %} 
+          {% endif %}
           {% endfor %}
         </div>
       </div>
     </div>
-    
-
-
 
 
 
