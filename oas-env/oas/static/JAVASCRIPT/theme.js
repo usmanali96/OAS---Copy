@@ -145,26 +145,34 @@ $('.owl-carousel-1').owlCarousel({
 
 
 
-// Example for the first card's timer
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 30, 2024 15:00:00").getTime();
+
+// Update the count down every 1 second
 var countdownfunction1 = setInterval(function() {
+  // Get today's date and time
   var now = new Date().getTime();
+
+  // Find the distance between now and the countdown date
   var distance = countDownDate - now;
-  
+
+  // Time calculations for days, hours, minutes, and seconds
   var days1 = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours1 = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes1 = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds1 = Math.floor((distance % (1000 * 60)) / 1000);
 
+  // Output the result in an element with id="days1", etc.
   document.getElementById("days1").innerHTML = days1;
   document.getElementById("hours1").innerHTML = hours1;
   document.getElementById("minutes1").innerHTML = minutes1;
   document.getElementById("seconds1").innerHTML = seconds1;
 
+  // If the countdown is over, display "EXPIRED"
   if (distance < 0) {
     clearInterval(countdownfunction1);
     document.querySelector(".count").innerHTML = "EXPIRED";
   }
 }, 1000);
-
 
 
