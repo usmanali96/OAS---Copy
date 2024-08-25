@@ -953,3 +953,15 @@ transition:all 0.5s ease;
       max-width: 300px; /* Maintain a maximum width */
   }
 }
+
+
+
+
+
+.up-auction .card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.up-auction .card:hover {
+  transform: scale(1.05); /* Adjust the scale value as needed */
+}
