@@ -958,10 +958,9 @@ transition:all 0.5s ease;
 
 
 
-.up-auction .card {
-  transition: transform 0.3s ease-in-out;
-}
-
-.up-auction .card:hover {
-  transform: scale(1.05); /* Adjust the scale value as needed */
+.up-auction .card{
+  transition: all 0.3s;
+  margin-top: 30px;
+  background-color: black;
+  color: white;
 }
