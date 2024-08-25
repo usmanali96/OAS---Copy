@@ -68,7 +68,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 
 input,
 textarea {
-    padding: 20px; /* Reduced padding for smaller screens */
+    padding: 20px;
     border: 0;
     width: 100%;
     font-size: 1rem;
@@ -82,7 +82,7 @@ textarea:focus { outline: 0; }
 
 textarea {
     width: 100%;
-    min-height: 10em; /* Reduced height for mobile */
+    min-height: 10em; 
 }
 
 .input-container {
@@ -92,19 +92,19 @@ textarea {
 }
 
 .submit-btn {
-    padding: 10px 20px; /* Adjusted padding for better fit on mobile */
+    padding: 10px 20px; 
     border-radius: 60px;
     display: inline-block;
     background-color: #4b8cfb;
     color: white;
-    font-size: 16px; /* Reduced font size */
+    font-size: 16px;
     cursor: pointer;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
               0 2px 10px 0 rgba(0,0,0,0.07);
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
-    width: 100%; /* Full-width on mobile */
-    text-align: center; /* Center text */
+    width: 100%; 
+    text-align: center; 
 }
 
 .submit-btn:hover {
@@ -115,7 +115,7 @@ textarea {
 
 @media (min-width: 769px) {
     .submit-btn {
-        width: auto; /* Back to original width on larger screens */
+        width: auto; 
     }
 }
 
@@ -134,8 +134,7 @@ input[type=checkbox]:checked + label {
 
 
 
-
-/* Input container styles */
+* Input container styles */
 .styled-input {
     position: relative;
     margin: 1rem 0;
@@ -144,8 +143,8 @@ input[type=checkbox]:checked + label {
 
 .styled-input label {
     position: absolute;
-    top: 20px;  /* Adjust to match padding of input */
-    left: 20px;  /* Adjust to match padding of input */
+    top: 10px;  /* Adjust to match padding of input */
+    left: 20px;  
     color: #999;
     font-size: 1rem;
     transition: all 0.25s ease;
