@@ -44,12 +44,12 @@ def  index(request):
 
 def my_view(request):
     products = [
-        {"id": 1, "category": "1st-Auction", "countdown_date": "Aug 30, 2024 15:00:00"},
-        {"id": 2, "category": "1st-Auction", "countdown_date": "Sep 01, 2024 12:00:00"},
+        {"id": 1, "category": "1st-Auction", "countdown_date": "2024-08-30T15:00:00"},
+        {"id": 2, "category": "1st-Auction", "countdown_date": "2024-09-01T12:00:00"},
         # Add more products as needed
     ]
-
     return render(request, 'my_template.html', {'products': products})
+
 
 
 def registerUser(request):
