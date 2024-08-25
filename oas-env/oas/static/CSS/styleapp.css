@@ -419,7 +419,13 @@ body{
   font-size: 1.5rem;
   margin-top: 3px;
 }
-
+.count {
+  font-size: 1.5rem;
+  color: white;
+  background: black;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 
 
