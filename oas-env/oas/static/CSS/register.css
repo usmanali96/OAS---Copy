@@ -26,9 +26,11 @@ section{
 }
 
 
-.register-heading{
+.register-heading-inner{
     text-align: center;
-    
+    align-items: center;
+    margin-top: 40px;
+
 }
 .custom-shape-divider-bottom-1678428448 {
     position: absolute;
