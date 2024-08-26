@@ -59,6 +59,13 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
     pointer-events: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.styled-input input {
+    width: calc(100% - 100px); /* Adjust width considering the label */
+    float: left; /* Ensure input and label are aligned */
 }
 
 .styled-input.wide {
