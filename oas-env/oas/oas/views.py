@@ -74,7 +74,7 @@ def loginUser(request):
         upassword = request.POST.get('password')
         user = authenticate(request, username=uname, password=upassword)
         if user is not None:
-             login(request)
+             login(request, user)
              return redirect('/')
         else:
              print("user doesn't exist")
