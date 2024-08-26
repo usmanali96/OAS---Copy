@@ -69,14 +69,26 @@ def my_view(request):
 
 def registerUser(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')  # Redirect to login after successful registration
-    else:
-        form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+        uname = request.POST.get('username')
+        uemail = request.POST.get('email')
+        upassword = request.POST.get('password')
 
+        if not uname or not uemail or not upassword:
+            return render(request, 'register.html', {'error': 'All fields are required.'})
+
+        if User.objects.filter(username=uname).exists():
+            return render(request, 'register.html', {'error': 'Username already exists.'})
+
+        user = User.objects.create_user(username=uname, email=uemail, password=upassword)
+
+        # Debugging check to confirm user is created
+        print("User created:", user)
+
+        # Automatically login the user
+        login(request, user)
+        return redirect('/')
+    
+    return render(request, 'register.html')
 
 
 def loginUser(request):
