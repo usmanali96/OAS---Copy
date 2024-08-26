@@ -873,6 +873,7 @@ transition:all 0.5s ease;
 
 
 .review-section {
+  margin-top: 30px;
   margin: auto;
   padding: 40px;
   text-align: center;
@@ -954,7 +955,7 @@ transition:all 0.5s ease;
 
 
 .third-strip-inner{
-  margin-top: 50px;
+  margin-top: 70px;
   text-align: center;
 
 }
