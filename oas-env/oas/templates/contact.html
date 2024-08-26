@@ -11,7 +11,7 @@
 
 
 
-
+<div class="d-flex">
     <div class="contact-form">
         <form method="post" action="{% url 'contact' %}">
             {% csrf_token %}
@@ -55,7 +55,13 @@
         </form>
     </div><!-- /.contact-form -->
 
-
+<div class="map-content">
+    <div class="container">
+        <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4201989874414!2d73.05034591150088!3d33.59440027322156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df949d2be3d885%3A0x83a37f5f6cf58313!2sSuperTech%20Institute%20of%20Computer%20Sciences!5e0!3m2!1sen!2s!4v1724658078915!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+    </div><!-- /.container -->
+</div><!-- /.map-content -->
+</div>
+<!-- /.d-flex -->
 
 
     {% include 'footer.html'%}
