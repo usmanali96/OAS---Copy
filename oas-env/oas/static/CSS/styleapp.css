@@ -740,6 +740,7 @@ color: #8b8b8b;
   display: flex !important;
   align-items: center !important;
   margin-bottom: 0px;
+  color: white;
 }
 .footer-logo-list{
   display: flex;
@@ -873,7 +874,7 @@ transition:all 0.5s ease;
 
 
 .review-section {
-  margin-top: 30px;
+  margin-top: 50px;
   padding: 40px;
   text-align: center;
   background-image: url(../img/client-bg.png);
