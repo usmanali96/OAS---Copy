@@ -57,15 +57,25 @@ def my_view(request):
 
 
 
-def registerUser(request):
-        uname = request.POST.get('username')
+#def registerUser(request):
+ #       uname = request.POST.get('username')
         
-        uemail = request.POST.get('email')
-        upassword = request.POST.get('password')
-        user = User.objects.create_user(username=uname, email=uemail, password=upassword)
+  #      uemail = request.POST.get('email')
+    #    upassword = request.POST.get('password')
+   #     user = User.objects.create_user(username=uname, email=uemail, password=upassword)
 
-        return render(request, 'register.html')
+     #   return render(request, 'register.html')
 
+
+def registerUser(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login after successful registration
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
 
 
 
