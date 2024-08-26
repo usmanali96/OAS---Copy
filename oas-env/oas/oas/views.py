@@ -10,6 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from contact.forms import contactForm
 from contact.models import Contact  
 from datetime import datetime
+from django.contrib import admin
 
 
 #def index(request)
@@ -75,6 +76,7 @@ def registerUser(request):
             return redirect('/')  
     else:
         form = UserCreationForm()
+    admin.site.register(User)
     return render(request, 'register.html', {'form': form})
 
 
