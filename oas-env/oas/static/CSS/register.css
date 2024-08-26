@@ -25,6 +25,11 @@ section{
     }
 }
 
+
+.register-heading{
+    text-align: center;
+    
+}
 .custom-shape-divider-bottom-1678428448 {
     position: absolute;
     bottom: 0;
@@ -45,6 +50,9 @@ section{
 .custom-shape-divider-bottom-1678428448 .shape-fill {
     fill: #FFFFFF;
 }
+
+
+
 
 
 
