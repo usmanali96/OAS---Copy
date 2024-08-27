@@ -87,21 +87,6 @@ $('.owl-carousel-1').owlCarousel({
           }
           
           cdtime.formatDuration = function(ms, baseunit){
-            /*
-            Usage: cdtime.formatDuration(ms, baseunit)
-              1) ms param: Time left in milliseconds
-              2) baseunit: The topmost unit to calculate the remaining time using: "days", "hours", "minutes", or "seconds"
-                  If baseunit is "hours" for example, function will calculate the number of hours plus minutes plus seconds left for the specified ms duration
-                  If baseunit is "minutes" for example, function will calculate the number of minutes plus seconds left for the specified ms duration
-          
-            Returns: object containing the time left in the specified baseunit plus sub units. Other units will return "n/a"
-              {
-                days: int,
-                hours: int,
-                minutes: int,
-                seconds: int
-              }
-            */
             var timediff = ms/1000 // time remaining in sec
             var oneMinute=60 //minute unit in seconds
             var oneHour=60*60 //hour unit in seconds

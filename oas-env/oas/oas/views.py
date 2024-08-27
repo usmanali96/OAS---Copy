@@ -54,7 +54,7 @@ def my_view(request):
         {"id": 2, "category": "1st-Auction", "countdown_date": "2024-09-01T12:00:00"},
         # Add more products as needed
     ]
-    return render(request, 'my_template.html', {'products': products})
+    return render(request, 'index.html', {'products': products})
 
 
 
@@ -104,6 +104,3 @@ def contactPage(request):
         form = contactForm()
 
     return render(request, 'contact.html', {"form": form})
-
-
-
