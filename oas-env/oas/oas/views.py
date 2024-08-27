@@ -104,3 +104,8 @@ def contactPage(request):
         form = contactForm()
 
     return render(request, 'contact.html', {"form": form})
+
+
+
+def Auction(request):
+    return render(request, 'cart.html')
