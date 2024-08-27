@@ -121,44 +121,34 @@ $('.owl-carousel-1').owlCarousel({
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    function updateTimer(timerElement) {
-        var dateString = timerElement.dataset.countdown;
-        var countDownDate;
-
-        // Example of manual parsing for a date string like "Aug 30, 2024 15:00:00"
-        var parts = dateString.split(/[\s,]+/);
-        var dateFormat = parts[0] + " " + parts[1] + ", " + parts[2] + " " + parts[3];
-
-        countDownDate = new Date(dateFormat).getTime();
-
-        if (isNaN(countDownDate)) {
-            console.error("Invalid date format: ", dateString);
-            return;
-        }
-
-        // Continue with the countdown logic as before
-        var countdownFunction = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                timerElement.querySelector('.count').innerHTML = "EXPIRED";
-                return;
-            }
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            timerElement.querySelector('.days').textContent = days;
-            timerElement.querySelector('.hours').textContent = hours;
-            timerElement.querySelector('.minutes').textContent = minutes;
-            timerElement.querySelector('.seconds').textContent = seconds;
-        }, 1000);
-    }
-
-    document.querySelectorAll('.timer-overlay').forEach(updateTimer);
-});
+          document.addEventListener('DOMContentLoaded', function() {
+            const timers = document.querySelectorAll('.timer-overlay');
+        
+            timers.forEach(timer => {
+                const countdownDate = new Date(timer.getAttribute('data-countdown')).getTime();
+                
+                const interval = setInterval(function() {
+                    const now = new Date().getTime();
+                    const distance = countdownDate - now;
+                    
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    timer.querySelector('.days').textContent = days < 10 ? '0' + days : days;
+                    timer.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
+                    timer.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+                    timer.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+                    
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        timer.querySelector('.days').textContent = '00';
+                        timer.querySelector('.hours').textContent = '00';
+                        timer.querySelector('.minutes').textContent = '00';
+                        timer.querySelector('.seconds').textContent = '00';
+                    }
+                }, 1000);
+            });
+        });
+        
