@@ -125,30 +125,39 @@ $('.owl-carousel-1').owlCarousel({
             const timers = document.querySelectorAll('.timer-overlay');
         
             timers.forEach(timer => {
-                const countdownDate = new Date(timer.getAttribute('data-countdown')).getTime();
-                
+                // Get the countdown date and parse it
+                const countdownDateStr = timer.getAttribute('data-countdown');
+                const countdownDate = new Date(countdownDateStr).getTime();
+        
+                if (isNaN(countdownDate)) {
+                    console.error("Invalid countdown date:", countdownDateStr);
+                    return; // Exit if the date is invalid
+                }
+        
                 const interval = setInterval(function() {
                     const now = new Date().getTime();
                     const distance = countdownDate - now;
-                    
-                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    
-                    timer.querySelector('.days').textContent = days < 10 ? '0' + days : days;
-                    timer.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
-                    timer.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
-                    timer.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
-                    
+        
                     if (distance < 0) {
                         clearInterval(interval);
                         timer.querySelector('.days').textContent = '00';
                         timer.querySelector('.hours').textContent = '00';
                         timer.querySelector('.minutes').textContent = '00';
                         timer.querySelector('.seconds').textContent = '00';
+                        return;
                     }
+        
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+                    timer.querySelector('.days').textContent = days < 10 ? '0' + days : days;
+                    timer.querySelector('.hours').textContent = hours < 10 ? '0' + hours : hours;
+                    timer.querySelector('.minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+                    timer.querySelector('.seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
                 }, 1000);
             });
         });
+        
         
