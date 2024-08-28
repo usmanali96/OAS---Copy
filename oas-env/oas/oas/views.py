@@ -11,6 +11,8 @@ from contact.forms import contactForm
 from contact.models import Contact  
 from datetime import datetime
 from django.contrib import admin
+from django.shortcuts import render, get_object_or_404, redirect
+from products.models import Product, Cart, CartItem
 
 
 #def index(request)
@@ -47,6 +49,16 @@ def  index(request):
         }
              
     return render(request, 'index.html', data)
+
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'product_detail.html', {'product': product})
+
+
+
+
 
 def my_view(request):
     products = [
@@ -107,5 +119,3 @@ def contactPage(request):
 
 
 
-def Auction(request):
-    return render(request, 'cart.html')
