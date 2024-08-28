@@ -1,3 +1,56 @@
+.inner-banner-content{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: translate(70px, 160px);
+}
+.inner-banner-content button{
+    padding: 20px;
+    color: aqua;
+    background-color: blueviolet;
+    border-radius: 22px;
+}
+.inner-banner-content h2{
+    font-size: 50px;
+    color: white;
+
+
+}
+.inner-banner {
+    background: rgba(12, 3, 33, 0.9);
+}
+.inner-banner {
+    min-height: 400px;
+    background: rgba(12, 3, 33, 0.9);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.inner-banner-img{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* General container styling */
 .container {
     width: 80%;

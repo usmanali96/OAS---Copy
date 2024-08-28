@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
+
+
+    <div class="inner-banner">
+        <div class="container">
+          <div class="inner-banner-content">
+            <h2
+              data-wow-duration="1.5s"
+              data-wow-delay=".2s"
+              style="
+                visibility: visible;
+                animation-duration: 1.5s;
+                animation-delay: 0.2s;
+              "
+            >
+              <b>{{ product.title }}</b>
+            </h2>
+          </div>
+          <!-- /.inner-banner-content -->
+          <div class="inner-banner-img">
+            <img src="{% static 'img/breadcrumb.png'%}" alt="" />
+          </div>
+          <!-- /.inner-banner-img -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.inner-banner -->
+
+
+
     <div class="container">
         <div class="product-detail">
             <div class="product-image">
