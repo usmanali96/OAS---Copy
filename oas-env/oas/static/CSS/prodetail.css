@@ -38,28 +38,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* General container styling */
-.container {
+.card-details .container {
     width: 80%;
     margin: auto;
     padding: 20px;
 }
 
 /* Product detail section styling */
-.product-detail {
+.card-details .product-detail {
     display: flex;
     align-items: center;
     justify-content: space-between;
