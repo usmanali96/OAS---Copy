@@ -90,45 +90,42 @@
  
     <div class="bid-cards">
       <div class="container">
-        <div class="row">
-          {% for Product in products %}
-          {% if product.category == '1st-Auction' %}
-          <div class="col-md-4">
-            <div class="card">
-              <!-- Timer Overlay -->
-              <div class="timer-overlay" id="timer-{{ forloop.counter }}" data-countdown="{{ product.countdown_date }}">
-                <div class="count">
-                  <div class="co">
-                    <span class="days">00</span> DAYS
-                  </div>
-                  <div class="co">
-                    <span class="hours">00</span> HOURS
-                  </div>
-                  <div class="co">
-                    <span class="minutes">00</span> MINUTES
-                  </div>
-                  <div class="co">
-                    <span class="seconds">00</span> SECONDS
-                  </div>
-                </div>
-              </div>
-              <!-- Product Image -->
-              <img src="media/{{product.image}}" class="card-img-top" alt="{{ product.title }}"/>
-              <div class="card-body">
-                <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text"><b>{{ product.description }}</b></p>
-                <!-- Buy Now Button (Link to Product Detail Page) -->
-                <a href="{% url 'product_detail' product.id %}" class="btn btn-success">BUY NOW</a>
-                <i class="bi bi-share-fill justify-content-end"></i>
-              </div>
-            </div>
+          <div class="row">
+              {% for product in products %}
+                  {% if product.category == '1st-Auction' %}
+                      <div class="col-md-4">
+                          <div class="card">
+                              <div class="timer-overlay" id="timer-{{ forloop.counter }}" data-countdown="{{ product.countdown_date }}">
+                                  <div class="count">
+                                      <div class="co">
+                                          <span class="days">00</span> DAYS
+                                      </div>
+                                      <div class="co">
+                                          <span class="hours">00</span> HOURS
+                                      </div>
+                                      <div class="co">
+                                          <span class="minutes">00</span> MINUTES
+                                      </div>
+                                      <div class="co">
+                                          <span class="seconds">00</span> SECONDS
+                                      </div>
+                                  </div>
+                              </div>
+                              <img src="{{ product.image.url }}" class="card-img-top" alt="..."/>
+                              <div class="card-body">
+                                  <h5 class="card-title">{{ product.title }}</h5>
+                                  <p class="card-text"><b>{{ product.description }}</b></p>
+                                  <a href="{% url 'product_detail' product.id %}" class="btn btn-success">BUY NOW</a>
+                                  <i class="bi bi-share-fill justify-content-end"></i>
+                              </div>
+                          </div>
+                      </div>
+                  {% endif %}
+              {% endfor %}
           </div>
-          {% endif %}
-          {% endfor %}
-        </div>
       </div>
-    </div>
-
+  </div>
+  
 
 
 

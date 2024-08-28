@@ -44,7 +44,7 @@ def  index(request):
     #totalPages =[x+1 for x in range (productsData.num_pages)]
 
     data = {
-        "Product":  productsData,
+        "products":  productsData,
         #"totalPages":totalPages,
         }
              
