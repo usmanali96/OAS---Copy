@@ -1,0 +1,47 @@
+/* General container styling */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Product detail section styling */
+.product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Product image styling */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Product info styling */
+.product-info {
+    max-width: 600px;
+}
+
+.product-info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}

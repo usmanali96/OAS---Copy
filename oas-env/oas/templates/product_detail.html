@@ -1,59 +1,31 @@
 {% load static %}
 {% include 'header.html' %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Now</title>
+    <title>{{ product.title }}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Link to your CSS file -->
 </head>
 <body>
-
-    <div class="card">
-        <div class="win-message">No need to bid. Your bid is win!</div>
-        <div class="card_image">
-        
-      <div class='selected'>
-        <img src="https://images.pexels.com/photos/2092557/pexels-photo-2092557.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="selected_img" id='main'>
-          </div>
-        <div class="image_list">
-            <div class="image_list-item"><img src="https://images.pexels.com/photos/2092557/pexels-photo-2092557.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="image_list active" id='main' > </div>
-          <div class="image_list-item"> <img src="https://images.pexels.com/photos/2092551/pexels-photo-2092551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" id='2' class="image_list"></div>
-          <div class="image_list-item">  <img src="https://images.pexels.com/photos/2092558/pexels-photo-2092558.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="image_list" id='3'></div>
-          <div class="image_list-item"><img src="https://images.pexels.com/photos/2092556/pexels-photo-2092556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" class="image_list" id='4'></div>
-      
-       </div>
-          </div>   
-          <div class="card_info">
-            <h2>Some Lot title</h2>
-            <h3>Current bid: </h3>
-            <p>Item condition: </p>
-             <p>Description: </p>
-             <p>Time left:</p> 
-              <div class="card_info-time">
-                 <span class="time_n" id='weeks'></span>
-                <span class="time_n" id='days'></span> 
-                <span class="time_n" id='hours'></span>
-                <span class="time_n" id='mins'></span>
-                <span class="time_n" id='seconds'></span>
-                <span>Weeks</span>
-                <span>Days</span>
-                <span>Hours</span>
-                <span>Minutes</span>
-                <span>Seconds</span>
-              </div>
-                 <p>Auction ends: </p>
-                  <p>Current bid: </p>
-                  <p>Max bid:</p>
-                
-          <div class="card_bid">
-            <div class="card_bid-decr"></div>
-            <label for="bid-sum" class="card_bid-sum"></label>
-            <input type="number" min=1 id="bid-sum" class="card_sum-input">
-            <div class="card_bid-incr"></div>    
-            <label for="bid-submit" ></label>
-            <input type="button" id="bid-submit" value="Bid" class="card_bid-submit">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-image">
+                <img src="{{ product.image.url }}" alt="{{ product.title }}">
             </div>
+            <div class="product-info">
+                <h1>{{ product.title }}</h1>
+                <p>{{ product.description }}</p>
+                <!-- You can add more details here if needed -->
+                <p>Category: {{ product.category }}</p>
+                <button class="btn btn-success">Add to Cart</button>
             </div>
         </div>
-    
+    </div>
+
+
+
+
+    {% 'footer.html' %}
 </body>
 </html>
