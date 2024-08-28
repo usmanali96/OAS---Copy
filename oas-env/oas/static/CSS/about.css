@@ -55,6 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .card{
   color: white;
+
+  
 }
 .row-big-card .cont {
     box-shadow: 0 0 30px 0 rgba(0,0,0,.15);
