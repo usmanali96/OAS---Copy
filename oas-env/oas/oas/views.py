@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from products.models import Products
+from products.models import Product
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.contrib.auth import authenticate, login
