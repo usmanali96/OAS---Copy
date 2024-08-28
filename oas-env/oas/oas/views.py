@@ -35,7 +35,7 @@ def cartPage(request):
 
 def  index(request):
 
-    productsData = Products.objects.all()
+    productsData = Product.objects.all()
     #productsData = Paginator(productsData, 2)
     #page = request.GET['page']
     #products = productsData.get_page(page)
