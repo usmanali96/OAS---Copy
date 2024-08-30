@@ -6,7 +6,7 @@ class Product(models.Model):  # Rename from Products to Product
     description = models.TextField()
     category = models.CharField(max_length=60)
     image = models.FileField(max_length=60, upload_to="products/", null=True)
-    bid_end_time = models.DateTimeField()
+    bid_end_time = models.DateTimeField(null=True)
 
     def __str__(self):
         return self.title
