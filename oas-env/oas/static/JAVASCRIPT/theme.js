@@ -101,7 +101,7 @@ $('.owl-carousel-1').owlCarousel({
           //  }
           //  else if (baseunit=="minutes"){ //if base unit is minutes, set "minutefield" to be topmost level
           //    minutefield=dayfield*24*60+hourfield*60+minutefield
-              dayfield=hourfield="n/a"
+            //  dayfield=hourfield="n/a"
         //    }
      //       else if (baseunit=="seconds"){ //if base unit is seconds, set "secondfield" to be topmost level
     //          var secondfield=timediff
