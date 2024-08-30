@@ -96,8 +96,14 @@
                   
                   
                 <script>
-                   var bidEndTime = "{{ product.bid_end_time }}";
+         document.addEventListener("DOMContentLoaded", function () {    var timerElement = document.querySelector("#timer-{{ product.id }}");
+    var bidEndTime = timerElement.getAttribute("data-countdown");
+    console.log("Bid End Time for Product {{ product.id }}:", bidEndTime); // Debugging line
     var target_mili_sec = new Date(bidEndTime).getTime();
+
+    if (isNaN(target_mili_sec)) {
+        console.error("Invalid Date Format for Product {{ product.id }}:", bidEndTime);
+    }
 
     function timer() {
         var now_mili_sec = new Date().getTime();
@@ -108,14 +114,15 @@
         var min = Math.floor((remaining_sec % 3600) / 60);
         var sec = Math.floor(remaining_sec % 60);
 
-        // Update the countdown for this specific product
         document.querySelector("#day{{ product.id }}").innerHTML = day;
         document.querySelector("#hour{{ product.id }}").innerHTML = hour;
         document.querySelector("#min{{ product.id }}").innerHTML = min;
         document.querySelector("#sec{{ product.id }}").innerHTML = sec;
     }
 
-    setInterval(timer, 1000); // Calls the timer function every 1 second
+    setInterval(timer, 1000);
+});
+ // Calls the timer function every 1 second
 </script>
                   
                       <div class="col-md-4">
