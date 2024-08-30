@@ -96,7 +96,8 @@
                   
                   
                 <script>
-    var target_mili_sec = new Date("Oct 10, 2024 14:30:0").getTime(); // Properly formatted date string
+                  var bidEndTime = "{{ product.bid_end_time|date:'M d, Y H:i:s'|safe }}";
+    var target_mili_sec = new Date(bidEndTime).getTime();
 
     function timer() {
         var now_mili_sec = new Date().getTime();
@@ -107,11 +108,11 @@
         var min = Math.floor((remaining_sec % 3600) / 60);
         var sec = Math.floor(remaining_sec % 60);
 
-        // Using proper concatenation for IDs
-        document.querySelector("#day" + "{{ product.id }}").innerHTML = day;
-        document.querySelector("#hour" + "{{ product.id }}").innerHTML = hour;
-        document.querySelector("#min" + "{{ product.id }}").innerHTML = min;
-        document.querySelector("#sec" + "{{ product.id }}").innerHTML = sec;
+        // Update the countdown for this specific product
+        document.querySelector("#day{{ product.id }}").innerHTML = day;
+        document.querySelector("#hour{{ product.id }}").innerHTML = hour;
+        document.querySelector("#min{{ product.id }}").innerHTML = min;
+        document.querySelector("#sec{{ product.id }}").innerHTML = sec;
     }
 
     setInterval(timer, 1000); // Calls the timer function every 1 second
