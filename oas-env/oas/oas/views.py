@@ -66,13 +66,13 @@ def product_detail(request, product_id):
 
 
 
-def my_view(request):
-    products = [
-        {"id": 1, "category": "1st-Auction", "countdown_date": "2024-08-30T15:00:00"},
-        {"id": 2, "category": "1st-Auction", "countdown_date": "2024-09-01T12:00:00"},
-        # Add more products as needed
-    ]
-    return render(request, 'index.html', {'products': products})
+#def my_view(request):
+#    products = [
+ #       {"id": 1, "category": "1st-Auction", "countdown_date": "2024-08-30T15:00:00"},
+  #      {"id": 2, "category": "1st-Auction", "countdown_date": "2024-09-01T12:00:00"},
+  #      # Add more products as needed
+  #  ]
+   # return render(request, 'index.html', {'products': products})
 
 
 

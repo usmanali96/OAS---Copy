@@ -96,7 +96,7 @@
                   
                   
                 <script>
-                   var bidEndTime = "{{ product.bid_end_time|date:'c'|safe }}";
+                   var bidEndTime = "{{ product.bid_end_time }}";
     var target_mili_sec = new Date(bidEndTime).getTime();
 
     function timer() {
@@ -120,7 +120,7 @@
                   
                       <div class="col-md-4">
                           <div class="card">
-                              <div class="timer-overlay" id="timer-{{ forloop.counter }}" data-countdown="{{ product.bid_end_time }}">
+                              <div class="timer-overlay" id="timer-{{ forloop.counter }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
                                   <div class="count">
                                       <div class="co">
                                           <span class="days" id="day{{product.id}}">00</span> DAYS
