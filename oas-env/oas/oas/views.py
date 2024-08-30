@@ -12,7 +12,7 @@ from contact.models import Contact
 from datetime import datetime
 from django.contrib import admin
 from django.shortcuts import render, get_object_or_404, redirect
-from products.models import Product, Cart, CartItem
+from products.models import Product
 
 
 #def index(request)
