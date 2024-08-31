@@ -1,87 +1,64 @@
-/* Inner Banner Styling */
-.inner-banner {
-    min-height: 400px;
-    background: rgba(12, 3, 33, 0.9);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.inner-banner-content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    transform: translate(70px, 160px);
-    z-index: 2;
-}
-
-.inner-banner-content h2 {
-    font-size: 50px;
-    color: white;
-}
-
-.inner-banner-img {
-    text-align: right;
-}
-
-/* General Container Styling */
+/* General container styling */
 .card-details .container {
     width: 80%;
     margin: auto;
     padding: 20px;
 }
 
-/* Product Detail Section Styling */
+/* Product detail section styling */
 .card-details .product-detail {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     justify-content: space-between;
-    flex-wrap: wrap;
+    gap: 30px; /* Add some space between the image and the info */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Product Image Styling */
+/* Product image styling */
 .product-image img {
-    max-width: 100%;
+    max-width: 300px; /* Set a smaller max width for the image */
     height: auto;
-    border-radius: 10px;
+    border-radius: 10px; /* Add rounded corners to the image */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
-/* Product Info Styling */
+/* Product info styling */
 .product-info {
+    flex: 1;
     max-width: 600px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .product-info h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .product-info p {
     font-size: 1.2em;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
 }
 
-/* Input Field and Button Styling */
-#price {
+/* Input styling for price */
+.product-info input[type="number"] {
+    width: 100px;
     padding: 10px;
     font-size: 1em;
-    margin-right: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100px;
 }
 
+/* Submit button styling */
 .btn-submit {
-    background-color: #28a745;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 30px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
@@ -89,5 +66,5 @@
 }
 
 .btn-submit:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
