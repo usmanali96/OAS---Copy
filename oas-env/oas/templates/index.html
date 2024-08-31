@@ -264,7 +264,7 @@
 
 
         <script>
-         document.addEventListener("DOMContentLoaded", function () {  var timerElement = document.querySelector("#timer-{{ product.id }}");
+         document.addEventListener("DOMContentLoaded", function () {   console.log("JavaScript for up-auction is running for Product ID {{ product.id }}");  var timerElement = document.querySelector("#timer-{{ product.id }}");
          var timerElement = document.querySelector("#timer-{{ product.id }}");
     console.log("Bid End Time for Product {{ product.id }}:", bidEndTime); // Debugging line
     var target_mili_sec = new Date(bidEndTime).getTime();
