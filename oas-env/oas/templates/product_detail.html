@@ -95,7 +95,7 @@
                 <div class="col-md-6">
                   <div class="product-dtl">
                     <div class="product-info">
-                      <div class="product-name">Variable Product</div>
+                      <div class="product-name">{{ product.title }}</div>
                       <div class="reviews-counter">
                     <div class="rate">
                         <input type="radio" id="star5" name="rate" value="5" checked />
@@ -111,7 +111,7 @@
                       </div>
                     <span>3 Reviews</span>
                   </div>
-                      <div class="product-price-discount"><span>$39.00</span><span class="line-through">$29.00</span></div>
+                      <div class="product-price-discount"><span>{{ product.description }}</span><span class="line-through">{{ product.description }}+600</span></div>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <div class="row">
