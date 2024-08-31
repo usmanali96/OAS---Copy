@@ -315,7 +315,7 @@
                               <div class="card-body">
                                   <h5 class="card-title">{{ product.title }}</h5>
                                   <p class="card-text"><b>{{ product.description }}</b></p>
-                                  <a href="{% url 'product_detail' product.id %}" class="btn btn-success">BUY NOW</a>
+                                  <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
                                   <i class="bi bi-share-fill justify-content-end"></i>
                               </div>
                           </div>
