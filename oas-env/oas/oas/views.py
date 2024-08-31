@@ -125,3 +125,14 @@ def contactPage(request):
 
 
 
+def save_price(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    if request.method == "POST":
+        price = request.POST.get('price')
+        if price:
+            product.price = price
+            product.save()
+            return redirect('product_detail', product_id=product.id)
+    
+    return render(request, 'product_detail.html', {'product': product})
