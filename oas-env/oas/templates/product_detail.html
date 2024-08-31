@@ -10,59 +10,62 @@
 <body>
 
 
-  <div class="inner-banner">
-    <div class="container">
-        <div class="inner-banner-content">
+    <div class="inner-banner">
+        <div class="container">
+          <div class="inner-banner-content">
             <h2
-                data-wow-duration="1.5s"
-                data-wow-delay=".2s"
-                style="
-                    visibility: visible;
-                    animation-duration: 1.5s;
-                    animation-delay: 0.2s;
-                "
+              data-wow-duration="1.5s"
+              data-wow-delay=".2s"
+              style="
+                visibility: visible;
+                animation-duration: 1.5s;
+                animation-delay: 0.2s;
+              "
             >
-                <b>{{ product.title }}</b>
+              <b>{{ product.title }}</b>
             </h2>
-        </div>
-        <!-- /.inner-banner-content -->
-        <div class="inner-banner-img">
-            <img src="{% static 'img/breadcrumb.png' %}" alt="" />
-        </div>
-        <!-- /.inner-banner-img -->
-    </div>
-    <!-- /.container -->
-</div>
-<!-- /.inner-banner -->
-
-<div class="card-details">
-  <div class="container">
-      <div class="product-detail">
-          <div class="product-image">
-              <img src="{{ product.image.url }}" alt="{{ product.title }}">
           </div>
-          <div class="product-info">
-              <h1>{{ product.title }}</h1>
-              <p>{{ product.description }}</p>
-              <p>Category: {{ product.category }}</p>
-
-              <!-- Input for price -->
-              <form method="POST" action="{% url 'save_price' product.id %}">
-                  {% csrf_token %}
-                  <label for="price">Enter your price:</label>
-                  <input type="number" id="price" name="price" required>
-
-                  <!-- Submit button -->
-                  <button type="submit" class="btn-submit">Submit Price</button>
-              </form>
+          <!-- /.inner-banner-content -->
+          <div class="inner-banner-img">
+            <img src="{% static 'img/breadcrumb.png'%}" alt="" />
           </div>
+          <!-- /.inner-banner-img -->
+        </div>
+        <!-- /.container -->
       </div>
-  </div>
-</div>
+      <!-- /.inner-banner -->
+
+
+
+      <div class="card-details">
+        <div class="container">
+            <div class="product-detail">
+                <div class="product-image">
+                    <img src="{{ product.image.url }}" alt="{{ product.title }}">
+                </div>
+                <div class="product-info">
+                    <h1>{{ product.title }}</h1>
+                    <p>{{ product.description }}</p>
+                    <p>Category: {{ product.category }}</p>
+    
+                    <!-- Input for price -->
+                    <form method="POST" action="{% url 'save_price' product.id %}">
+                        {% csrf_token %}
+                        <label for="price">Enter your price:</label>
+                        <input type="number" id="price" name="price" required>
+    
+                        <!-- Submit button -->
+                        <button type="submit" class="btn-submit">Submit Price</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
 
 
     {% include 'footer.html' %}
 </body>
 </html>
-
-

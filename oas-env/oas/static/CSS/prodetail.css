@@ -1,3 +1,39 @@
+/* Inner Banner Styling */
+.inner-banner {
+    min-height: 400px;
+    background: rgba(12, 3, 33, 0.9);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inner-banner-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translate(70px, 160px);
+    z-index: 2;
+}
+
+.inner-banner-content h2 {
+    font-size: 50px;
+    color: white;
+}
+
+.inner-banner-img {
+    text-align: right;
+}
+
+
+
+
+
+
+
 /* General container styling */
 .card-details .container {
     width: 80%;
