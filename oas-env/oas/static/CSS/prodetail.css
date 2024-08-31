@@ -1,26 +1,4 @@
-.inner-banner-content{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    transform: translate(70px, 160px);
-}
-.inner-banner-content button{
-    padding: 20px;
-    color: aqua;
-    background-color: blueviolet;
-    border-radius: 22px;
-}
-.inner-banner-content h2{
-    font-size: 50px;
-    color: white;
-
-
-}
-.inner-banner {
-    background: rgba(12, 3, 33, 0.9);
-}
+/* Inner Banner Styling */
 .inner-banner {
     min-height: 400px;
     background: rgba(12, 3, 33, 0.9);
@@ -28,39 +6,54 @@
     overflow: hidden;
     z-index: 1;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
-.inner-banner-img{
+
+.inner-banner-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translate(70px, 160px);
+    z-index: 2;
+}
+
+.inner-banner-content h2 {
+    font-size: 50px;
+    color: white;
+}
+
+.inner-banner-img {
     text-align: right;
 }
 
-
-
-
-/* General container styling */
+/* General Container Styling */
 .card-details .container {
     width: 80%;
     margin: auto;
     padding: 20px;
 }
 
-/* Product detail section styling */
+/* Product Detail Section Styling */
 .card-details .product-detail {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-/* Product image styling */
+/* Product Image Styling */
 .product-image img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
-/* Product info styling */
+/* Product Info Styling */
 .product-info {
     max-width: 600px;
+    padding: 20px;
 }
 
 .product-info h1 {
@@ -71,17 +64,30 @@
 .product-info p {
     font-size: 1.2em;
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-.btn-success {
+/* Input Field and Button Styling */
+#price {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.btn-submit {
     background-color: #28a745;
     color: #fff;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.btn-success:hover {
+.btn-submit:hover {
     background-color: #218838;
 }
