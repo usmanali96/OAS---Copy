@@ -92,18 +92,12 @@ def registerUser(request):
         uname = request.POST.get('username')
         uemail = request.POST.get('email')
         upassword = request.POST.get('password')
-        
-        if not uname or not uemail or not upassword:
-            return render(request, 'register.html', {'error': 'All fields are required.'})
-        
-        try:
-            user = User.objects.create_user(username=uname, email=uemail, password=upassword)
-            user.save()
-            # Automatically log the user in after registration
-            login(request, user)
-            return redirect('/')
-        except ValidationError as e:
-            return render(request, 'register.html', {'error': str(e)})
+
+        # Create a new user
+        User.objects.create_user(username=uname, email=uemail, password=upassword)
+
+        # Redirect to login page or another page after signup
+        return redirect('login')  # Adjust the redirect URL as needed
 
     return render(request, 'register.html')
 
