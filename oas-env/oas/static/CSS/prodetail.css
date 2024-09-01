@@ -5,18 +5,15 @@
     overflow: hidden;
     z-index: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
 
 .inner-banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
-    text-align: center;
+    text-align: left;
+    flex: 1;
 }
 
 .inner-banner-content h2 {
@@ -26,25 +23,35 @@
 }
 
 .inner-banner-img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    flex: 1;
     text-align: right;
+    max-width: 50%;
+    height: auto;
+}
+
+.inner-banner-img img {
     max-width: 100%;
     height: auto;
 }
 
 @media (max-width: 768px) {
     .inner-banner {
-        min-height: 300px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .inner-banner-content h2 {
-        font-size: 6vw; /* Adjust font size for smaller screens */
+    .inner-banner-content {
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .inner-banner-img {
-        display: none; /* Hide the image on smaller screens */
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .inner-banner-content h2 {
+        font-size: 6vw;
     }
 }
 
@@ -54,7 +61,7 @@
     }
 
     .inner-banner-content h2 {
-        font-size: 8vw; /* Further adjust font size for mobile */
+        font-size: 8vw;
     }
 }
 
