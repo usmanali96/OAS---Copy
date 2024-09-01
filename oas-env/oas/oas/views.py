@@ -93,11 +93,11 @@ def registerUser(request):
         uemail = request.POST.get('email')
         upassword = request.POST.get('password')
 
-        # Create a new user
+    
         User.objects.create_user(username=uname, email=uemail, password=upassword)
 
-        # Redirect to login page or another page after signup
-        return redirect('login')  # Adjust the redirect URL as needed
+       
+        return redirect('login') 
 
     return render(request, 'register.html')
 
@@ -124,7 +124,7 @@ def contactPage(request):
         form = contactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contact')  # Redirect to a success page or another URL after submission
+            return redirect('contact') 
     else:
         form = contactForm()
 
@@ -140,18 +140,24 @@ def save_price(request, product_id):
         email = request.POST.get('email')
         price = request.POST.get('price')
 
-        # Create a new bid dictionary
+        
         new_bid = {
             'name': name,
             'email': email,
             'price': price,
         }
 
-        # Append the new bid to the existing list of bids
         product.bids.append(new_bid)
         product.save()
 
-        # Redirect to the product detail page after saving
         return redirect('product_detail', product_id=product_id)
     
     return render(request, 'product_detail.html', {'product': product})
+
+
+
+
+
+
+def browse_page(request):
+    return render(request, 'browse_product.html')

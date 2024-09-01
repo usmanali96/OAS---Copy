@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="bid-cards">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == '1st-Auction' %}
+                    
+                    
+                  <script>
+           document.addEventListener("DOMContentLoaded", function () {    var timerElement = document.querySelector("#timer-{{ product.id }}");
+      var bidEndTime = timerElement.getAttribute("data-countdown");
+      console.log("Bid End Time for Product {{ product.id }}:", bidEndTime); // Debugging line
+      var target_mili_sec = new Date(bidEndTime).getTime();
+  
+      if (isNaN(target_mili_sec)) {
+          console.error("Invalid Date Format for Product {{ product.id }}:", bidEndTime);
+      }
+  
+      function timer() {
+          var now_mili_sec = new Date().getTime();
+          var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+  
+          var day = Math.floor(remaining_sec / (3600 * 24));
+          var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+          var min = Math.floor((remaining_sec % 3600) / 60);
+          var sec = Math.floor(remaining_sec % 60);
+  
+          document.querySelector("#day{{ product.id }}").innerHTML = day;
+          document.querySelector("#hour{{ product.id }}").innerHTML = hour;
+          document.querySelector("#min{{ product.id }}").innerHTML = min;
+          document.querySelector("#sec{{ product.id }}").innerHTML = sec;
+      }
+  
+      setInterval(timer, 1000);
+  });
+   // Calls the timer function every 1 second
+  </script>
+                    
+                        <div class="col-md-4">
+                            <div class="card">
+                              <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                                    <div class="count">
+                                        <div class="co">
+                                            <span class="days" id="day{{product.id}}">00</span> DAYS
+                                        </div>
+                                        <div class="co">
+                                            <span class="hours" id="hour{{product.id}}">00</span> HOURS
+                                        </div>
+                                        <div class="co">
+                                            <span class="minutes" id="min{{product.id}}">00</span> MINUTES
+                                        </div>
+                                        <div class="co">
+                                            <span class="seconds" id="sec{{product.id}}">00</span> SECONDS
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="media/{{product.image}}" class="card-img-top" alt="..."/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text"><b>{{ product.description }}</b></p>
+                                    <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
+                                    <i class="bi bi-share-fill justify-content-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+  
+  
+  
+          <!-- Search bar container -->
+  <div class="search-container">
+    <form class="search-form" action="" >
+        <input type="text" name="q" placeholder="Search..." class="form-control" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="category-card">
+          
+            <div class="category-content">
+                <h3 class="category-title">Categories</h3>
+                <ul class="product-list">
+                    <li class="product-item"> <a href="">Accessories</a></li>
+                    <li class="product-item"> <a href="">Antiques</a></li>
+                    <li class="product-item"> <a href="">Cars</a></li>
+                    <li class="product-item"> <a href="">Electronics</a></li>
+                    <li class="product-item"> <a href="">Fashion</a></li>
+                    <li class="product-item"> <a href="">Music</a></li>
+                    <li class="product-item"> <a href="">Trading cards</a></li>
+                    <li class="product-item"> <a href="">Vehicles</a></li>
+                    <li class="product-item"> <a href="">Virtual Worlds</a></li>
+                    <li class="product-item"> <a href="">Watches</a></li>
+                    
+                    
+                    <!-- Add more products as needed -->
+                </ul>
+            </div>
+        </div>
+          </div>
+        </div>
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <nav aria-label="Page navigation example" >
+        <ul class="pagination">
+  
+  
+          {% if products.has_previous %}
+          <li class="page-item"><a class="page-link" href="/?page={{ products.previous_page_number }}"><i class="bi bi-arrow-90deg-left"></i></a></li>
+          {% endif %}
+  
+  
+  
+          {% for c in totalpages %}
+          <li class="page-item"><a class="page-link {% if products.number == c %} active {% endif %} " href="/?page={{c}}">{{c}}</a></li>
+          {% endfor %}
+          
+          {% if products.has_next %}
+          <li class="page-item"><a class="page-link" href="/?page={{products.next_page_number}}"><i class="bi bi-arrow-90deg-right"></i></a></li>
+          {% endif %}
+        </ul>
+  
+  
+     
+  
+  
+  
+      </nav>
+  
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  
+  </html>
