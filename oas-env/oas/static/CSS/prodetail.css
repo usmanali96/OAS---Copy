@@ -49,8 +49,8 @@
     justify-content: space-between;
     gap: 30px; /* Add some space between the image and the info */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 80px;
+    margin-bottom: 85px;
 }
 
 /* Product image styling */
@@ -114,12 +114,13 @@
 .pro-description-inner {
     text-align: center;
     color: white;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 80px;
+    margin-bottom: 85px;
 }
 .pro-description-inner span{
     color: white;
     font-weight: bolder;
+    margin-bottom: 30px;
 }
 
 
