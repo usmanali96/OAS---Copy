@@ -93,3 +93,81 @@ section {
     color: #333;
   }
   
+
+
+
+
+
+  /* Section styling with gradient animation */
+section {
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+    background-size: 400% 400%;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  
+    animation: gradient 10s linear infinite;
+  }
+  
+  /* Gradient animation keyframes */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Card styling inside the section */
+  .card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Input fields styling */
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    border-radius: 10px;
+    background-color: #2575fc;
+    border: none;
+    padding: 10px 20px;
+  }
+  
+  /* Link styling */
+  .text-primary {
+    color: #2575fc !important;
+  }
+  
+  /* Responsive text and spacing adjustments */
+  .text-center {
+    color: #333;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: #333;
+  }
+  
