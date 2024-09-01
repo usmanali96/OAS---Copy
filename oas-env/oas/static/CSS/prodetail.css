@@ -55,8 +55,8 @@
 
 /* Product image styling */
 .product-image img {
-    width: 80px;
-    height: 85px;
+    width: 390px;
+    height: 460px;
     border-radius: 10px;
     object-fit: cover; /* Ensures the image fits nicely within the given dimensions */
 }
