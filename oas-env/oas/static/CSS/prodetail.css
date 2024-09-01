@@ -234,7 +234,7 @@
 	font-size: 45px;
 }
 .product-thumb .item img {
-	height: 60px;
+	height: 100px;
 }
 .product-name {
 	font-size: 22px;
@@ -424,4 +424,9 @@
 .review-form .round-black-btn {
 	text-transform: uppercase;
 	cursor: pointer;
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 75%;
+    height: 75%;
 }
