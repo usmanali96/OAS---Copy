@@ -109,3 +109,240 @@
   }
   
   
+
+
+
+
+
+
+
+
+
+  body{
+    background-color: black;
+}
+.card{
+    background-color: black;
+    border: 3%;
+    overflow: hidden;
+    display: flex;
+    margin-left: 2px;  /* Adjust horizontal spacing */
+    margin-right: 2px;
+    margin-top: 10px;  /* Keep vertical spacing larger */
+    margin-bottom: 10px;
+    display: flex;
+    margin-bottom: 0.5rem; /* Adjust this value to control spacing */
+   
+}
+    
+
+
+   
+.card img {
+    
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.card:hover img {
+    transform: scale(1.1); /* Adjust the scale as needed */
+}
+
+.card-1 .price{
+    font-weight: bold;
+}
+.card-1 .card-title{
+    color: aliceblue;
+}
+.card-1 .card-text{
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+.card-1 .btn-primary{
+    background-color: green;
+    border: none;
+    
+}
+.card-1 .bi-share-fill{
+    color: aliceblue;
+    
+}
+.row{
+    margin-top: 70px;
+}
+
+ .col-md-3 .shop-widget-item {
+    border:3px solid;
+     height: auto; 
+     width: auto;   
+}
+
+.shop-widget-item  li a{
+    
+    display: list-item;
+    color: aliceblue;
+ 
+   
+
+
+}
+
+.category-card {
+    border: 1px solid  #333;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within the card */
+    box-shadow: 0 4px 8px rgb(57, 64, 70); /* Subtle shadow for depth */
+    width: 300px; /* Fixed width */
+    margin: 20px; /* Space around the card */
+    background-color: black;
+}
+
+.category-title {
+    font-size: 35px; /* Larger font size for title */
+    margin-bottom: 12px; /* Space below the title */
+    color: aliceblue; /* Darker text color */
+    text-align: center; /* Center-align the title */
+    
+
+
+    
+        position: relative;
+      
+        cursor: pointer;
+}
+    
+    .category-title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px; /* Adjust this value based on the distance you want from the text */
+        width: 100%;
+        height: 3px; /* Adjust the thickness of the line */
+        background-color: green; /* Adjust the color of the line */
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    
+    .category-title:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    
+
+
+
+
+
+.product-list {
+  
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    
+    color: aliceblue;
+}
+
+.product-item a{
+    
+    margin-left: 20px;
+   pointer-events: fill;
+    display: flex;
+    font-size: 1.3em; /* Regular font size for product names */
+  text-decoration: none;
+    padding: 8px 0; /* Vertical padding between products */
+    color: aliceblue;
+    font-style: bold;
+   
+    
+}
+
+.pagination{
+    justify-content: center;
+    
+}
+
+
+
+.hover .product-text a {
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.product-item:hover a {
+    transform: scale(0.9);
+    color:green; /* Changes color to blue */
+    box-shadow: 0 2px 4px rgb(57, 64, 70); /* Subtle shadow for depth */
+}
+
+
+
+
+
+.pagination .page-link.active {
+    background-color: green; /* Your desired color */
+    color: white; /* Text color */
+    border-color: green;
+}
+
+.pagination .page-link:hover.active {
+    background-color: green; /* Optional: hover color */
+    border-color: green;
+}
+
+
+
+
+/* Base styling for the search container */
+.search-container {
+    display: flex;
+    justify-content: flex-end; /* Align the search bar to the side */
+    padding: 10px;
+    width:  140%; /* Take full width to ensure responsiveness */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Search form styling */
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 300px; /* Limit the width */
+    border: 1px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Input field styling */
+.search-form .form-control {
+    color: #333;
+    background-color:black;
+    border: none;
+    padding: 10px;
+    flex: 1;
+}
+
+/* Button styling */
+.search-form .btn {
+    border-radius: 0;
+    margin-left: -1px; /* Remove gap between input and button */
+    background-color: green;
+    border-color: green;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .search-form {
+        max-width: 200%; /* Make the form take full width on smaller screens */
+    }
+}
+
+/* Ensuring the input field stays the same during zoom */
+.search-form .form-control {
+    min-width: 0; /* Prevents input from shrinking too much */
+}
