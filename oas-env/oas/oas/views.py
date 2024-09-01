@@ -109,9 +109,10 @@ def loginUser(request):
         user = authenticate(request, username=uname, password=upassword)
         if user is not None:
              login(request, user)
-             return redirect('/')
+             print("User authenticated and logged in.")
+             return redirect('index')
         else:
-             print("user doesn't exist")
+              print("User authentication failed.")
              
         return render(request, 'login.html')
              
