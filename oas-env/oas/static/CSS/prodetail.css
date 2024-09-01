@@ -5,60 +5,46 @@
     overflow: hidden;
     z-index: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
 }
 
 .inner-banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
-    display: flex; /* Make the content and image align side by side */
-    align-items: center;
-    width: 50%; /* Adjust width to share space with the image */
-    text-align: left;
+    text-align: center;
 }
 
 .inner-banner-content h2 {
-    font-size: 2vw; /* Smaller font size */
+    font-size: 5vw; /* Make the font size responsive */
     color: white;
     margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.inner-banner-content h2 b {
-    margin-right: 20px; /* Add space between text and image */
 }
 
 .inner-banner-img {
-    width: 50%; /* Ensure the image container takes up the remaining space */
+    position: absolute;
+    bottom: 0;
+    right: 0;
     text-align: right;
-}
-
-.inner-banner-img img {
     max-width: 100%;
     height: auto;
 }
 
 @media (max-width: 768px) {
     .inner-banner {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .inner-banner-content {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .inner-banner-img {
-        width: 100%;
-        text-align: center;
+        min-height: 300px;
     }
 
     .inner-banner-content h2 {
-        font-size: 4vw;
+        font-size: 6vw; /* Adjust font size for smaller screens */
+    }
+
+    .inner-banner-img {
+        display: none; /* Hide the image on smaller screens */
     }
 }
 
@@ -68,7 +54,7 @@
     }
 
     .inner-banner-content h2 {
-        font-size: 5vw;
+        font-size: 8vw; /* Further adjust font size for mobile */
     }
 }
 
