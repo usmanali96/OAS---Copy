@@ -13,6 +13,8 @@ from datetime import datetime
 from django.contrib import admin
 from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
+from django.core.exceptions import ValidationError
+
 
 
 #def index(request)
@@ -76,24 +78,34 @@ def product_detail(request, product_id):
 
 
 
+#def registerUser(request):
+ #       uname = request.POST.get('username')
+  #      uemail = request.POST.get('email')
+   #     upassword = request.POST.get('password')
+    #    user = User.objects.create_user(username=uname, email=uemail, password=upassword)
+
+     #   return render(request, 'register.html')
+
+
 def registerUser(request):
+    if request.method == 'POST':
         uname = request.POST.get('username')
         uemail = request.POST.get('email')
         upassword = request.POST.get('password')
-        user = User.objects.create_user(username=uname, email=uemail, password=upassword)
+        
+        if not uname or not uemail or not upassword:
+            return render(request, 'register.html', {'error': 'All fields are required.'})
+        
+        try:
+            user = User.objects.create_user(username=uname, email=uemail, password=upassword)
+            user.save()
+            # Automatically log the user in after registration
+            login(request, user)
+            return redirect('/')
+        except ValidationError as e:
+            return render(request, 'register.html', {'error': str(e)})
 
-        return render(request, 'register.html')
-
-
-#def registerUser(request):
-    #if request.method == 'POST':
-        #form = UserCreationForm(request.POST)
-        #if form.is_valid():
-           # form.save()
-           # return redirect('/')  
-    #else:
-      #  form = UserCreationForm()
-   # return render(request, 'register.html', {'form': form})
+    return render(request, 'register.html')
 
 
 
