@@ -437,3 +437,83 @@
 .bid-submit{
     display: flex;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bid-submit {
+    display: flex;
+  }
+  
+  .product-dtl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .product-name {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 4px;
+  }
+  
+  .reviews-counter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .product-price-discount {
+    font-size: 22px;
+    font-weight: 400;
+    padding: 10px 0;
+  }
+  
+  .product-price-discount .line-through {
+    text-decoration: line-through;
+    margin-left: 10px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #a5a5a5;
+  }
+  
+  .short-description {
+    font-size: 14px;
+    color: #7a7a7a;
+  }
+  
+  .product-dtl p {
+    margin-top: 10px;
+  }
+  
