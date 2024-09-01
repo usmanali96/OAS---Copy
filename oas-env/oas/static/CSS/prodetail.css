@@ -14,21 +14,21 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-127%, -50%);
     z-index: 2;
     text-align: center;
 }
 
 .inner-banner-content h2 {
-    font-size: 5vw; /* Make the font size responsive */
+    font-size: 3vw; /* Make the font size responsive */
     color: white;
     margin: 0;
 }
 
 .inner-banner-img {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -200px;
+    right: -65px;
     text-align: right;
     max-width: 100%;
     height: auto;
