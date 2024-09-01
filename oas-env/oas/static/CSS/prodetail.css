@@ -430,3 +430,10 @@
     width: 75% !important;
     height: 75% !important;
 }
+
+
+
+
+.bid-submit{
+    display: flex;
+}
