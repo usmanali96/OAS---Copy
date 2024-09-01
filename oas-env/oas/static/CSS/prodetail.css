@@ -127,36 +127,6 @@
 
 
 
-.product-info input{
-    width: 100%;
-    height: 100%;
-    border: 3px solid white;
-    border-radius: 5px;
-    padding-left: 8px;
-    color: white;
-    background-color: grey;
-}
-label{
-    background-color: grey;
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transition: all .8s ease;
-    font-size: 20px;
-    pointer-events: none;
-    color: white;
-    font-family: poppins;
-
-}
-
-input:focus + label,
-input:valid + label{
-    font-size: 15px;
-    top: 0;
-    background-color: grey;
-    color: white;
-
-}
 
 
 
