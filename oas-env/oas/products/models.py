@@ -9,6 +9,7 @@ class Product(models.Model):  # Rename from Products to Product
     bid_end_time = models.DateTimeField(null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     long_description = models.TextField(null=True, blank=True)
+    bids = models.JSONField(default=list, blank=True)  # Store bids as a list of dictionaries
 
 
     def __str__(self):

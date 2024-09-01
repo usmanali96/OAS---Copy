@@ -128,11 +128,23 @@ def contactPage(request):
 def save_price(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     
-    if request.method == "POST":
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
         price = request.POST.get('price')
-        if price:
-            product.price = price
-            product.save()
-            return redirect('product_detail', product_id=product.id)
+
+        # Create a new bid dictionary
+        new_bid = {
+            'name': name,
+            'email': email,
+            'price': price,
+        }
+
+        # Append the new bid to the existing list of bids
+        product.bids.append(new_bid)
+        product.save()
+
+        # Redirect to the product detail page after saving
+        return redirect('product_detail', product_id=product_id)
     
     return render(request, 'product_detail.html', {'product': product})
