@@ -110,7 +110,7 @@ def loginUser(request):
         if user is not None:
              login(request, user)
              print("User authenticated and logged in.")
-             return redirect('index')
+             return redirect('/')
         else:
               print("User authentication failed.")
              
