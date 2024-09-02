@@ -46,8 +46,8 @@
                     <img src="{{ product.image.url }}" alt="{{ product.title }}">
                 </div>
                 <div class="product-info">
-                    <h1>{{ product.title }}</h1>
-                    <p>{{ product.description }}</p>
+                    <h1 style="color: white;">{{ product.title }}</h1>
+                    <p style="color: white;">{{ product.description }}</p>
     
                     <!-- Input form for name, email, and price -->
                     <form method="POST" action="{% url 'save_price' product.id %}" class="bid-form">
