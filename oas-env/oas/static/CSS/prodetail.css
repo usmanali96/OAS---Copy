@@ -94,6 +94,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    color: white;
 }
 
 .product-info h1 {
