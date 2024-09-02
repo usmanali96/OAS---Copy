@@ -1,4 +1,4 @@
-.bid-cards .card{
+.browse-cards .card{
     position: relative;
     transition: all 0.3s;
     margin-top: 30px;
@@ -7,7 +7,7 @@
     
   
   }
-  .bid-cards .card:hover{
+  .browse-cards .card:hover{
     transform: scale(1.15);
     border-bottom: 3px solid;
     border-color: white;
@@ -16,7 +16,7 @@
   
   
   
-  .bid-cards .timer-overlay {
+  .browse-cards .timer-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,12 +26,12 @@
     pointer-events: none; /* Prevent the overlay from blocking interactions */
   }
   
-  .bid-cards .card-body {
+  .browse-cards .card-body {
     position: relative;
     z-index: 2; /* Ensure the link is above the overlay */
   }
   
-  .bid-cards .btn-success {
+  .browse-cards .btn-success {
     position: relative;
     z-index: 3; /* Ensure the button is above all other elements */
   }
@@ -44,7 +44,7 @@
   
   @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
   
-  .bid-cards .card {
+  .browse-cards .card {
     position: relative;
     overflow: hidden;
     transition: all 0.3s;
@@ -53,7 +53,7 @@
     color: white;
   }
   
-  .bid-cards .card:hover {
+  .browse-cards .card:hover {
     transform: scale(1.15);
     border-bottom: 3px solid;
     border-color: white;
@@ -73,7 +73,7 @@
     transition: opacity 0.3s;
   }
   
-  .bid-cards .card:hover .timer-overlay {
+  .browse-cards .card:hover .timer-overlay {
     opacity: 1;
   }
   
