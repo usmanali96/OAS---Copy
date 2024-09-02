@@ -124,3 +124,9 @@ textarea {
     padding-right: 15px;
 
 }
+.map-content-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
