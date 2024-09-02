@@ -124,9 +124,28 @@ textarea {
     padding-right: 15px;
 
 }
-.map-content-inner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.map-content-inner iframe {
+    width: 100%;
+    height: auto;
+    min-height: 300px; /* Ensures a minimum height for smaller screens */
+}
+
+@media (max-width: 768px) {
+    .map-content-inner iframe {
+        height: 350px; /* Adjust height for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .map-content-inner iframe {
+        height: 300px; /* Adjust height for mobile devices */
+    }
+}
+
+.d-flex {
+    flex-wrap: wrap;
+}
+
+.contact-form, .map-content {
+    flex: 1 1 100%;
 }
