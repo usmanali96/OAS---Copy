@@ -183,6 +183,12 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
+    productsData = Product.objects.all()
+    data = {
+        "products":  productsData,
+        #"totalPages":totalPages,
+        }
+
     return render(request, 'browse_product.html')
 
 
