@@ -189,7 +189,7 @@ def browse_page(request):
         #"totalPages":totalPages,
         }
 
-    return render(request, 'browse_product.html')
+    return render(request, 'browse_product.html', data)
 
 
 
