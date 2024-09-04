@@ -185,7 +185,7 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
-    productsData = Product.objects.all()
+    productsData = Product.objects.all().order_by('id')  # or any other field like '-created_at'
     bot = Paginator(productsData, 10)
     page = request.GET.get('page', 1)
     page_obj = bot.get_page(page)
