@@ -185,16 +185,17 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
-    productsData = Product.objects.all().order_by('id')  # or any other field like '-created_at'
-    bot = Paginator(productsData, 10)
-    page = request.GET.get('page', 1)
-    page_obj = bot.get_page(page)
-    
-    totalpages = [x + 1 for x in range(bot.num_pages)]
-    
-    data = {
-        "products": page_obj,
-        "totalPages": totalpages
-    }
+  productsData = Product.objects.all().order_by('id')
+  bot = Paginator(productsData, 10)
+  
+  page = request.GET.get('page', 1)
+  page_obj = bot.get_page(page)
 
-    return render(request, 'browse_product.html', data)
+  totalpages = [x + 1 for x in range(bot.num_pages)]
+    
+  data = {
+      "products": page_obj,
+      "totalPages": totalpages
+      }
+  
+  return render(request, 'browse_product.html', data)
