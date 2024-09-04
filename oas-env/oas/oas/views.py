@@ -186,7 +186,7 @@ def save_price(request, product_id):
 
 def browse_page(request):
     productsData = Product.objects.all()
-    bot = Paginator(productsData, 1)
+    bot = Paginator(productsData, 10)
     page = request.GET.get('page', 0)
     page_obj = bot.get_page(page)
     
