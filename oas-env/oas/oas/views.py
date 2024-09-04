@@ -193,4 +193,20 @@ def browse_page(request):
 
 
 
+def browseproduct(request):
+    productsData = Product.objects.all()
+    bot = Paginator(productsData,5)
+    page = request.GET.get('page',1)
+    page_obj = bot .get_page(page)
 
+    totalpages =  [x+1 for x in range( bot.num_pages)]
+    
+
+    data = {
+        "products":  productsData,
+        "totalPages":totalpages
+        }
+             
+    return render(request, 'browse_product.html', data)
+
+    
