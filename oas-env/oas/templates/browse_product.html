@@ -99,7 +99,7 @@
       {% endif %}
   
       {% for page_number in totalPages %}
-        {% if page_number== page_obj.number %}
+        {% if page_number == page_obj.number %}
           <li class="page-item active">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
           </li>
