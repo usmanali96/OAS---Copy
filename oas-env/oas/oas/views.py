@@ -16,6 +16,8 @@ from products.models import Product
 from django.core.mail import send_mail
 from datetime import datetime, timedelta
 from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+
 
 
 
@@ -191,7 +193,7 @@ def browse_page(request):
     totalpages = [x + 1 for x in range(bot.num_pages)]
     
     data = {
-        "products": page_obj,  # Pass the paginated products
+        "products": page_obj,
         "totalPages": totalpages
     }
 

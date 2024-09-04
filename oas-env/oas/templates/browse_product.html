@@ -109,21 +109,21 @@
             <!-- Page Number Links -->
             {% for c in totalPages %}
                 <li class="page-item {% if products.number == c %} active {% endif %}">
-                    <a class="page-link" href="{% url 'browse_product' %}?page={{ products.previous_page_number }}">
+                    <a class="page-link" href="{% url 'browse_page' %}?page={{ products.previous_page_number }}">
                 </li>
             {% endfor %}
       
             <!-- Next Page Link -->
             {% if products.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="{% url 'browse_product' %}?page={{ products.previous_page_number }}">
+                    <a class="page-link" href="{% url 'browse_page' %}?page={{ products.previous_page_number }}">
 
                         <i class="bi bi-arrow-90deg-right"></i>
                     </a>
                 </li>
             {% else %}
                 <li class="page-item disabled">
-                    <a class="page-link" href="{% url 'browse_product' %}?page={{ products.previous_page_number }}">
+                    <a class="page-link" href="{% url 'browse_page' %}?page={{ products.previous_page_number }}">
                         <i class="bi bi-arrow-90deg-right"></i>
                     </a>
                 </li>
