@@ -162,4 +162,5 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
+    
     return render(request, 'browse_product.html')
