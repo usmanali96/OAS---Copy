@@ -6,6 +6,9 @@ class Products(models.Model):
     category = models.CharField(max_length=60)
     image = models.FileField(max_length=60, upload_to="products/", null=True)
 
+
     
+
+
 
 # Create your models here.
