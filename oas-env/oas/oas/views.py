@@ -141,7 +141,7 @@ def contactPage(request):
 def send_bid_end_email(product, bid):
        send_mail(
         subject=f'New Bid Received for {product.title}',
-        message=f'Thank you, {bid["name"]}, for your bid of {bid["price"]} on {product.title}.',
+        message=f'Thank you, {bid["name"]}, for your bid of {bid["price"]} on {product.title}. Your Bid has been submitted the winner will be announced when the timer ends. If you win the auction we will contact you through email.',
         from_email='onlineauction537@gmail.com',
         recipient_list=[bid["email"]],
        )
