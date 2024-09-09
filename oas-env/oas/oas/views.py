@@ -169,6 +169,9 @@ def save_price(request, product_id):
 
         send_bid_end_email(product, new_bid)
 
+        messages.success(request, 'Your bid has been successfully submitted!')
+
+
         return redirect('product_detail', product_id=product_id)
     
     return render(request, 'product_detail.html', {'product': product})
