@@ -166,14 +166,7 @@ def save_price(request, product_id):
         product.save()
 
 
-        # Record bid end time
-        bid_end_time = datetime.now() + timedelta(minutes=10)  # Change this to your desired bid end time
-        product.bid_end_time = bid_end_time
-        product.save()
-        
-        # Call the send_bid_end_email function directly
         send_bid_end_email(product, new_bid)
-
 
         return redirect('product_detail', product_id=product_id)
     
@@ -183,14 +176,11 @@ def save_price(request, product_id):
 
 
 
-
-
 def browse_page(request):
-    # Get all products and order them by category
+    
     productsData = Product.objects.all().order_by('category', 'id')  # Ordering by category, then by id
 
-    # Set up pagination
-    bot = Paginator(productsData, 10)  # 10 products per page
+    bot = Paginator(productsData, 10) 
     page_number = request.GET.get('page', 1)
     page_obj = bot.get_page(page_number)
 
