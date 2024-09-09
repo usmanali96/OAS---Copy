@@ -13,7 +13,11 @@ from datetime import datetime
 from django.contrib import admin
 from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
-from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+from datetime import datetime, timedelta
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+
 
 
 
@@ -132,6 +136,15 @@ def contactPage(request):
 
 
 
+
+
+def send_bid_end_email(product, bid):
+    # Send email to the bid email
+    subject = 'Bid End Notification'
+    message = render_to_string('product_detail.html', {'product': product, 'bid': bid})
+    send_mail(subject, message, 'your_email@example.com', [bid['email']])
+
+
 def save_price(request, product_id):
     
     
@@ -152,6 +165,16 @@ def save_price(request, product_id):
         product.bids.append(new_bid)
         product.save()
 
+
+        # Record bid end time
+        bid_end_time = datetime.now() + timedelta(minutes=10)  # Change this to your desired bid end time
+        product.bid_end_time = bid_end_time
+        product.save()
+        
+        # Call the send_bid_end_email function directly
+        send_bid_end_email(product, new_bid)
+
+
         return redirect('product_detail', product_id=product_id)
     
     return render(request, 'product_detail.html', {'product': product})
@@ -161,6 +184,26 @@ def save_price(request, product_id):
 
 
 
+
 def browse_page(request):
+<<<<<<< HEAD
     
     return render(request, 'browse_product.html')
+=======
+    # Get all products and order them by category
+    productsData = Product.objects.all().order_by('category', 'id')  # Ordering by category, then by id
+
+    # Set up pagination
+    bot = Paginator(productsData, 10)  # 10 products per page
+    page_number = request.GET.get('page', 1)
+    page_obj = bot.get_page(page_number)
+
+    totalpages = [x + 1 for x in range(bot.num_pages)]
+    
+    data = {
+        "products": page_obj,
+        "totalPages": totalpages
+    }
+
+    return render(request, 'browse_product.html', data)
+>>>>>>> 73e94ac560679dcdec6cbf340494d323487b4d08
