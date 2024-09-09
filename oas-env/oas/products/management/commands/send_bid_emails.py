@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         now = timezone.now()
-        products = Product.objects.filter(bid_end_time__lte=now, bid_end_time__isnull=False)
+        products = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
 
         for product in products:
             if product.bids:
@@ -16,13 +16,16 @@ class Command(BaseCommand):
                 email = highest_bid.get('email')
                 
                 if email:
-                    send_mail(
-                        subject=f'Bid Winner for {product.title}',
-                        message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction we will share the payment details soon.',
-                        from_email='onlineauction537@gmail.com',
-                        recipient_list=[email],
-                    )
-                    
-                product.save()
+                    try:
+                        send_mail(
+                            subject=f'Bid Winner for {product.title}',
+                            message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
+                            from_email='onlineauction537@gmail.com',
+                            recipient_list=[email],
+                        )
+                        product.email_sent = True  # Mark email as sent
+                        product.save()
+                    except Exception as e:
+                        self.stdout.write(self.style.ERROR(f'Failed to send email: {e}'))
 
         self.stdout.write(self.style.SUCCESS('Successfully sent bid end emails.'))
