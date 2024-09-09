@@ -120,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Karachi'
 
 USE_I18N = True
 
@@ -156,10 +156,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'onlineauction537@gmail.com'  # Your Gmail address
-EMAIL_HOST_PASSWORD = 'slxc zznc xowo iggh'  # Your Gmail account password or App Password if 2FA is enabled
+EMAIL_HOST_USER = 'onlineauction537@gmail.com'  
+EMAIL_HOST_PASSWORD = 'slxc zznc xowo iggh'  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-TIME_ZONE = 'Asia/Karachi'
-USE_TZ = True
