@@ -157,7 +157,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'onlineauction537@gmail.com'  # Your Gmail address
-EMAIL_HOST_PASSWORD = 'onlineauction@1'  # Your Gmail account password or App Password if 2FA is enabled
+EMAIL_HOST_PASSWORD = 'Onlineauction@1'  # Your Gmail account password or App Password if 2FA is enabled
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
