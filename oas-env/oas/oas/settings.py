@@ -159,3 +159,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'onlineauction537@gmail.com'  # Your Gmail address
 EMAIL_HOST_PASSWORD = 'onlineauction@1'  # Your Gmail account password or App Password if 2FA is enabled
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+TIME_ZONE = 'Asia/Karachi'
+USE_TZ = True

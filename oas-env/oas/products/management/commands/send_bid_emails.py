@@ -17,7 +17,7 @@ class Command(BaseCommand):
                     send_mail(
                         subject=f'Bid Ended for {product.title}',
                         message=f'The bid for {product.title} has ended. Thank you for participating!',
-                        from_email='your_email@example.com',
+                        from_email='onlineauction537@gmail.com',
                         recipient_list=[email],
                     )
 
