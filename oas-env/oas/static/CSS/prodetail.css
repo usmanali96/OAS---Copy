@@ -1,0 +1,315 @@
+.inner-banner {
+    min-height: 400px;
+    background: rgba(12, 3, 33, 0.9);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.inner-banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-127%, -50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.inner-banner-content h2 {
+    font-size: 4vw; /* Make the font size responsive */
+    color: white;
+    margin: 0;
+}
+
+.inner-banner-img {
+    position: absolute;
+    bottom: -200px;
+    right: -65px;
+    text-align: right;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .inner-banner {
+        min-height: 300px;
+    }
+
+    .inner-banner-content h2 {
+        font-size: 6vw; /* Adjust font size for smaller screens */
+    }
+
+    .inner-banner-img {
+        display: none; /* Hide the image on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .inner-banner {
+        min-height: 200px;
+    }
+
+    .inner-banner-content h2 {
+        font-size: 8vw; /* Further adjust font size for mobile */
+    }
+}
+
+
+/* General container styling */
+.card-details .container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    color: white;
+}
+
+/* Product detail section styling */
+.card-details .product-detail {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between;
+    gap: 30px; /* Add some space between the image and the info */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 80px;
+    margin-bottom: 85px;
+}
+
+/* Product image styling */
+.product-image img {
+    width: 390px;
+    height: 460px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures the image fits nicely within the given dimensions */
+}
+
+
+/* Product info styling */
+.product-info {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+}
+
+.product-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Input styling for price */
+.product-info input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button styling */
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.pro-description-inner {
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    margin-bottom: 85px;
+}
+.pro-description-inner span{
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Product Detail Section */
+.product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.product-info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Bid Form Styling */
+.bid-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.bid-form label {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.bid-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.bid-form input::placeholder {
+    color: #aaa;
+}
+
+.bid-form .btn-submit {
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bid-form .btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Product Description Section */
+.pro-description {
+    background-color: #121212;
+    padding: 40px 20px;
+}
+
+.pro-description h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.pro-description p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-info {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .bid-form {
+        max-width: 100%;
+    }
+
+    .pro-description h1 {
+        font-size: 2em;
+    }
+
+    .pro-description p {
+        font-size: 1.1em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

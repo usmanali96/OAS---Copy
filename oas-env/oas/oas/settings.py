@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'products'
+    'products',
+    'contact'
 ]
 
 
@@ -84,12 +85,12 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
 
-        'NAME' : 'py_oas_pro',
+        'NAME' : 'onlinea1_bids',
         'ENGINE': 'django.db.backends.mysql',
         'HOST' : 'localhost',
-        'DATABASE' : 'py_oas_pro',
-        'USER' : 'root',
-        'PASSWORD' : '',
+        'DATABASE' : 'onlinea1_bids',
+        'USER' : 'onlinea1_bids',
+        'PASSWORD' : 'n2w@ukh@u',
         'PORT' : '3306'
     }
 }
