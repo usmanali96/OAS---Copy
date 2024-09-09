@@ -139,11 +139,12 @@ def contactPage(request):
 
 
 def send_bid_end_email(product, bid):
-    # Send email to the bid email
-    subject = 'Bid End Notification'
-    message = render_to_string('product_detail.html', {'product': product, 'bid': bid})
-    send_mail(subject, message, 'your_email@example.com', [bid['email']])
-
+       send_mail(
+        subject=f'New Bid Received for {product.title}',
+        message=f'Thank you, {bid["name"]}, for your bid of {bid["price"]} on {product.title}.',
+        from_email='your_email@example.com',
+        recipient_list=[bid["email"]],
+       )
 
 def save_price(request, product_id):
     
