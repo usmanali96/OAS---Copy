@@ -11,17 +11,18 @@ class Command(BaseCommand):
         products = Product.objects.filter(bid_end_time__lte=now, bid_end_time__isnull=False)
 
         for product in products:
-            for bid in product.bids:
-                email = bid.get('email')
+            if product.bids:
+                highest_bid = max(product.bids, key=lambda bid: bid['price'])
+                email = highest_bid.get('email')
+                
                 if email:
                     send_mail(
-                        subject=f'Bid Ended for {product.title}',
-                        message=f'The bid for {product.title} has ended. Thank you for participating!',
+                        subject=f'Bid Winner for {product.title}',
+                        message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction we will share the payment details soon.',
                         from_email='onlineauction537@gmail.com',
                         recipient_list=[email],
                     )
-
-            product.bids.clear()
-            product.save()
+                    
+                product.save()
 
         self.stdout.write(self.style.SUCCESS('Successfully sent bid end emails.'))
