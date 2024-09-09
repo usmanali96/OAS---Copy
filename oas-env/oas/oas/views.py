@@ -192,3 +192,6 @@ def browse_page(request):
     }
 
     return render(request, 'browse_product.html', data)
+    
+
+    
