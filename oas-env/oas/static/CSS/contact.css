@@ -32,15 +32,14 @@
     line-height: 1.5;
 }
 
-/* Inputs Styling */
 input:focus ~ label, 
 textarea:focus ~ label, 
 input:valid ~ label, 
 textarea:valid ~ label {
     font-size: 0.75em;
     color: #999;
-    top: -10px; /* Adjusted to better position label */
-    left: 10px; /* Adjusted to better position label */
+    top: -15px; 
+    left: 10px; 
     transition: all 0.225s ease;
 }
 
@@ -52,15 +51,13 @@ textarea:valid ~ label {
 }
 
 .styled-input label {
-    color: #999;
-    padding: 1.3rem 0.75rem;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    transition: all 0.25s ease;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: #fff;
     pointer-events: none;
-    display: inline-block;
-    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .styled-input input,
@@ -117,13 +114,13 @@ textarea {
     }
 }
 
-.map-content{
+.map-content {
     padding-top: 220px;
     min-height: 100vh;
     padding-left: 15px;
     padding-right: 15px;
-
 }
+
 .d-flex {
     display: flex;
     flex-wrap: wrap;
