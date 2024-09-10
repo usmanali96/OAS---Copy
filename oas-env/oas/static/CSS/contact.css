@@ -32,15 +32,14 @@
     line-height: 1.5;
 }
 
-/* Inputs Styling */
 input:focus ~ label, 
 textarea:focus ~ label, 
 input:valid ~ label, 
 textarea:valid ~ label {
     font-size: 0.75em;
     color: #999;
-    top: -20px; /* Adjusted to better position label */
-    left: 10px; /* Adjusted to better position label */
+    top: -25px; /* Further adjusted to ensure it's clear of the input text */
+    left: 10px; /* Remain the same to keep it aligned */
     transition: all 0.225s ease;
 }
 
