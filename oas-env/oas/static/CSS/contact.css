@@ -38,8 +38,8 @@ input:valid ~ label,
 textarea:valid ~ label {
     font-size: 0.75em;
     color: #999;
-    top: -15px; /* Further adjusted to ensure it's clear of the input text */
-    left: 10px; /* Remain the same to keep it aligned */
+    top: -15px; 
+    left: 10px; 
     transition: all 0.225s ease;
 }
 
