@@ -66,8 +66,9 @@ def  index(request):
                             from_email='onlineauction537@gmail.com',
                             recipient_list=[email],
                         )
-                        product.email_sent = True  
+                        product.email_sent = True    
                         product.save()
+                        logging.info(f"Email sent to {email} for product {product.title}.")
                 
                 except Exception as e:
                     logging.error(f"Error sending email: {e}")
