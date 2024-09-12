@@ -6,30 +6,30 @@ import logging
 
 
 
-class Command(BaseCommand):
-    help = 'Send an email to the highest bidder when the bid end time has passed'
+#class Command(BaseCommand):
+    #help = 'Send an email to the highest bidder when the bid end time has passed'
 
 
-    def handle(self, *args, **kwargs):
-        now = timezone.now()
-        products = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
+    #def handle(self, *args, **kwargs):
+      #  now = timezone.now()
+      #  products = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
 
-        for product in products:
-            if product.bids:
-                highest_bid = max(product.bids, key=lambda bid: bid['price'])
-                email = highest_bid.get('email')
-                try:
-                    if email:
-                        send_mail(
-                        subject=f'Bid Winner for {product.title}',
-                        message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
-                        from_email='your_email@gmail.com',
-                        recipient_list=[email],
-                    )
-                    product.email_sent = True  # Mark email as sent
-                    product.save()
+      #  for product in products:
+       #     if product.bids:
+        #        highest_bid = max(product.bids, key=lambda bid: bid['price'])
+        #        email = highest_bid.get('email')
+          #      try:
+          #          if email:
+          #              send_mail(
+           #             subject=f'Bid Winner for {product.title}',
+             #           message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
+            #            from_email='your_email@gmail.com',
+             #           recipient_list=[email],
+              #      )
+            #        product.email_sent = True  # Mark email as sent
+               #     product.save()
 
-                except Exception as e:
-                    logging.error(f"Error sending email: {e}")
+              #  except Exception as e:
+              #      logging.error(f"Error sending email: {e}")
 
-        self.stdout.write(self.style.SUCCESS('Completed checking and sending bid end emails.'))
+      #  self.stdout.write(self.style.SUCCESS('Completed checking and sending bid end emails.'))

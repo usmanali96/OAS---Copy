@@ -1,3 +1,4 @@
+import email
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from products.models import Product
@@ -17,6 +18,10 @@ from django.core.mail import send_mail
 from datetime import datetime, timedelta
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
+from django.utils.timezone import make_aware
+import logging
+from django.core.mail import send_mail
+from django.utils import timezone
 
 
 
@@ -42,10 +47,37 @@ def cartPage(request):
 def  index(request):
 
     productsData = Product.objects.all()
+
+    for product in productsData:
+        if product.bid_end_time:
+            # Step 2: Convert bid_end_time to milliseconds
+            bid_end_time_aware = make_aware(product.bid_end_time)  # Ensure timezone awareness
+            target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
+           
+            now_mili_sec = int(timezone.now().timestamp() * 1000)
+            remaining_sec = (target_mili_sec - now_mili_sec) / 1000
+
+            if remaining_sec <= 0:
+                # Step 4: Call the send_mail function
+                send_mail(
+                    subject=f'Bid Winner for {product.title}',
+                    message=f'Congratulations! You have the highest bid of {["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
+                    from_email='your_email@gmail.com',
+                    recipient_list=[email],
+                )
+                print(f"Email sent for product {product.title}.")
+            
+            
+
+         
     #productsData = Paginator(productsData, 2)
     #page = request.GET['page']
     #products = productsData.get_page(page)
 
+    #1 - loop through thr products to get timing.
+    #2 - get target_mili_sec filed for each product
+    #3 - calculate the difference var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+    #4 - if the difference is less than zero call the send mailfunction
 
     #totalPages =[x+1 for x in range (productsData.num_pages)]
 
