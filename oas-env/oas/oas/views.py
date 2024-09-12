@@ -45,25 +45,40 @@ def cartPage(request):
 
 
 def  index(request):
+    now = timezone.now()
+    productsData = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
+
 
     productsData = Product.objects.all()
 
     for product in productsData:
-        if product.bid_end_time:
-            # Step 2: Convert bid_end_time to milliseconds
-             
-            target_mili_sec = int(product.bid_end_time.timestamp() * 1000) 
-            now_mili_sec = int(timezone.now().timestamp() * 1000)
-            remaining_sec = (target_mili_sec - now_mili_sec) / 1000
+        target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
+        
+        # Get the current time in milliseconds
+        now_mili_sec = int(now.timestamp() * 1000)
+        
+        # Calculate the difference in seconds
+        remaining_sec = (target_mili_sec - now_mili_sec) / 1000
 
-            if remaining_sec <= 0:
-                # Step 4: Call the send_mail function
-                send_mail(
-                    subject=f'Bid Winner for {product.title}',
-                    message=f'Congratulations! You have the highest bid of {["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
-                    from_email='your_email@gmail.com',
-                    recipient_list=[email],
-                )
+        if remaining_sec <= 0:
+            if product.bids:
+                highest_bid = max(product.bids, key=lambda bid: bid['price'])
+                email = highest_bid.get('email')
+
+                try:
+                    if email:
+                        send_mail(
+                            subject=f'Bid Winner for {product.title}',
+                            message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
+                            from_email='your_email@gmail.com',
+                            recipient_list=[email],
+                        )
+                        product.email_sent = True  # Mark email as sent
+                        product.save()
+                
+                except Exception as e:
+                    logging.error(f"Error sending email: {e}")
+
                 
             
             
