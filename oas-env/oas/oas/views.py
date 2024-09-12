@@ -52,18 +52,19 @@ def  index(request):
     productsData = Product.objects.all()
 
     for product in productsData:
-        target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
+         if product.bid_end_time is not None:
+             target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
         
         # Get the current time in milliseconds
-        now_mili_sec = int(now.timestamp() * 1000)
+             now_mili_sec = int(now.timestamp() * 1000)
         
         # Calculate the difference in seconds
-        remaining_sec = (target_mili_sec - now_mili_sec) / 1000
-
-        if remaining_sec <= 0:
-            if product.bids:
-                highest_bid = max(product.bids, key=lambda bid: bid['price'])
-                email = highest_bid.get('email')
+             remaining_sec = (target_mili_sec - now_mili_sec) / 1000
+             
+             if remaining_sec <= 0:
+                if product.bids:
+                    highest_bid = max(product.bids, key=lambda bid: bid['price'])
+                    email = highest_bid.get('email')
 
                 try:
                     if email:
