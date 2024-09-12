@@ -51,7 +51,7 @@ def  index(request):
     for product in productsData:
         if product.bid_end_time:
             # Step 2: Convert bid_end_time to milliseconds
-            bid_end_time_aware = make_aware(product.bid_end_time)  # Ensure timezone awareness
+            bid_end_time_aware  = make_aware(product.bid_end_time)  # Ensure timezone awareness
             target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
            
             now_mili_sec = int(timezone.now().timestamp() * 1000)
@@ -65,7 +65,7 @@ def  index(request):
                     from_email='your_email@gmail.com',
                     recipient_list=[email],
                 )
-                print(f"Email sent for product {product.title}.")
+                
             
             
 
