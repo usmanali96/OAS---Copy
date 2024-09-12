@@ -52,8 +52,7 @@ def  index(request):
         if product.bid_end_time:
             # Step 2: Convert bid_end_time to milliseconds
              
-            target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
-           
+            target_mili_sec = int(product.bid_end_time.timestamp() * 1000) 
             now_mili_sec = int(timezone.now().timestamp() * 1000)
             remaining_sec = (target_mili_sec - now_mili_sec) / 1000
 
