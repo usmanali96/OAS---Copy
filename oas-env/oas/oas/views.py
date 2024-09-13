@@ -44,20 +44,26 @@ def cartPage(request):
 
 
 
-def  index(request):
+def index(request):
     now = timezone.now()
-    productsData = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
+
+    # Query to display all products on the page
     productsData = Product.objects.all()
-    for product in productsData:
-         if product.bid_end_time is not None:
-             target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
-             now_mili_sec = int(now.timestamp() * 1000)
-             remaining_sec = (target_mili_sec - now_mili_sec) / 1000
-             
-             if remaining_sec <= 0:
+
+    # Query for products that need emails sent
+    productsToEmail = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
+    
+    for product in productsToEmail:
+        if product.bid_end_time is not None:
+            target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
+            now_mili_sec = int(now.timestamp() * 1000)
+            remaining_sec = (target_mili_sec - now_mili_sec) / 1000
+            
+            if remaining_sec <= 0:
                 if product.bids:
                     highest_bid = max(product.bids, key=lambda bid: bid['price'])
                     email = highest_bid.get('email')
+                    
                 try:
                     if email:
                         send_mail(
@@ -72,6 +78,7 @@ def  index(request):
                 
                 except Exception as e:
                     logging.error(f"Error sending email: {e}")
+    
 
                 
             
@@ -90,9 +97,8 @@ def  index(request):
     #totalPages =[x+1 for x in range (productsData.num_pages)]
 
     data = {
-        "products":  productsData,
-        #"totalPages":totalPages,
-        }
+        "products": productsData,  # Pass all products to the template for display
+    }
              
     return render(request, 'index.html', data)
 
