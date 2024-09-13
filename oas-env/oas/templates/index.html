@@ -285,11 +285,18 @@
         var now_mili_sec = new Date().getTime();
         var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
 
-        var day = Math.floor(remaining_sec / (3600 * 24));
-        var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
-        var min = Math.floor((remaining_sec % 3600) / 60);
-        var sec = Math.floor(remaining_sec % 60);
+        if (remaining_sec <= 0) {
+           // Timer has reached zero or below
+           document.querySelector("#day{{ product.id }}").innerHTML = "00";
+           document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+           document.querySelector("#min{{ product.id }}").innerHTML = "00";
+           document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+           clearInterval(timerInterval); // Stop the timer
+           return; // Exit the function
+                                  
+          }
 
+          
         document.querySelector("#day{{ product.id }}").innerHTML = day;
         document.querySelector("#hour{{ product.id }}").innerHTML = hour;
         document.querySelector("#min{{ product.id }}").innerHTML = min;
