@@ -47,7 +47,7 @@ def cartPage(request):
 def  index(request):
     now = timezone.now()
     productsData = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
-    productsData = Product.objects.all()
+   # productsData = Product.objects.all()
     for product in productsData:
          if product.bid_end_time is not None:
              target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
