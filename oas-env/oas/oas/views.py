@@ -266,3 +266,16 @@ def review_section(request):
         form = ReviewForm()
 
     return render(request, 'your_template.html', {'products': products, 'form': form})
+
+
+
+def submit_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('success_url')  # Replace with your success URL or message
+    else:
+        form = ReviewForm()
+
+    return render(request, 'your_template.html', {'form': form})

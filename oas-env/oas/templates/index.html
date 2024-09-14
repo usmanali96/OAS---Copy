@@ -361,16 +361,25 @@
       We want to be a part of your smile, success, and future growth.
   </p>
 
-  <!-- Review Cards Section -->
+  <!-- Existing Reviews -->
   <div class="existing-reviews">
-      {% for product in products %} 
+      {% for product in products %}
           {% if product.category == 'client-review' %}
               <div class="review-card">
                   <img src="{% static 'media/' %}{{ product.image }}" alt="{{ product.title }}">
                   <p>{{ product.description }}</p>
                   <h3>{{ product.title }}</h3>
+                  {% if product.reviews %}
+                      {% for review in product.reviews %}
+                          <div class="review">
+                              <img src="{{ review.profile_pic }}" alt="{{ review.name }}" class="review-img" />
+                              <p>{{ review.comment }}</p>
+                              <h4>{{ review.name }}</h4>
+                          </div>
+                      {% endfor %}
+                  {% endif %}
               </div>
-          {% endif %} 
+          {% endif %}
       {% endfor %}
   </div>
 
@@ -380,7 +389,7 @@
   <!-- Review Form (Initially Hidden) -->
   <div id="review-form-container" class="review-form-section" style="display: none;">
       <h3>Submit Your Review</h3>
-      <form id="review-form" method="POST" action="" enctype="multipart/form-data">
+      <form id="review-form" method="POST" action="{% url 'submit_review' %}" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="form-group">
               <label for="name">Name</label>
