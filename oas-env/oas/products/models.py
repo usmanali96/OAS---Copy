@@ -12,7 +12,6 @@ class Product(models.Model):  # Rename from Products to Product
     long_description = models.TextField(null=True, blank=True)
     bids = models.JSONField(default=list, blank=True)  # Store bids as a list of dictionaries
     email_sent = models.BooleanField(default=False)  
-    reviews = models.JSONField(default=list, blank=True)
 
     def is_bid_ended(self):
         return timezone.now() >= self.bid_end_time

@@ -22,7 +22,7 @@ from django.utils.timezone import make_aware
 import logging
 from django.core.mail import send_mail
 from django.utils import timezone
-from products.forms import ReviewForm
+
 
 
 
@@ -248,7 +248,7 @@ def browse_page(request):
 
 
 
-def review_section(request):
+#def review_section(request):
     products = Product.objects.filter(category='client-review')
 
     if request.method == 'POST':
@@ -269,7 +269,7 @@ def review_section(request):
 
 
 
-def submit_review(request):
+#def submit_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
@@ -298,4 +298,4 @@ def submit_review(request):
     else:
         form = ReviewForm()
 
-    return render(request, 'your_template.html', {'form': form})
+    #return render(request, 'your_template.html', {'form': form})
