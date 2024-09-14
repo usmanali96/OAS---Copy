@@ -389,7 +389,7 @@
   <!-- Review Form (Initially Hidden) -->
   <div id="review-form-container" class="review-form-section" style="display: none;">
       <h3>Submit Your Review</h3>
-      <form id="review-form" method="POST" action="{% url 'submit_review' %}" enctype="multipart/form-data">
+      <form id="review-form" method="POST" action="{% url 'products:submit_review' %}" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="form-group">
               <label for="name">Name</label>
