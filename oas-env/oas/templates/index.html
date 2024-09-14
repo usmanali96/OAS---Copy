@@ -353,38 +353,22 @@
 
 
 
-<div class="review-section">
+ <div class="review-section">
   <h2><b>What Clients Say</b></h2>
-  <p style="color: rgb(171, 161, 161);">
-    Explore the world's best & largest Bidding marketplace with our beautiful Bidding products.
-    <br> 
-    We want to be a part of your smile, success, and future growth.
-  </p>
-
+  <p style="color: rgb(171, 161, 161);">Explore the world's best & largest Bidding marketplace with our beautiful Bidding products.<br> We want to be a part of your smile, success, and future growth.</p>
   <div class="review-section-inner">
     {% for product in products %} 
-      {% if product.category == 'client-review' %}
-        <div class="card">
-          <img src="{% static 'media/' %}{{ product.image }}" alt="{{ product.title }}">
-          <p>{{ product.description }}</p>
-          <h3>{{ product.title }}</h3>
-        </div>
+          {% if product.category == 'client-review' %}
+      <div class="card">
+          <img src="media/{{product.image}}" alt="Johan Martin">
+          <p>{{product.description}}</p>
+          <h3>{{product.title}}</h3>
+      </div>
       {% endif %} 
-    {% endfor %}
-  </div>
+        {% endfor %}
 
-  <!-- Review form section -->
-  <div class="review-form-container">
-    <h3>Submit Your Review</h3>
-    <form method="POST" action="">
-      {% csrf_token %}
-      {{ form.as_p }} <!-- Render form fields as paragraphs -->
-      <input type="hidden" name="product_id" value="{{ product.id }}">
-      <button type="submit">Submit Review</button>
-    </form>
   </div>
-</div>
-
+  </div>
 
 
 
