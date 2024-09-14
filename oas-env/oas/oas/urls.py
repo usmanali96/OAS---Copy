@@ -19,7 +19,6 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import submit_review
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,7 +31,6 @@ urlpatterns = [
     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
     path('product/<int:product_id>/save_price/', views.save_price, name='save_price'),
     path('browse_product/', views.browse_page, name='browse_page'),
-    path('submit-review/', submit_review, name='submit_review'),
     ]
 
 
