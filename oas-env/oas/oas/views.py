@@ -22,6 +22,7 @@ from django.utils.timezone import make_aware
 import logging
 from django.core.mail import send_mail
 from django.utils import timezone
+from products.forms import ReviewForm
 
 
 
@@ -242,3 +243,26 @@ def browse_page(request):
     }
 
     return render(request, 'browse_product.html', data)
+
+
+
+
+
+def review_section(request):
+    products = Product.objects.filter(category='client-review')
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            product = Product.objects.get(id=request.POST.get('product_id'))
+
+            # Save the form data into the model fields
+            product.title = form.cleaned_data['name']
+            product.description = form.cleaned_data['comment']
+            product.save()
+
+            return redirect('review_section')
+    else:
+        form = ReviewForm()
+
+    return render(request, 'your_template.html', {'products': products, 'form': form})
