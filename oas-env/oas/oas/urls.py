@@ -32,7 +32,7 @@ urlpatterns = [
     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
     path('product/<int:product_id>/save_price/', views.save_price, name='save_price'),
     path('browse_product/', views.browse_page, name='browse_page'),
-    path('submit-review/', views.submit_review, name='submit_review'),
+    path('', views.include('products.urls')),  # Include 'products' app URLs
     ]
 
 
