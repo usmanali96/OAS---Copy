@@ -273,8 +273,28 @@ def submit_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('success_url')  # Replace with your success URL or message
+            name = form.cleaned_data['name']
+            comment = form.cleaned_data['comment']
+            profile_pic = form.cleaned_data.get('profile_pic')
+            product_id = form.cleaned_data['product_id']
+
+            try:
+                product = Product.objects.get(id=product_id)
+                review = {
+                    'name': name,
+                    'comment': comment,
+                    'profile_pic': profile_pic.url if profile_pic else None
+                }
+                reviews = product.reviews
+                reviews.append(review)
+                product.reviews = reviews
+                product.save()
+
+                return redirect('success_url')  # Replace with actual success URL
+            except Product.DoesNotExist:
+                return render(request, 'error.html', {'error': 'Product not found'})
+        else:
+            return render(request, 'error.html', {'error': 'Form is not valid'})
     else:
         form = ReviewForm()
 
