@@ -985,6 +985,123 @@ transition:all 0.5s ease;
 
 
 
+/* General styling for the review section */
+.review-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.review-section p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.review-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.review-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.review-card h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Styling for the "Add Review" button */
+.review-action {
+  margin-top: 20px;
+}
+
+#toggle-review-form {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-review-form:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the review form */
+.review-form {
+  margin-top: 20px;
+}
+
+.review-form h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form .form-control {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.review-form .form-control:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+.review-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+  background-color: #0056b3;
+}
 
 
 

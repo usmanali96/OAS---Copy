@@ -353,22 +353,67 @@
 
 
 
- <div class="review-section">
-  <h2><b>What Clients Say</b></h2>
-  <p style="color: rgb(171, 161, 161);">Explore the world's best & largest Bidding marketplace with our beautiful Bidding products.<br> We want to be a part of your smile, success, and future growth.</p>
-  <div class="review-section-inner">
-    {% for product in products %} 
-          {% if product.category == 'client-review' %}
-      <div class="card">
-          <img src="media/{{product.image}}" alt="Johan Martin">
-          <p>{{product.description}}</p>
-          <h3>{{product.title}}</h3>
-      </div>
-      {% endif %} 
-        {% endfor %}
+div class="review-section">
+<h2><b>What Clients Say</b></h2>
+<p style="color: rgb(171, 161, 161);">
+  Explore the world's best & largest Bidding marketplace with our beautiful Bidding products.
+  <br> 
+  We want to be a part of your smile, success, and future growth.
+</p>
 
-  </div>
-  </div>
+<div class="review-list">
+  {% for product in products %} 
+    {% if product.category == 'client-review' %}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var toggleReviewFormBtn = document.getElementById('toggle-review-form');
+          var reviewForm = document.getElementById('review-form');
+      
+          toggleReviewFormBtn.addEventListener('click', function() {
+              // Toggle the visibility of the review form
+              if (reviewForm.style.display === 'none' || reviewForm.style.display === '') {
+                  reviewForm.style.display = 'block';
+                  toggleReviewFormBtn.textContent = 'Cancel';
+              } else {
+                  reviewForm.style.display = 'none';
+                  toggleReviewFormBtn.textContent = 'Add Review';
+              }
+          });
+      });
+      </script>
+
+
+
+
+
+
+
+      <div class="review-card">
+        <img src="{% static 'media/' %}{{ product.image }}" alt="{{ product.title }}">
+        <p>{{ product.description }}</p>
+        <h3>{{ product.title }}</h3>
+      </div>
+    {% endif %} 
+  {% endfor %}
+</div>
+
+<!-- Add Review Button -->
+<div class="review-action">
+  <button id="toggle-review-form">Add Review</button>
+</div>
+
+<!-- Review Form (Initially Hidden) -->
+<div id="review-form" class="review-form" style="display: none;">
+  <h3>Submit Your Review</h3>
+  <form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="product_id" value="{{ product.id }}">
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
+</div>
 
 
 
