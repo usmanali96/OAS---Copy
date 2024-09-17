@@ -162,7 +162,7 @@ def loginUser(request):
         if user is not None:
              login(request, user)
              print("User authenticated and logged in.")
-             return redirect('/')
+             return redirect('index')
         else:
               print("User authentication failed.")
              
@@ -305,9 +305,6 @@ def browse_page(request):
 
 
 
-
-
-
 def add_product_view(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)  # Handle file uploads
@@ -318,3 +315,17 @@ def add_product_view(request):
         form = ProductForm()
 
     return render(request, 'add_product.html', {'form': form})
+
+
+
+
+
+
+def shop_page(request):
+    
+    productsData = Product.objects.all()
+    data = {
+        "products": productsData,  # Pass all products to the template for display
+    }
+             
+    return render(request, 'shop.html', data)
