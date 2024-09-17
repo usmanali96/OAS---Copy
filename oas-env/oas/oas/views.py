@@ -313,7 +313,7 @@ def add_product_view(request):
         form = ProductForm(request.POST, request.FILES)  # Handle file uploads
         if form.is_valid():
             form.save()  # Save product to the database
-            return redirect('index')  # Redirect to a success page, e.g., home or product listing
+            return redirect('index.html')  # Redirect to a success page, e.g., home or product listing
     else:
         form = ProductForm()
 
