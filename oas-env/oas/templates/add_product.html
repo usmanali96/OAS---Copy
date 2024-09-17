@@ -10,56 +10,97 @@
 <body>
     <div class="add-product">
         <div class="container">
-            <h1>Add Product</h1>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                
-                <div class="input-group">
-                    <label for="title">Product Title</label>
-                    <input type="text" id="title" name="title" placeholder="Enter product title" required>
-                </div>
-        
-                <div class="input-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" placeholder="Enter product description" required></textarea>
-                </div>
-        
-                <div class="input-group">
-                    <label for="category">Category</label>
-                    <select id="category" name="category" class="category-select">
-                        <option value="Electronics">Electronics</option>
-                        <option value="Clothing">Clothing</option>
-                        <option value="Books">Books</option>
-                        <option value="Home Appliances">Home Appliances</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-        
-                <div class="input-group">
-                    <label for="price">Price</label>
-                    <input type="number" id="price" name="price" placeholder="Enter product price" required>
-                </div>
-        
-                <div class="input-group">
-                    <label for="bid_end_time">Bid End Time</label>
-                    <input type="datetime-local" id="bid_end_time" name="bid_end_time" required>
-                </div>
-        
-                <div class="input-group">
-                    <label for="image">Product Image</label>
-                    <input type="file" id="image" name="image" accept="image/*" required>
-                    <div class="note">Upload a high-quality image (JPEG, PNG).</div>
-                </div>
-        
-                <input type="submit" value="Add Product">
-            </form>
-        </div>
-        
-        <!-- After submitting the form, the product details will be displayed below -->
-        <div class="bid-cards">
-            <div class="container">
-                <div class="row">
-                    <!-- Display the product details here -->
+    <!-- Add Product Form -->
+    <div class="form-container">
+        <h1>Add Product</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label for="title">Product Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter product title" required>
+            </div>
+
+            <div class="input-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Enter product description" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Books">Books</option>
+                    <option value="Home Appliances">Home Appliances</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" placeholder="Enter product price" required>
+            </div>
+
+            <div class="input-group">
+                <label for="bid_end_time">Bid End Time</label>
+                <input type="datetime-local" id="bid_end_time" name="bid_end_time" required>
+            </div>
+
+            <div class="input-group">
+                <label for="image">Product Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                <div class="note">Upload a high-quality image (JPEG, PNG).</div>
+            </div>
+
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+
+    <!-- Bid Cards Section -->
+    <div class="bid-cards">
+        <div class="row">
+            {% for product in products %}
+                {% if product.category == '1st-Auction' %}
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var timerElement = document.querySelector("#timer-{{ product.id }}");
+                            var bidEndTime = timerElement.getAttribute("data-countdown");
+                            console.log("Bid End Time for Product {{ product.id }}:", bidEndTime); // Debugging line
+                            var target_mili_sec = new Date(bidEndTime).getTime();
+
+                            if (isNaN(target_mili_sec)) {
+                                console.error("Invalid Date Format for Product {{ product.id }}:", bidEndTime);
+                            }
+
+                            function timer() {
+                                var now_mili_sec = new Date().getTime();
+                                var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+
+                                if (remaining_sec <= 0) {
+                                    document.querySelector("#day{{ product.id }}").innerHTML = "00";
+                                    document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+                                    document.querySelector("#min{{ product.id }}").innerHTML = "00";
+                                    document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+                                    clearInterval(timerInterval);
+                                    return;
+                                }
+
+                                var day = Math.floor(remaining_sec / (3600 * 24));
+                                var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+                                var min = Math.floor((remaining_sec % 3600) / 60);
+                                var sec = Math.floor(remaining_sec % 60);
+
+                                document.querySelector("#day{{ product.id }}").innerHTML = day.toString().padStart(2, '0');
+                                document.querySelector("#hour{{ product.id }}").innerHTML = hour.toString().padStart(2, '0');
+                                document.querySelector("#min{{ product.id }}").innerHTML = min.toString().padStart(2, '0');
+                                document.querySelector("#sec{{ product.id }}").innerHTML = sec.toString().padStart(2, '0');
+                            }
+
+                            var timerInterval = setInterval(timer, 1000);
+                        });
+                    </script>
+
                     <div class="col-md-4">
                         <div class="card">
                             <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
@@ -78,18 +119,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="media/{{ product.image }}" class="card-img-top" alt="..."/>
+                            <img src="media/{{ product.image }}" class="card-img-top" alt="{{ product.title }}"/>
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.title }}</h5>
-                                <p class="card-text"><b>{{ product.description }}</b></p>
+                                <p class="card-text">{{ product.description }}</p>
                                 <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
-                                <i class="bi bi-share-fill justify-content-end"></i>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
+    </div>
+</div>
 </div><!-- /.add-product -->
     
     
