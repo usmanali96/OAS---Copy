@@ -14,14 +14,14 @@
     margin-bottom: 40px;
 }
 
-h1 {
+.add-product h1 {
     text-align: center;
     font-size: 28px;
     color: #333;
     margin-bottom: 20px;
 }
 
-label {
+.add-product label {
     display: block;
     font-weight: bold;
     color: #555;
