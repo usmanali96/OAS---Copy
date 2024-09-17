@@ -50,7 +50,7 @@
     <div class="bid-cards">
         <div class="row">
             {% for product in products %}
-                {% if product.category == '1st-Auction' %}
+                {% if product.category == 'user-Auction' %}
                     <script>
                         document.addEventListener("DOMContentLoaded", function () {
                             var timerElement = document.querySelector("#timer-{{ product.id }}");
