@@ -54,6 +54,42 @@
                 <input type="submit" value="Add Product">
             </form>
         </div>
+        
+        <!-- After submitting the form, the product details will be displayed below -->
+        <div class="bid-cards">
+            <div class="container">
+                <div class="row">
+                    <!-- Display the product details here -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                                <div class="count">
+                                    <div class="co">
+                                        <span class="days" id="day{{ product.id }}">00</span> DAYS
+                                    </div>
+                                    <div class="co">
+                                        <span class="hours" id="hour{{ product.id }}">00</span> HOURS
+                                    </div>
+                                    <div class="co">
+                                        <span class="minutes" id="min{{ product.id }}">00</span> MINUTES
+                                    </div>
+                                    <div class="co">
+                                        <span class="seconds" id="sec{{ product.id }}">00</span> SECONDS
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="media/{{ product.image }}" class="card-img-top" alt="..."/>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.title }}</h5>
+                                <p class="card-text"><b>{{ product.description }}</b></p>
+                                <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
+                                <i class="bi bi-share-fill justify-content-end"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div><!-- /.add-product -->
     
     
