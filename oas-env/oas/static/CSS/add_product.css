@@ -9,7 +9,7 @@
 
 
 
-input[type="submit"] {
+.add-product input[type="submit"] {
     width: 100%;
     padding: 14px;
     background-color: #28a745;
@@ -20,93 +20,12 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.add-product input[type="submit"]:hover {
     background-color: #218838;
 }
 
-.note {
+.add-product .note {
     font-size: 12px;
     color: #888;
 }
 
-/* Bid Cards */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col-md-4 {
-    flex: 0 0 33.333%;
-    padding: 15px;
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.timer-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
-
-.count {
-    text-align: center;
-}
-
-.co {
-    margin: 5px 0;
-}
-
-.card-body {
-    padding: 20px;
-    text-align: center;
-}
-
-.card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.card-text {
-    font-size: 14px;
-    margin-bottom: 15px;
-}
-
-.btn {
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn:hover {
-    background-color: #218838;
-}
-
-.bi-share-fill {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #fff;
-}
