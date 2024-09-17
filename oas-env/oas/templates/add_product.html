@@ -27,6 +27,17 @@
             </div>
 
             <div class="input-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Books">Books</option>
+                    <option value="Home Appliances">Home Appliances</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="input-group">
                 <label for="price">Price</label>
                 <input type="number" id="price" name="price" placeholder="Enter product price" required>
             </div>
@@ -50,7 +61,7 @@
     <div class="bid-cards">
         <div class="row">
             {% for product in products %}
-                {% if product.category == 'user-Auction' %}
+                {% if product.category == 'Electronics' %}
                     <script>
                         document.addEventListener("DOMContentLoaded", function () {
                             var timerElement = document.querySelector("#timer-{{ product.id }}");
