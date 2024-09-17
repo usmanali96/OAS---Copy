@@ -22,6 +22,7 @@ from django.utils.timezone import make_aware
 import logging
 from django.core.mail import send_mail
 from django.utils import timezone
+from products.forms import ProductForm
 
 
 
@@ -249,53 +250,71 @@ def browse_page(request):
 
 
 #def review_section(request):
-    products = Product.objects.filter(category='client-review')
+   # products = Product.objects.filter(category='client-review')
 
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            product = Product.objects.get(id=request.POST.get('product_id'))
+  #  if request.method == 'POST':
+  #      form = ReviewForm(request.POST)
+   #     if form.is_valid():
+    #        product = Product.objects.get(id=request.POST.get('product_id'))
 
             # Save the form data into the model fields
-            product.title = form.cleaned_data['name']
-            product.description = form.cleaned_data['comment']
-            product.save()
+    #        product.title = form.cleaned_data['name']
+    #        product.description = form.cleaned_data['comment']
+    #        product.save()
 
-            return redirect('review_section')
-    else:
-        form = ReviewForm()
+    #        return redirect('review_section')
+ #   else:
+ #       form = ReviewForm()
 
-    return render(request, 'your_template.html', {'products': products, 'form': form})
+ #   return render(request, 'your_template.html', {'products': products, 'form': form})
 
 
 
 #def submit_review(request):
+  #  if request.method == 'POST':
+  #      form = ReviewForm(request.POST, request.FILES)
+  #      if form.is_valid():
+           # name = form.cleaned_data['name']
+   #         comment = form.cleaned_data['comment']
+   #         profile_pic = form.cleaned_data.get('profile_pic')
+    #        product_id = form.cleaned_data['product_id']
+
+     #       try:
+           #     product = Product.objects.get(id=product_id)
+          #      review = {
+             #       'name': name,
+          #          'comment': comment,
+          #          'profile_pic': profile_pic.url if profile_pic else None
+           #     }
+           #     reviews = product.reviews
+           #     reviews.append(review)
+           #     product.reviews = reviews
+            #    product.save()
+
+#                return redirect('success_url')  # Replace with actual success URL
+ #           except Product.DoesNotExist:
+   #             return render(request, 'error.html', {'error': 'Product not found'})
+  #      else:
+    #return render(request, 'error.html', {'error': 'Form is not valid'})
+    #else:
+     #   form = ReviewForm()
+         #return render(request, 'your_template.html', {'form': form})#
+
+
+
+
+
+
+
+
+
+def add_product_view(request):
     if request.method == 'POST':
-        form = ReviewForm(request.POST, request.FILES)
+        form = ProductForm(request.POST, request.FILES)  # Handle file uploads
         if form.is_valid():
-            name = form.cleaned_data['name']
-            comment = form.cleaned_data['comment']
-            profile_pic = form.cleaned_data.get('profile_pic')
-            product_id = form.cleaned_data['product_id']
-
-            try:
-                product = Product.objects.get(id=product_id)
-                review = {
-                    'name': name,
-                    'comment': comment,
-                    'profile_pic': profile_pic.url if profile_pic else None
-                }
-                reviews = product.reviews
-                reviews.append(review)
-                product.reviews = reviews
-                product.save()
-
-                return redirect('success_url')  # Replace with actual success URL
-            except Product.DoesNotExist:
-                return render(request, 'error.html', {'error': 'Product not found'})
-        else:
-            return render(request, 'error.html', {'error': 'Form is not valid'})
+            form.save()  # Save product to the database
+            return redirect('home')  # Redirect to a success page, e.g., home or product listing
     else:
-        form = ReviewForm()
+        form = ProductForm()
 
-    #return render(request, 'your_template.html', {'form': form})
+    return render(request, 'add_product.html', {'form': form})
