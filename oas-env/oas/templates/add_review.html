@@ -9,15 +9,8 @@
 </head>
 <body>
 
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li class="{{ message.tags }}">{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
 
-
+    
     <div class="container review-form-container">
         <h2 class="review-form-heading">Submit Your Review</h2>
         <form method="POST" enctype="multipart/form-data" class="review-form">
