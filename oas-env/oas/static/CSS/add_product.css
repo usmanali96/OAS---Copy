@@ -1,35 +1,35 @@
 .add-product-container {
-    background-color: #111;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #111;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .form-container {
-    background-color: #222;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 100%;
+  background-color: #222;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
 }
 
 h1 {
-    text-align: center;
-    font-size: 26px;
-    color: #ddd;
-    margin-bottom: 20px;
-    font-weight: 600;
+  text-align: center;
+  font-size: 26px;
+  color: #ddd;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 label {
-    display: block;
-    font-weight: 600;
-    color: #bbb;
-    margin-bottom: 6px;
-    font-size: 14px;
+  display: block;
+  font-weight: 600;
+  color: #bbb;
+  margin-bottom: 6px;
+  font-size: 14px;
 }
 
 input[type="text"],
@@ -37,48 +37,55 @@ input[type="number"],
 input[type="datetime-local"],
 textarea,
 select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #333;
-    color: #ddd;
-    font-size: 14px;
-    margin-bottom: 15px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: #ddd;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+input[type="number"].small-input, /* New smaller input for bid */
+textarea.small-input {
+  width: 50%;  /* Adjust the width to make the input smaller */
+  padding: 8px; /* Adjust padding */
+  font-size: 13px; /* Adjust font size */
 }
 
 textarea {
-    height: 100px;
-    resize: vertical;
+  height: 100px;
+  resize: vertical;
 }
 
 input[type="file"] {
-    padding: 10px;
-    background-color: #333;
-    border-radius: 4px;
-    color: #ddd;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 4px;
+  color: #ddd;
 }
 
 input[type="submit"] {
-    width: 100%;
-    padding: 14px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 14px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #218838;
+  background-color: #218838;
 }
 
 .note {
-    font-size: 12px;
-    color: #888;
-    margin-top: -10px;
+  font-size: 12px;
+  color: #888;
+  margin-top: -10px;
 }
 
 
