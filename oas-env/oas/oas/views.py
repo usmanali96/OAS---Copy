@@ -292,7 +292,7 @@ def add_product_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your bid has been successfully submitted!')  
-            return redirect('shop')  
+            return redirect('add_product')  
     else:
         form = ProductForm()
 
