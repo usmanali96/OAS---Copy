@@ -291,7 +291,7 @@ def add_product_view(request):
         form = ProductForm(request.POST, request.FILES)  
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your bid has been successfully submitted!')  
+            messages.success(request, 'Your product has been successfully added!')  
             return redirect('add_product')  
     else:
         form = ProductForm()
