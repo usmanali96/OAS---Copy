@@ -84,6 +84,26 @@ input[type="submit"]:hover {
 
 
 
+/* Add this to the existing CSS */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap between fields */
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+      flex-direction: column; /* Stack on small screens */
+  }
+}
+
+
+
+
 
 
 

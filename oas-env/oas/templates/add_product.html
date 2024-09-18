@@ -42,15 +42,17 @@
                     <textarea id="long-description" name="long-description" placeholder="Enter Comprehensive product details" required></textarea>
                 </div>
     
-                <div class="input-group">
-                    <label for="bid_end_time">Bid End Time</label>
-                    <input type="datetime-local" id="bid_end_time" name="bid_end_time" required>
-                </div>
-    
-                <div class="input-group">
-                    <label for="image">Product Image</label>
-                    <input type="file" id="image" name="image" accept="image/*" required>
-                    <div class="note">Upload a high-quality image (JPEG, PNG).</div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="bid_end_time">Bid End Time</label>
+                        <input type="datetime-local" id="bid_end_time" name="bid_end_time" required>
+                    </div>
+                
+                    <div class="input-group">
+                        <label for="image">Product Image</label>
+                        <input type="file" id="image" name="image" required>
+                        <small class="note">Upload a high-quality image (JPEG, PNG).</small>
+                    </div>
                 </div>
     
                 <input type="submit" value="Add Product">
