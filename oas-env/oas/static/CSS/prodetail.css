@@ -8,7 +8,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    background-image: url('/media/images/animated_bg1.jpg')
+    background-image: url(animated_bg1.jpg);
 }
 
 .inner-banner-content {
