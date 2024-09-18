@@ -9,6 +9,16 @@
 </head>
 <body>
 
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="container review-form-container">
         <h2 class="review-form-heading">Submit Your Review</h2>
         <form method="POST" enctype="multipart/form-data" class="review-form">
