@@ -33,6 +33,7 @@ urlpatterns = [
     path('browse_product/', views.browse_page, name='browse_page'),
     path('add-product/', views.add_product_view, name='add_product'),
     path('shop/', views.shop_page, name='shop'),
+    path('add-review/', views.add_review, name='add_review'),
     ]
 
 

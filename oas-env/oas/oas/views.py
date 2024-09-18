@@ -23,6 +23,7 @@ import logging
 from django.core.mail import send_mail
 from django.utils import timezone
 from products.forms import ProductForm
+from products.forms import ReviewForm
 
 
 
@@ -270,37 +271,17 @@ def browse_page(request):
 
 
 
-#def submit_review(request):
-  #  if request.method == 'POST':
-  #      form = ReviewForm(request.POST, request.FILES)
-  #      if form.is_valid():
-           # name = form.cleaned_data['name']
-   #         comment = form.cleaned_data['comment']
-   #         profile_pic = form.cleaned_data.get('profile_pic')
-    #        product_id = form.cleaned_data['product_id']
 
-     #       try:
-           #     product = Product.objects.get(id=product_id)
-          #      review = {
-             #       'name': name,
-          #          'comment': comment,
-          #          'profile_pic': profile_pic.url if profile_pic else None
-           #     }
-           #     reviews = product.reviews
-           #     reviews.append(review)
-           #     product.reviews = reviews
-            #    product.save()
-
-#                return redirect('success_url')  # Replace with actual success URL
- #           except Product.DoesNotExist:
-   #             return render(request, 'error.html', {'error': 'Product not found'})
-  #      else:
-    #return render(request, 'error.html', {'error': 'Form is not valid'})
-    #else:
-     #   form = ReviewForm()
-         #return render(request, 'your_template.html', {'form': form})#
-
-
+def add_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')  # Redirect to the homepage or wherever appropriate
+        messages.success(request, 'Your bid has been successfully submitted!')
+    else:
+        form = ReviewForm()
+    return render(request, 'add_review.html', {'form': form})
 
 
 

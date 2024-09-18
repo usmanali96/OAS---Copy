@@ -1,0 +1,33 @@
+{% load static %}
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container review-form-container">
+        <h2 class="review-form-heading">Submit Your Review</h2>
+        <form method="POST" enctype="multipart/form-data" class="review-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.title.label_tag }}
+                {{ form.title }}
+            </div>
+            <div class="form-group">
+                {{ form.description.label_tag }}
+                {{ form.description }}
+            </div>
+            <div class="form-group">
+                {{ form.profile_image.label_tag }}
+                {{ form.profile_image }}
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Submit Review</button>
+        </form>
+    </div>
+    
+</body>
+</html>
