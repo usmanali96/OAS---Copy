@@ -277,10 +277,10 @@ def add_review(request):
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('index')  # Redirect to the homepage or wherever appropriate
-        messages.success(request, 'Your bid has been successfully submitted!')
+            return redirect('success_page')  # Redirect after successful review submission
     else:
         form = ReviewForm()
+
     return render(request, 'add_review.html', {'form': form})
 
 

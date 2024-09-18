@@ -13,7 +13,7 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['title', 'description', 'profile_image']  # Adjust fields based on your model
+        fields = ['title', 'description', 'image']  # Category is omitted from the form
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -26,17 +26,15 @@ class ReviewForm(forms.ModelForm):
                 'rows': 5,
                 'required': True
             }),
-            'profile_image': forms.FileInput(attrs={
+            'image': forms.FileInput(attrs={
                 'class': 'form-control-file',
                 'required': True
             }),
         }
+
     def save(self, commit=True):
-        # Get the instance of the review, but don't save it yet
         review = super().save(commit=False)
-        # Automatically set the category to 'client-review'
-        review.category = 'client-review'
+        review.category = 'client-review'  # Set category to 'client-review' only for this form
         if commit:
             review.save()
         return review
-        
