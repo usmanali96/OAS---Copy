@@ -286,7 +286,7 @@ def add_review(request):
 
 
 
-def add_product(request):
+def add_product_view(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
