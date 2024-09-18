@@ -15,7 +15,7 @@
     <div class="shop-content d-flex">
         <div class="container">
           <div class="shop-content-inner">
-            <h1><b>Live Auction</b></h1>
+            <h1><b>Electronic Items</b></h1>
             <p style="color: grey">
               Explore on the world's best & largest Bidding marketplace with our
               beautiful Bidding<br />
@@ -30,6 +30,106 @@
 
 
     <div class="user-auction-cards">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == 'Electronics' %}
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var timerElement = document.querySelector("#timer-{{ product.id }}");
+                                var bidEndTime = timerElement.getAttribute("data-countdown");
+                                var target_mili_sec = new Date(bidEndTime).getTime();
+    
+                                function timer() {
+                                    var now_mili_sec = new Date().getTime();
+                                    var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+    
+                                    if (remaining_sec <= 0) {
+                                        document.querySelector("#day{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#min{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+                                        clearInterval(timerInterval);
+                                        return;
+                                    }
+    
+                                    var day = Math.floor(remaining_sec / (3600 * 24));
+                                    var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+                                    var min = Math.floor((remaining_sec % 3600) / 60);
+                                    var sec = Math.floor(remaining_sec % 60);
+    
+                                    document.querySelector("#day{{ product.id }}").innerHTML = day.toString().padStart(2, '0');
+                                    document.querySelector("#hour{{ product.id }}").innerHTML = hour.toString().padStart(2, '0');
+                                    document.querySelector("#min{{ product.id }}").innerHTML = min.toString().padStart(2, '0');
+                                    document.querySelector("#sec{{ product.id }}").innerHTML = sec.toString().padStart(2, '0');
+                                }
+    
+                                var timerInterval = setInterval(timer, 1000);
+                            });
+                        </script>
+    
+                        <!-- Display the product -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                                    <div class="count">
+                                        <div class="co">
+                                            <span class="days" id="day{{ product.id }}">00</span> DAYS
+                                        </div>
+                                        <div class="co">
+                                            <span class="hours" id="hour{{ product.id }}">00</span> HOURS
+                                        </div>
+                                        <div class="co">
+                                            <span class="minutes" id="min{{ product.id }}">00</span> MINUTES
+                                        </div>
+                                        <div class="co">
+                                            <span class="seconds" id="sec{{ product.id }}">00</span> SECONDS
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- Display the product details -->
+                                <img src="/media/{{ product.image }}" class="card-img-top" alt="Product Image"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text"><b>{{ product.description }}</b></p>
+                                    <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+    <div class="shop-content d-flex">
+        <div class="container">
+          <div class="shop-content-inner">
+            <h1><b>Clothing Items</b></h1>
+            <p style="color: grey">
+              Explore on the world's best & largest Bidding marketplace with our
+              beautiful Bidding<br />
+              products. We want to be a part of your smile, success and future
+              growth.
+            </p>
+          </div>
+          <!-- /.shop-content-inner -->
+        </div>
+      </div>
+      <!-- /.shop-content -->
+
+
+
+
+
+
+      <div class="user-auction-cards">
         <div class="container">
             <div class="row">
                 {% for product in products %}
@@ -102,6 +202,348 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <div class="shop-content d-flex"></div>
+        <div class="container">
+          <div class="shop-content-inner">
+            <h1><b>Books Items</b></h1>
+            <p style="color: grey">
+              Explore on the world's best & largest Bidding marketplace with our
+              beautiful Bidding<br />
+              products. We want to be a part of your smile, success and future
+              growth.
+            </p>
+          </div>
+          <!-- /.shop-content-inner -->
+        </div>
+      </div>
+      <!-- /.shop-content -->
+
+
+
+
+
+    <div class="user-auction-cards">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == 'Books' %}
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var timerElement = document.querySelector("#timer-{{ product.id }}");
+                                var bidEndTime = timerElement.getAttribute("data-countdown");
+                                var target_mili_sec = new Date(bidEndTime).getTime();
+    
+                                function timer() {
+                                    var now_mili_sec = new Date().getTime();
+                                    var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+    
+                                    if (remaining_sec <= 0) {
+                                        document.querySelector("#day{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#min{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+                                        clearInterval(timerInterval);
+                                        return;
+                                    }
+    
+                                    var day = Math.floor(remaining_sec / (3600 * 24));
+                                    var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+                                    var min = Math.floor((remaining_sec % 3600) / 60);
+                                    var sec = Math.floor(remaining_sec % 60);
+    
+                                    document.querySelector("#day{{ product.id }}").innerHTML = day.toString().padStart(2, '0');
+                                    document.querySelector("#hour{{ product.id }}").innerHTML = hour.toString().padStart(2, '0');
+                                    document.querySelector("#min{{ product.id }}").innerHTML = min.toString().padStart(2, '0');
+                                    document.querySelector("#sec{{ product.id }}").innerHTML = sec.toString().padStart(2, '0');
+                                }
+    
+                                var timerInterval = setInterval(timer, 1000);
+                            });
+                        </script>
+    
+                        <!-- Display the product -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                                    <div class="count">
+                                        <div class="co">
+                                            <span class="days" id="day{{ product.id }}">00</span> DAYS
+                                        </div>
+                                        <div class="co">
+                                            <span class="hours" id="hour{{ product.id }}">00</span> HOURS
+                                        </div>
+                                        <div class="co">
+                                            <span class="minutes" id="min{{ product.id }}">00</span> MINUTES
+                                        </div>
+                                        <div class="co">
+                                            <span class="seconds" id="sec{{ product.id }}">00</span> SECONDS
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- Display the product details -->
+                                <img src="/media/{{ product.image }}" class="card-img-top" alt="Product Image"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text"><b>{{ product.description }}</b></p>
+                                    <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="shop-content d-flex"></div>
+        <div class="container">
+          <div class="shop-content-inner">
+            <h1><b>Home Appliances</b></h1>
+            <p style="color: grey">
+              Explore on the world's best & largest Bidding marketplace with our
+              beautiful Bidding<br />
+              products. We want to be a part of your smile, success and future
+              growth.
+            </p>
+          </div>
+          <!-- /.shop-content-inner -->
+        </div>
+      </div>
+      <!-- /.shop-content -->
+
+
+
+
+
+
+
+
+    <div class="user-auction-cards">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == 'Home Appliances' %}
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var timerElement = document.querySelector("#timer-{{ product.id }}");
+                                var bidEndTime = timerElement.getAttribute("data-countdown");
+                                var target_mili_sec = new Date(bidEndTime).getTime();
+    
+                                function timer() {
+                                    var now_mili_sec = new Date().getTime();
+                                    var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+    
+                                    if (remaining_sec <= 0) {
+                                        document.querySelector("#day{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#min{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+                                        clearInterval(timerInterval);
+                                        return;
+                                    }
+    
+                                    var day = Math.floor(remaining_sec / (3600 * 24));
+                                    var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+                                    var min = Math.floor((remaining_sec % 3600) / 60);
+                                    var sec = Math.floor(remaining_sec % 60);
+    
+                                    document.querySelector("#day{{ product.id }}").innerHTML = day.toString().padStart(2, '0');
+                                    document.querySelector("#hour{{ product.id }}").innerHTML = hour.toString().padStart(2, '0');
+                                    document.querySelector("#min{{ product.id }}").innerHTML = min.toString().padStart(2, '0');
+                                    document.querySelector("#sec{{ product.id }}").innerHTML = sec.toString().padStart(2, '0');
+                                }
+    
+                                var timerInterval = setInterval(timer, 1000);
+                            });
+                        </script>
+    
+                        <!-- Display the product -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                                    <div class="count">
+                                        <div class="co">
+                                            <span class="days" id="day{{ product.id }}">00</span> DAYS
+                                        </div>
+                                        <div class="co">
+                                            <span class="hours" id="hour{{ product.id }}">00</span> HOURS
+                                        </div>
+                                        <div class="co">
+                                            <span class="minutes" id="min{{ product.id }}">00</span> MINUTES
+                                        </div>
+                                        <div class="co">
+                                            <span class="seconds" id="sec{{ product.id }}">00</span> SECONDS
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- Display the product details -->
+                                <img src="/media/{{ product.image }}" class="card-img-top" alt="Product Image"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text"><b>{{ product.description }}</b></p>
+                                    <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="shop-content d-flex"></div>
+    <div class="container">
+      <div class="shop-content-inner">
+        <h1><b>Other Items</b></h1>
+        <p style="color: grey">
+          Explore on the world's best & largest Bidding marketplace with our
+          beautiful Bidding<br />
+          products. We want to be a part of your smile, success and future
+          growth.
+        </p>
+      </div>
+      <!-- /.shop-content-inner -->
+    </div>
+  </div>
+  <!-- /.shop-content -->
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="user-auction-cards">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == 'Other' %}
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var timerElement = document.querySelector("#timer-{{ product.id }}");
+                                var bidEndTime = timerElement.getAttribute("data-countdown");
+                                var target_mili_sec = new Date(bidEndTime).getTime();
+    
+                                function timer() {
+                                    var now_mili_sec = new Date().getTime();
+                                    var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+    
+                                    if (remaining_sec <= 0) {
+                                        document.querySelector("#day{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#min{{ product.id }}").innerHTML = "00";
+                                        document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+                                        clearInterval(timerInterval);
+                                        return;
+                                    }
+    
+                                    var day = Math.floor(remaining_sec / (3600 * 24));
+                                    var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+                                    var min = Math.floor((remaining_sec % 3600) / 60);
+                                    var sec = Math.floor(remaining_sec % 60);
+    
+                                    document.querySelector("#day{{ product.id }}").innerHTML = day.toString().padStart(2, '0');
+                                    document.querySelector("#hour{{ product.id }}").innerHTML = hour.toString().padStart(2, '0');
+                                    document.querySelector("#min{{ product.id }}").innerHTML = min.toString().padStart(2, '0');
+                                    document.querySelector("#sec{{ product.id }}").innerHTML = sec.toString().padStart(2, '0');
+                                }
+    
+                                var timerInterval = setInterval(timer, 1000);
+                            });
+                        </script>
+    
+                        <!-- Display the product -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                                    <div class="count">
+                                        <div class="co">
+                                            <span class="days" id="day{{ product.id }}">00</span> DAYS
+                                        </div>
+                                        <div class="co">
+                                            <span class="hours" id="hour{{ product.id }}">00</span> HOURS
+                                        </div>
+                                        <div class="co">
+                                            <span class="minutes" id="min{{ product.id }}">00</span> MINUTES
+                                        </div>
+                                        <div class="co">
+                                            <span class="seconds" id="sec{{ product.id }}">00</span> SECONDS
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- Display the product details -->
+                                <img src="/media/{{ product.image }}" class="card-img-top" alt="Product Image"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text"><b>{{ product.description }}</b></p>
+                                    <a href="{% url 'product_detail' product_id=product.id %}" class="btn btn-success">BUY NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
 </body>
