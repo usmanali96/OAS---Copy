@@ -370,13 +370,8 @@
   </div>
   </div>
 
-  <a href="{% url 'add_review' %}" >Login</a>
+  <a href="{% url 'add_review' %}" >Click here to add review</a>
 
-  <form method="post" enctype="multipart/form-data"></form>
-    {% csrf_token %}
-    {{ form.as_p }} <!-- This renders the form fields as per your ReviewForm in forms.py -->
-    <button type="submit" class="btn btn-primary">Submit Review</button>
-</form>
 
 
 

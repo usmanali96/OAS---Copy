@@ -13,18 +13,22 @@
         <h2 class="review-form-heading">Submit Your Review</h2>
         <form method="POST" enctype="multipart/form-data" class="review-form">
             {% csrf_token %}
+            
             <div class="form-group">
-                {{ form.title.label_tag }}
-                {{ form.title }}
+                <label for="title">Name</label>
+                <input type="text" id="title" name="title" placeholder="Enter your name" required>
             </div>
+    
             <div class="form-group">
-                {{ form.description.label_tag }}
-                {{ form.description }}
+                <label for="description">Review</label>
+                <textarea id="description" name="description" placeholder="Write your review" rows="4" required></textarea>
             </div>
+    
             <div class="form-group">
-                {{ form.profile_image.label_tag }}
-                {{ form.profile_image }}
+                <label for="profile_image">Profile Image</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*">
             </div>
+    
             <button type="submit" class="btn btn-primary submit-btn">Submit Review</button>
         </form>
     </div>
