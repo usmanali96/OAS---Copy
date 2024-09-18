@@ -23,7 +23,7 @@
     text-align: center;
 }
 
-.inner-banner-content h2 {
+.inner-banner-content h2 b {
     text-align: center;
     font-size: 4vw; /* Make the font size responsive */
     color: white;
