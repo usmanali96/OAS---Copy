@@ -17,14 +17,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-127%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 2;
     text-align: center;
 }
 
 .inner-banner-content h2 b {
-    text-align: center;
-    font-size: 4vw; /* Make the font size responsive */
+    font-size: 4vw; 
     color: white;
     margin: 0;
 }
