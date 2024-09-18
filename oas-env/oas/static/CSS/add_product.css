@@ -202,3 +202,10 @@ input[type="submit"]:hover {
   }
   
   
+
+
+  .shop-content-inner{
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
