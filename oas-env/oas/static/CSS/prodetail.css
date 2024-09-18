@@ -23,6 +23,9 @@
 }
 
 .inner-banner-content h2 b {
+    padding: 5px 10px;
+    background-color: rgba(29, 26, 26, 0.408);
+    border-radius: 22px;
     font-size: 4vw; 
     color: white;
     margin: 0;
