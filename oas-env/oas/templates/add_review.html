@@ -10,14 +10,13 @@
 <body>
 
     {% if messages %}
-    <div class="messages">
+    <ul class="messages">
         {% for message in messages %}
-        <div class="alert alert-success">
-            {{ message }}
-        </div>
+            <li class="{{ message.tags }}">{{ message }}</li>
         {% endfor %}
-    </div>
-    {% endif %}
+    </ul>
+{% endif %}
+
 
     <div class="container review-form-container">
         <h2 class="review-form-heading">Submit Your Review</h2>
