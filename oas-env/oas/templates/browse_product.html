@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'CSS/browswpg.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/browsepg.css' %}" />
 </head>
 
 
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 {% for product in products %}
-                    {% if product.category == '1st-Auction' %}
+                    {% if product.category == 'browse-card' %}
                     
                     
                   <script>
@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <img src="media/{{product.image}}" class="card-img-top" alt="..."/>
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="..."/>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ product.title }}</h5>
                                     <p class="card-text"><b>{{ product.description }}</b></p>
@@ -83,10 +83,44 @@
     
   
   
+
+
+
+
+
+
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            </li>
+        {% endif %}
+
+        {% for page_number in totalPages %}
+            <li class="page-item {% if page_number == page_obj.number %} active {% endif %}">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+
+
+
+
+
+
   
           <!-- Search bar container -->
   <div class="search-container">
-    <form class="search-form" action="" >
+    <form class="search-form" action="{% url 'product_list' %}" >
         <input type="text" name="q" placeholder="Search..." class="form-control" autocomplete="off">
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
@@ -94,10 +128,14 @@
   
   
   
+
+
   
+
   
   
   <div class="category-card">
+  <!-- <div class="category-card">
           
             <div class="category-content">
                 <h3 class="category-title">Categories</h3>
@@ -114,14 +152,17 @@
                     <li class="product-item"> <a href="">Watches</a></li>
                     
                     
-                    <!-- Add more products as needed -->
+                     Add more products as needed -->
                 </ul>
+                <!--</ul>
             </div>
         </div>
           </div>
         </div>
       </div>
   
+   -->
+
   
   
   
@@ -159,13 +200,12 @@
   
       </nav>
   
-    </div>
+    </div>-->
   
   
   
   
-  
-  
+  </body>
   
   
   

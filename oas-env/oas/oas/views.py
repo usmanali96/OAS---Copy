@@ -13,7 +13,11 @@ from datetime import datetime
 from django.contrib import admin
 from django.shortcuts import render, get_object_or_404, redirect
 from products.models import Product
-from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+from datetime import datetime, timedelta
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+
 
 
 
@@ -52,6 +56,20 @@ def  index(request):
              
     return render(request, 'index.html', data)
 
+
+
+
+
+
+
+
+def product_list(request):
+    query = request.GET.get('q')
+    if query:
+        products = Product.objects.filter(title__icontains=query)
+    else:
+        products = Product.objects.all()
+    return render(request, 'product_list.html', {'products': products})
 
 
 
@@ -132,6 +150,16 @@ def contactPage(request):
 
 
 
+
+
+def send_bid_end_email(product, bid):
+       send_mail(
+        subject=f'New Bid Received for {product.title}',
+        message=f'Thank you, {bid["name"]}, for your bid of {bid["price"]} on {product.title}. Your Bid has been submitted the winner will be announced when the timer ends. If you win the auction we will contact you through email.',
+        from_email='onlineauction537@gmail.com',
+        recipient_list=[bid["email"]],
+       )
+
 def save_price(request, product_id):
     
     
@@ -152,6 +180,12 @@ def save_price(request, product_id):
         product.bids.append(new_bid)
         product.save()
 
+
+        send_bid_end_email(product, new_bid)
+
+        messages.success(request, 'Your bid has been successfully submitted!')
+
+
         return redirect('product_detail', product_id=product_id)
     
     return render(request, 'product_detail.html', {'product': product})
@@ -160,6 +194,22 @@ def save_price(request, product_id):
 
 
 
-
 def browse_page(request):
-    return render(request, 'browse_product.html')
+    
+    productsData = Product.objects.all().order_by('category', 'id')  # Ordering by category, then by id
+
+    bot = Paginator(productsData, 10) 
+    page_number = request.GET.get('page', 1)
+    page_obj = bot.get_page(page_number)
+
+    totalpages = [x + 1 for x in range(bot.num_pages)]
+    
+    data = {
+        "products": page_obj,
+        "totalPages": totalpages
+    }
+
+    return render(request, 'browse_product.html', data)
+    
+
+    

@@ -93,57 +93,65 @@
           <div class="row">
               {% for product in products %}
                   {% if product.category == '1st-Auction' %}
-                  
-                  
-                <script>
-         document.addEventListener("DOMContentLoaded", function () {    var timerElement = document.querySelector("#timer-{{ product.id }}");
-    var bidEndTime = timerElement.getAttribute("data-countdown");
-    console.log("Bid End Time for Product {{ product.id }}:", bidEndTime); // Debugging line
-    var target_mili_sec = new Date(bidEndTime).getTime();
-
-    if (isNaN(target_mili_sec)) {
-        console.error("Invalid Date Format for Product {{ product.id }}:", bidEndTime);
-    }
-
-    function timer() {
-        var now_mili_sec = new Date().getTime();
-        var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
-
-        var day = Math.floor(remaining_sec / (3600 * 24));
-        var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
-        var min = Math.floor((remaining_sec % 3600) / 60);
-        var sec = Math.floor(remaining_sec % 60);
-
-        document.querySelector("#day{{ product.id }}").innerHTML = day;
-        document.querySelector("#hour{{ product.id }}").innerHTML = hour;
-        document.querySelector("#min{{ product.id }}").innerHTML = min;
-        document.querySelector("#sec{{ product.id }}").innerHTML = sec;
-    }
-
-    setInterval(timer, 1000);
-});
- // Calls the timer function every 1 second
-</script>
-                  
+                      <script>
+                          document.addEventListener("DOMContentLoaded", function () {
+                              var timerElement = document.querySelector("#timer-{{ product.id }}");
+                              var bidEndTime = timerElement.getAttribute("data-countdown");
+                              console.log("Bid End Time for Product {{ product.id }}:", bidEndTime); // Debugging line
+                              var target_mili_sec = new Date(bidEndTime).getTime();
+  
+                              if (isNaN(target_mili_sec)) {
+                                  console.error("Invalid Date Format for Product {{ product.id }}:", bidEndTime);
+                              }
+  
+                              function timer() {
+                                  var now_mili_sec = new Date().getTime();
+                                  var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+  
+                                  if (remaining_sec <= 0) {
+                                      // Timer has reached zero or below
+                                      document.querySelector("#day{{ product.id }}").innerHTML = "00";
+                                      document.querySelector("#hour{{ product.id }}").innerHTML = "00";
+                                      document.querySelector("#min{{ product.id }}").innerHTML = "00";
+                                      document.querySelector("#sec{{ product.id }}").innerHTML = "00";
+                                      clearInterval(timerInterval); // Stop the timer
+                                      return; // Exit the function
+                                  }
+  
+                                  var day = Math.floor(remaining_sec / (3600 * 24));
+                                  var hour = Math.floor((remaining_sec % (3600 * 24)) / 3600);
+                                  var min = Math.floor((remaining_sec % 3600) / 60);
+                                  var sec = Math.floor(remaining_sec % 60);
+  
+                                  document.querySelector("#day{{ product.id }}").innerHTML = day.toString().padStart(2, '0');
+                                  document.querySelector("#hour{{ product.id }}").innerHTML = hour.toString().padStart(2, '0');
+                                  document.querySelector("#min{{ product.id }}").innerHTML = min.toString().padStart(2, '0');
+                                  document.querySelector("#sec{{ product.id }}").innerHTML = sec.toString().padStart(2, '0');
+                              }
+  
+                              var timerInterval = setInterval(timer, 1000); // Calls the timer function every 1 second
+                          });
+                      </script>
+  
                       <div class="col-md-4">
                           <div class="card">
-                            <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
+                              <div class="timer-overlay" id="timer-{{ product.id }}" data-countdown="{{ product.bid_end_time|date:'c'|safe }}">
                                   <div class="count">
                                       <div class="co">
-                                          <span class="days" id="day{{product.id}}">00</span> DAYS
+                                          <span class="days" id="day{{ product.id }}">00</span> DAYS
                                       </div>
                                       <div class="co">
-                                          <span class="hours" id="hour{{product.id}}">00</span> HOURS
+                                          <span class="hours" id="hour{{ product.id }}">00</span> HOURS
                                       </div>
                                       <div class="co">
-                                          <span class="minutes" id="min{{product.id}}">00</span> MINUTES
+                                          <span class="minutes" id="min{{ product.id }}">00</span> MINUTES
                                       </div>
                                       <div class="co">
-                                          <span class="seconds" id="sec{{product.id}}">00</span> SECONDS
+                                          <span class="seconds" id="sec{{ product.id }}">00</span> SECONDS
                                       </div>
                                   </div>
                               </div>
-                              <img src="media/{{product.image}}" class="card-img-top" alt="..."/>
+                              <img src="media/{{ product.image }}" class="card-img-top" alt="..."/>
                               <div class="card-body">
                                   <h5 class="card-title">{{ product.title }}</h5>
                                   <p class="card-text"><b>{{ product.description }}</b></p>
