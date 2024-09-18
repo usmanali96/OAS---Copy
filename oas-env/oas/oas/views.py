@@ -286,12 +286,12 @@ def add_review(request):
 
 
 
-def add_product_view(request):
+def add_product(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)  # Handle file uploads
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()  # Save product to the database
-            return redirect('index')  # Redirect to the homepage using the URL name
+            form.save()
+            return redirect('success_page')  # Redirect to a success page
     else:
         form = ProductForm()
 
