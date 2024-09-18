@@ -277,7 +277,7 @@ def add_review(request):
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('success_page')  # Redirect after successful review submission
+            return redirect('index')  # Redirect after successful review submission
     else:
         form = ReviewForm()
 
@@ -291,7 +291,7 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('success_page')  # Redirect to a success page
+            return redirect('shop')  # Redirect to a success page
     else:
         form = ProductForm()
 
