@@ -91,7 +91,7 @@ input[type="submit"]:hover {
 
 
 
-.bid-cards .card{
+.user-auction-cards .card{
     position: relative;
     transition: all 0.3s;
     margin-top: 30px;
@@ -101,7 +101,7 @@ input[type="submit"]:hover {
     
   
   }
-  .bid-cards .card:hover{
+  .user-auction-cards .card:hover{
     transform: scale(1.15);
     border-bottom: 3px solid;
     border-color: white;
@@ -110,7 +110,7 @@ input[type="submit"]:hover {
   
   
   
-  .bid-cards .timer-overlay {
+  .user-auction-cards .timer-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -120,12 +120,12 @@ input[type="submit"]:hover {
     pointer-events: none; /* Prevent the overlay from blocking interactions */
   }
   
-  .bid-cards .card-body {
+  .user-auction-cards .card-body {
     position: relative;
     z-index: 2; /* Ensure the link is above the overlay */
   }
   
-  .bid-cards .btn-success {
+  .user-auction-cards .btn-success {
     position: relative;
     z-index: 3; /* Ensure the button is above all other elements */
   }
