@@ -244,6 +244,10 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
+<<<<<<< HEAD
+    
+    return render(request, 'browse_product.html')
+=======
     
     productsData = Product.objects.all().order_by('category', 'id')  # Ordering by category, then by id
 
@@ -259,75 +263,3 @@ def browse_page(request):
     }
 
     return render(request, 'browse_product.html', data)
-<<<<<<< HEAD
-    
-
-    
-=======
-
-
-
-
-
-#def review_section(request):
-   # products = Product.objects.filter(category='client-review')
-
-  #  if request.method == 'POST':
-  #      form = ReviewForm(request.POST)
-   #     if form.is_valid():
-    #        product = Product.objects.get(id=request.POST.get('product_id'))
-
-            # Save the form data into the model fields
-    #        product.title = form.cleaned_data['name']
-    #        product.description = form.cleaned_data['comment']
-    #        product.save()
-
-    #        return redirect('review_section')
- #   else:
- #       form = ReviewForm()
-
- #   return render(request, 'your_template.html', {'products': products, 'form': form})
-
-
-
-
-def add_review(request):
-    if request.method == 'POST':
-        form = ReviewForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    else:
-        form = ReviewForm()
-
-    return render(request, 'add_review.html', {'form': form})
-
-
-
-
-def add_product_view(request):
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)  
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your product has been successfully added!')  
-            return redirect('add_product')  
-    else:
-        form = ProductForm()
-
-    return render(request, 'add_product.html', {'form': form})
-
-
-
-
-
-
-def shop_page(request):
-    
-    productsData = Product.objects.all()
-    data = {
-        "products": productsData,  # Pass all products to the template for display
-    }
-             
-    return render(request, 'shop.html', data)
->>>>>>> e6ab7568787521a73ed33ebbe74a47d75e89a335
