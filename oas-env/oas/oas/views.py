@@ -169,13 +169,20 @@ def registerUser(request):
 
 
 
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            # Process the form data
-            return redirect('success')
-    else:
-        form = SignUpForm()
+     
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        data = {
+            'secret': settings.RECAPTCHA_SECRET_KEY,
+            'response': recaptcha_response
+        }
+        response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+        result = response.json()
+        if result['success']:
+            # Proceed with form submission
+            return HttpResponse('Form submitted successfully.')
+        else:
+            # Handle reCAPTCHA failure
+            return HttpResponse('Invalid reCAPTCHA. Please try again.')
     
 
 
