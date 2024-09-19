@@ -244,15 +244,13 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
-<<<<<<< HEAD
+
 
     
     return render(request, 'browse_product.html')
 
     # Get all products and order them by category
-=======
-    
->>>>>>> 63a302a52fa8aec891e99ebaba2690f6114b50b5
+
     productsData = Product.objects.all().order_by('category', 'id')  # Ordering by category, then by id
 
     bot = Paginator(productsData, 10) 
@@ -267,14 +265,7 @@ def browse_page(request):
     }
 
     return render(request, 'browse_product.html', data)
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-    
-
-    
-=======
 
 
 
@@ -341,5 +332,4 @@ def shop_page(request):
     }
              
     return render(request, 'shop.html', data)
->>>>>>> e6ab7568787521a73ed33ebbe74a47d75e89a335
->>>>>>> 63a302a52fa8aec891e99ebaba2690f6114b50b5
+
