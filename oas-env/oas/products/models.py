@@ -18,4 +18,3 @@ class Product(models.Model):  # Rename from Products to Product
 
     def __str__(self):
         return self.title
-

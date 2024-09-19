@@ -41,8 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
-    'contact'
+    'contact',
+    'captcha'
 ]
+
+
+
+RECAPTCHA_PUBLIC_KEY = '6Lfi0EgqAAAAAOTrsz-Etw70mEmjVTNR0fMs94aG'
+RECAPTCHA_PRIVATE_KEY = '6Lfi0EgqAAAAABLteBoE3mKoqbmGWauslbdb7HT_'
+
+
+
 
 
 MIDDLEWARE = [
