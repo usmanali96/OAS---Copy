@@ -177,3 +177,26 @@ $('.owl-carousel-1').owlCarousel({
 
 
 
+
+
+
+
+
+
+
+
+         document.addEventListener('DOMContentLoaded', function() {
+          var showFormBtn = document.getElementById('show-review-form-btn');
+          var reviewFormContainer = document.getElementById('review-form-container');
+      
+          showFormBtn.addEventListener('click', function() {
+              // Toggle visibility of the review form
+              if (reviewFormContainer.style.display === 'none' || reviewFormContainer.style.display === '') {
+                  reviewFormContainer.style.display = 'block';
+                  showFormBtn.textContent = 'Cancel';
+              } else {
+                  reviewFormContainer.style.display = 'none';
+                  showFormBtn.textContent = 'Add Review';
+              }
+          });
+      });

@@ -28,9 +28,16 @@ urlpatterns = [
     path('register-user/', views.registerUser, name='register-user'),
     path('login/', views.login, name='login'),
     path('contact/', views.contactPage, name='contact'),
+
+ path('products/', views.product_list, name='product_list'),
+
+
     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
     path('product/<int:product_id>/save_price/', views.save_price, name='save_price'),
     path('browse_product/', views.browse_page, name='browse_page'),
+    path('add-product/', views.add_product_view, name='add_product'),
+    path('shop/', views.shop_page, name='shop'),
+    path('add-review/', views.add_review, name='add_review'),
     ]
 
 
