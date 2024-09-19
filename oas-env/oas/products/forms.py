@@ -6,19 +6,6 @@ from .models import Product
 
 
 
-from django import forms
-from captcha.fields import ReCaptchaV3
-
-class SignUpForm(forms.Form):
-    username = forms.CharField(max_length=150)
-    password = forms.CharField(widget=forms.PasswordInput)
-    captcha = ReCaptchaV3()
-
-
-
-
-
-
 
 class ProductForm(forms.ModelForm):
     class Meta:
