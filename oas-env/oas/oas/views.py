@@ -113,13 +113,13 @@ def index(request):
 
 
 
-def product_list(request):
-    query = request.GET.get('q')
-    if query:
-        products = Product.objects.filter(title__icontains=query)
-    else:
-        products = Product.objects.all()
-    return render(request, 'product_list.html', {'products': products})
+#def product_list(request):
+  #  query = request.GET.get('q')
+  #  if query:
+   #     products = Product.objects.filter(title__icontains=query)
+   # else:
+   #     products = Product.objects.all()
+   # return render(request, 'product_list.html', {'products': products})
 
 
 
