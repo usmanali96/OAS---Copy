@@ -1,6 +1,5 @@
 .inner-banner {
     min-height: 400px;
-    background: rgba(12, 3, 33, 0.9);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -8,31 +7,38 @@
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
+    background-image: url('/static/img/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .inner-banner-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-127%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 2;
     text-align: center;
 }
 
-.inner-banner-content h2 {
-    font-size: 4vw; /* Make the font size responsive */
-    color: white;
+.inner-banner-content h2 b {
+    padding: 5px 10px;
+    background-color: rgba(29, 26, 26, 0.408);
+    border-radius: 22px;
+    font-size: 4vw; 
+    color: #f1c94d;
     margin: 0;
 }
 
-.inner-banner-img {
+/*.inner-banner-img {
     position: absolute;
     bottom: -200px;
     right: -65px;
     text-align: right;
     max-width: 100%;
     height: auto;
-}
+}*/
 
 @media (max-width: 768px) {
     .inner-banner {

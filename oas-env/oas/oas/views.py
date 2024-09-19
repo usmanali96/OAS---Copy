@@ -1,3 +1,4 @@
+import email
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from products.models import Product
@@ -17,6 +18,13 @@ from django.core.mail import send_mail
 from datetime import datetime, timedelta
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
+from django.utils.timezone import make_aware
+import logging
+from django.core.mail import send_mail
+from django.utils import timezone
+from products.forms import ProductForm
+from products.forms import ReviewForm
+
 
 
 
@@ -39,20 +47,61 @@ def cartPage(request):
 
 
 
-def  index(request):
+def index(request):
+    now = timezone.now()
 
+    # Query to display all products on the page
     productsData = Product.objects.all()
+
+    # Query for products that need emails sent
+    productsToEmail = Product.objects.filter(bid_end_time__lte=now, email_sent=False)
+    
+    for product in productsToEmail:
+        if product.bid_end_time is not None:
+            target_mili_sec = int(product.bid_end_time.timestamp() * 1000)
+            now_mili_sec = int(now.timestamp() * 1000)
+            remaining_sec = (target_mili_sec - now_mili_sec) / 1000
+            
+            if remaining_sec <= 0:
+                if product.bids:
+                    highest_bid = max(product.bids, key=lambda bid: bid['price'])
+                    email = highest_bid.get('email')
+                    
+                try:
+                    if email:
+                        send_mail(
+                            subject=f'Bid Winner for {product.title}',
+                            message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
+                            from_email='onlineauction537@gmail.com',
+                            recipient_list=[email],
+                        )
+                        product.email_sent = True    
+                        product.save()
+                        logging.info(f"Email sent to {email} for product {product.title}.")
+                
+                except Exception as e:
+                    logging.error(f"Error sending email: {e}")
+    
+
+                
+            
+            
+
+         
     #productsData = Paginator(productsData, 2)
     #page = request.GET['page']
     #products = productsData.get_page(page)
 
+    #1 - loop through thr products to get timing.
+    #2 - get target_mili_sec filed for each product
+    #3 - calculate the difference var remaining_sec = Math.floor((target_mili_sec - now_mili_sec) / 1000);
+    #4 - if the difference is less than zero call the send mailfunction
 
     #totalPages =[x+1 for x in range (productsData.num_pages)]
 
     data = {
-        "products":  productsData,
-        #"totalPages":totalPages,
-        }
+        "products": productsData,  # Pass all products to the template for display
+    }
              
     return render(request, 'index.html', data)
 
@@ -128,7 +177,7 @@ def loginUser(request):
         if user is not None:
              login(request, user)
              print("User authenticated and logged in.")
-             return redirect('/')
+             return redirect('index')
         else:
               print("User authentication failed.")
              
@@ -210,6 +259,75 @@ def browse_page(request):
     }
 
     return render(request, 'browse_product.html', data)
+<<<<<<< HEAD
     
 
     
+=======
+
+
+
+
+
+#def review_section(request):
+   # products = Product.objects.filter(category='client-review')
+
+  #  if request.method == 'POST':
+  #      form = ReviewForm(request.POST)
+   #     if form.is_valid():
+    #        product = Product.objects.get(id=request.POST.get('product_id'))
+
+            # Save the form data into the model fields
+    #        product.title = form.cleaned_data['name']
+    #        product.description = form.cleaned_data['comment']
+    #        product.save()
+
+    #        return redirect('review_section')
+ #   else:
+ #       form = ReviewForm()
+
+ #   return render(request, 'your_template.html', {'products': products, 'form': form})
+
+
+
+
+def add_review(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = ReviewForm()
+
+    return render(request, 'add_review.html', {'form': form})
+
+
+
+
+def add_product_view(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)  
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your product has been successfully added!')  
+            return redirect('add_product')  
+    else:
+        form = ProductForm()
+
+    return render(request, 'add_product.html', {'form': form})
+
+
+
+
+
+
+def shop_page(request):
+    
+    productsData = Product.objects.all()
+    data = {
+        "products": productsData,  # Pass all products to the template for display
+    }
+             
+    return render(request, 'shop.html', data)
+>>>>>>> e6ab7568787521a73ed33ebbe74a47d75e89a335
