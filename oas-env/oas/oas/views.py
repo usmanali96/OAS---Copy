@@ -186,10 +186,10 @@ def save_price(request, product_id):
 
 
 def browse_page(request):
-<<<<<<< HEAD
+
     
     return render(request, 'browse_product.html')
-=======
+
     # Get all products and order them by category
     productsData = Product.objects.all().order_by('category', 'id')  # Ordering by category, then by id
 
@@ -206,4 +206,4 @@ def browse_page(request):
     }
 
     return render(request, 'browse_product.html', data)
->>>>>>> 73e94ac560679dcdec6cbf340494d323487b4d08
+
