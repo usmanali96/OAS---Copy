@@ -24,6 +24,7 @@ from django.core.mail import send_mail
 from django.utils import timezone
 from products.forms import ProductForm
 from products.forms import ReviewForm
+from .forms import SignUpForm
 
 
 
@@ -163,10 +164,24 @@ def registerUser(request):
     
         User.objects.create_user(username=uname, email=uemail, password=upassword)
 
-       
+
+
+
+
+
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            return redirect('success')
+    else:
+        form = SignUpForm()
+    
+
+
         return redirect('login') 
 
-    return render(request, 'register.html')
+    return render(request, 'register.html',{'form': form})
 
 
 

@@ -41,8 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
-    'contact'
+    'contact',
+    'captcha'
 ]
+
+
+
+RECAPTCHA_PUBLIC_KEY = 'your_site_key'
+RECAPTCHA_PRIVATE_KEY = 'your_secret_key'
+
+
+
 
 
 MIDDLEWARE = [

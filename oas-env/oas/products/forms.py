@@ -1,6 +1,30 @@
 from django import forms
 from .models import Product
 
+
+
+
+
+
+
+from django import forms
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
+
+class SignUpForm(forms.Form):
+    username = forms.CharField(max_length=150)
+    password = forms.CharField(widget=forms.PasswordInput)
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
+
+
+
+
+
+
+
+
+
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
