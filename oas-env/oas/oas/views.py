@@ -24,7 +24,7 @@ from django.core.mail import send_mail
 from django.utils import timezone
 from products.forms import ProductForm
 from products.forms import ReviewForm
-from .forms import SignUpForm
+
 
 
 
@@ -164,31 +164,12 @@ def registerUser(request):
     
         User.objects.create_user(username=uname, email=uemail, password=upassword)
 
+        return render(request, 'register.html')
 
 
 
 
 
-     
-        recaptcha_response = request.POST.get('g-recaptcha-response')
-        data = {
-            'secret': settings.RECAPTCHA_SECRET_KEY,
-            'response': recaptcha_response
-        }
-        response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
-        result = response.json()
-        if result['success']:
-            # Proceed with form submission
-            return HttpResponse('Form submitted successfully.')
-        else:
-            # Handle reCAPTCHA failure
-            return HttpResponse('Invalid reCAPTCHA. Please try again.')
-    
-
-
-        return redirect('login') 
-
-    return render(request, 'register.html',{'form': form})
 
 
 
@@ -271,7 +252,7 @@ def browse_page(request):
 
 
     
-    return render(request, 'browse_product.html')
+   
 
     # Get all products and order them by category
 
