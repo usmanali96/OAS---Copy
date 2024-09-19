@@ -57,20 +57,6 @@
 
 
 
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Sign Up</button>
-</form>
-<script src="https://www.google.com/recaptcha/api.js?render=your_site_key"></script>
-<script>
-  grecaptcha.ready(function() {
-      grecaptcha.execute('6Lfi0EgqAAAAAOTrsz-Etw70mEmjVTNR0fMs94aG', {action: 'submit'}).then(function(token) {
-          // Add your logic to submit to your backend server here.
-      });
-  });
-</script>
-
 
 
 

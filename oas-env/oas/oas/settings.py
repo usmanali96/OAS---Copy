@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import smtplib
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,14 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
-    'contact',
-    'captcha'
+    'contact'
 ]
 
 
 
-RECAPTCHA_PUBLIC_KEY = '6Lfi0EgqAAAAAOTrsz-Etw70mEmjVTNR0fMs94aG'
-RECAPTCHA_PRIVATE_KEY = '6Lfi0EgqAAAAABLteBoE3mKoqbmGWauslbdb7HT_'
+RECAPTCHA_PUBLIC_KEY = 'your_site_key'
+RECAPTCHA_PRIVATE_KEY = 'your_secret_key'
 
 
 
@@ -159,12 +159,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'onlineauction537@gmail.com'  
 EMAIL_HOST_PASSWORD = 'slxc zznc xowo iggh'  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
