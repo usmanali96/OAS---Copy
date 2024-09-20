@@ -72,7 +72,7 @@ def index(request):
                     if email:
                         send_mail(
                             subject=f'Bid Winner for {product.title}',
-                            message=f'Congratulations! You have the highest bid of {highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
+                            message=f'Congratulations! You have the highest bid of ${highest_bid["price"]} for {product.title}. Congrats for winning the Auction. We will share the payment details soon.',
                             from_email='onlineauction537@gmail.com',
                             recipient_list=[email],
                         )
@@ -209,7 +209,7 @@ def contactPage(request):
 def send_bid_end_email(product, bid):
        send_mail(
         subject=f'New Bid Received for {product.title}',
-        message=f'Thank you, {bid["name"]}, for your bid of {bid["price"]} on {product.title}. Your Bid has been submitted the winner will be announced when the timer ends. If you win the auction we will contact you through email.',
+        message=f'Thank you, {bid["name"]}, for your bid of ${bid["price"]} on {product.title}. Your Bid has been submitted the winner will be announced when the timer ends. If you win the auction we will contact you through email.',
         from_email='onlineauction537@gmail.com',
         recipient_list=[bid["email"]],
        )
