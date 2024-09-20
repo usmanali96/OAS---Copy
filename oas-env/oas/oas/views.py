@@ -216,7 +216,6 @@ def send_bid_end_email(product, bid):
 
 def save_price(request, product_id):
     
-    
     product = get_object_or_404(Product, id=product_id)
     
     if request.method == 'POST':
