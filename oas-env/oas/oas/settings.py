@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 import smtplib
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -172,6 +173,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51PpQi22KN6TCRv6oYGuAq6gryjnzjiDWbZFSFMf8X9XcWK4GOkyPfWdjMYV1gsX608bLlijg8YY2GtmPmoR51nD800Dqagf4MG'
-
-STRIPE_SECRET_KEY = 'sk_test_51PpQi22KN6TCRv6oZ2CYyYkcGRmzKd8OYoxsA8m0dRjD6NmJqyaRoba4CYoU1OOpNRNOD9LPjlf0u5aMYo5w67Tj00fy9IHnpn'
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
