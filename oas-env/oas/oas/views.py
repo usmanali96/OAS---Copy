@@ -1,6 +1,8 @@
 import email
+from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import render, redirect
+import stripe
 from products.models import Product
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
@@ -30,6 +32,13 @@ from products.forms import ReviewForm
 
 
 
+stripe.api_key = settings.STRIPE_SECRET_KEY
+
+
+
+
+
+
 #def index(request)
    # return render(request, 'index.html')
 def aboutPage(request):
@@ -40,8 +49,12 @@ def register(request):
 def login(request):
     return render(request, 'login.html')
 
-def cartPage(request):
-    return render(request, 'cart.html')
+
+def success(request):
+    return render(request, 'success.html')
+
+def cancel(request):
+    return render(request, 'cancel.html')
 
 
 
@@ -106,6 +119,46 @@ def index(request):
              
     return render(request, 'index.html', data)
 
+
+
+
+
+
+
+def checkout(request, product_id):
+    # Fetch the product
+    product = get_object_or_404(Product, id=product_id)
+
+    # Find the highest bid
+    if product.bids:
+        highest_bid = max(product.bids, key=lambda bid: bid['price'])
+        email = highest_bid.get('email')
+        amount = highest_bid.get('price')
+    
+    try:
+        # Create Stripe Checkout session
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            line_items=[{
+                'price_data': {
+                    'currency': 'usd',
+                    'product_data': {
+                        'name': product.title,
+                    },
+                    'unit_amount': int(amount * 100),  # Convert price to cents
+                },
+                'quantity': 1,
+            }],
+            mode='payment',
+            success_url='http://localhost:8000/success/',  # Update to your success page
+            cancel_url='http://localhost:8000/cancel/',    # Update to your cancel page
+        )
+        
+        # Redirect the user to the Stripe Checkout session
+        return redirect(checkout_session.url)
+
+    except Exception as e:
+        return render(request, 'error.html', {'error': str(e)})
 
 
 
