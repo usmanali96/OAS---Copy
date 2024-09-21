@@ -32,7 +32,7 @@ from django.urls import reverse
 
 
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+#stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 
