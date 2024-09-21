@@ -125,7 +125,7 @@ def index(request):
 
 
 
-def checkout(request, product_id):
+#def checkout(request, product_id):
     # Fetch the product by ID
     product = get_object_or_404(Product, id=product_id)
 
