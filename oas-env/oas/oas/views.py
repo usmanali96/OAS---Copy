@@ -2,7 +2,7 @@ import email
 from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import render, redirect
-import stripe
+#import stripe
 from products.models import Product
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
@@ -26,7 +26,7 @@ from django.core.mail import send_mail
 from django.utils import timezone
 from products.forms import ProductForm
 from products.forms import ReviewForm
-from django.urls import reverse
+#from django.urls import reverse
 
 
 
