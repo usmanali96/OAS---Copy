@@ -127,41 +127,41 @@ def index(request):
 
 #def checkout(request, product_id):
     # Fetch the product by ID
-    product = get_object_or_404(Product, id=product_id)
+  #  product = get_object_or_404(Product, id=product_id)
 
     # Find the highest bid for the product
-    if product.bids:
-        highest_bid = max(product.bids, key=lambda bid: bid['price'])
-        email = highest_bid.get('email')
-        amount = highest_bid.get('price')  # Amount in dollars
+   # if product.bids:
+    #    highest_bid = max(product.bids, key=lambda bid: bid['price'])
+     #   email = highest_bid.get('email')
+      #  amount = highest_bid.get('price')  # Amount in dollars
 
-    try:
+   # try:
         # Create a Stripe Checkout session
-        checkout_session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            line_items=[{
-                'price_data': {
-                    'currency': 'usd',
-                    'product_data': {
-                        'name': product.title,  # The product title
-                    },
-                    'unit_amount': int(amount * 100),  # Convert price to cents (Stripe uses cents)
-                },
-                'quantity': 1,
-            }],
-            mode='payment',
+    #    checkout_session = stripe.checkout.Session.create(
+     #       payment_method_types=['card'],
+   #         line_items=[{
+      #          'price_data': {
+       #             'currency': 'usd',
+        #            'product_data': {
+         #               'name': product.title,  # The product title
+          #          },
+           #         'unit_amount': int(amount * 100),  # Convert price to cents (Stripe uses cents)
+            #    },
+           #     'quantity': 1,
+          #  }],
+           # mode='payment',
             # Success URL: Where to redirect after successful payment
-            success_url=request.build_absolute_uri(reverse('success')),
+           # success_url=request.build_absolute_uri(reverse('success')),
             # Cancel URL: Where to redirect if the user cancels the payment
-            cancel_url=request.build_absolute_uri(reverse('cancel')),
-        )
+            #cancel_url=request.build_absolute_uri(reverse('cancel')),
+        #)
 
         # Redirect to the Stripe payment page
-        return redirect(checkout_session.url, code=303)
+      #  return redirect(checkout_session.url, code=303)
 
-    except Exception as e:
+#    except Exception as e:
         # In case of an error, show an error template or message
-        return render(request, 'error.html', {'error': str(e)})
+ #       return render(request, 'error.html', {'error': str(e)})
 
 
 
