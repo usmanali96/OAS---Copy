@@ -26,7 +26,7 @@ from django.core.mail import send_mail
 from django.utils import timezone
 from products.forms import ProductForm
 from products.forms import ReviewForm
-
+from django.urls import reverse
 
 
 
@@ -126,38 +126,41 @@ def index(request):
 
 
 def checkout(request, product_id):
-    # Fetch the product
+    # Fetch the product by ID
     product = get_object_or_404(Product, id=product_id)
 
-    # Find the highest bid
+    # Find the highest bid for the product
     if product.bids:
         highest_bid = max(product.bids, key=lambda bid: bid['price'])
         email = highest_bid.get('email')
-        amount = highest_bid.get('price')
-    
+        amount = highest_bid.get('price')  # Amount in dollars
+
     try:
-        # Create Stripe Checkout session
+        # Create a Stripe Checkout session
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[{
                 'price_data': {
                     'currency': 'usd',
                     'product_data': {
-                        'name': product.title,
+                        'name': product.title,  # The product title
                     },
-                    'unit_amount': int(amount * 100),  # Convert price to cents
+                    'unit_amount': int(amount * 100),  # Convert price to cents (Stripe uses cents)
                 },
                 'quantity': 1,
             }],
             mode='payment',
-            success_url='http://localhost:8000/success/',  # Update to your success page
-            cancel_url='http://localhost:8000/cancel/',    # Update to your cancel page
+            # Success URL: Where to redirect after successful payment
+            success_url=request.build_absolute_uri(reverse('success')),
+            # Cancel URL: Where to redirect if the user cancels the payment
+            cancel_url=request.build_absolute_uri(reverse('cancel')),
         )
-        
-        # Redirect the user to the Stripe Checkout session
-        return redirect(checkout_session.url)
+
+        # Redirect to the Stripe payment page
+        return redirect(checkout_session.url, code=303)
 
     except Exception as e:
+        # In case of an error, show an error template or message
         return render(request, 'error.html', {'error': str(e)})
 
 
