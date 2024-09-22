@@ -200,33 +200,37 @@ def registerUser(request):
 
 def loginUser(request):
     if request.method == 'POST':
-        # Use Django's built-in AuthenticationForm for validation
+        # Using Django's AuthenticationForm
         form = AuthenticationForm(request, data=request.POST)
         
         if form.is_valid():
             uname = form.cleaned_data.get('username')
             upassword = form.cleaned_data.get('password')
-            
-            user = authenticate(request, username=uname, password=upassword)
-            
-            if user is not None:
-                login(request, user)
-                print("User authenticated and logged in.")
-                return redirect('index')
-            else:
-                # Provide feedback to the user if authentication fails
-                print("User authentication failed.")
-                return render(request, 'login.html', {'form': form, 'error': 'Invalid username or password.'})
-        else:
-            # Form is not valid (e.g., fields are missing)
-            print("Form validation failed.")
-            return render(request, 'login.html', {'form': form, 'error': 'Please fill in all required fields correctly.'})
-    
-    else:
-        # Display the empty login form on GET request
-        form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})
 
+            print(f"Username: {uname}, Password: {upassword}")  # Debugging: Check credentials
+
+            user = authenticate(request, username=uname, password=upassword)
+
+            if user is not None:
+                # Check if the user is active
+                if user.is_active:
+                    login(request, user)
+                    print("User authenticated and logged in.")
+                    return redirect('index')  # Make sure 'index' is defined in URLs
+                else:
+                    messages.error(request, "This account is inactive.")
+                    return render(request, 'login.html', {'form': form})
+            else:
+                print("Authentication failed.")
+                messages.error(request, "Invalid username or password.")
+        else:
+            print("Form validation failed.")
+            messages.error(request, "Please check the form fields.")
+
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'login.html', {'form': form})
              
 
 

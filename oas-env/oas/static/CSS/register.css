@@ -101,3 +101,9 @@ h2 {
 label {
     color: #333;
 }
+
+.alert {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: #fff; /* White text */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
