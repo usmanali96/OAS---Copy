@@ -124,6 +124,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -165,7 +167,10 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'onlineauction537@gmail.com'  
-EMAIL_HOST_PASSWORD = 'slxc zznc xowo iggh'  
+EMAIL_HOST_PASSWORD = 'fzxoazdvvfnjwgfw'  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
+
+#STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+#STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
