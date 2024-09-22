@@ -17,20 +17,20 @@
   <div class="card p-5" style="width: 100%; max-width: 500px; background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);">
     <form method="post" action="{% url 'register-user' %}">
       {% csrf_token %}
-      <h2 class="text-center mb-4" style="color: #333;">Create an Account</h2>
+      <h2 class="text-center mb-4" style="color: #ffffff;">Create an Account</h2>
       
       <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
+        <label for="username" class="form-label" style="color: #ffffff;">Username</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" style="border-radius: 10px; border: 1px solid #ddd;">
       </div>
       
       <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
+        <label for="email" class="form-label" style="color: #ffffff;">Email</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" style="border-radius: 10px; border: 1px solid #ddd;">
       </div>
       
       <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
+        <label for="password" class="form-label" style="color: #ffffff;">Password</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" style="border-radius: 10px; border: 1px solid #ddd;">
       </div>
       
