@@ -353,24 +353,36 @@
 
 
 
- <div class="review-section">
+<div class="reviews-section">
   <h2><b>What Clients Say</b></h2>
-  <p style="color: rgb(171, 161, 161);">Explore the world's best & largest Bidding marketplace with our beautiful Bidding products.<br> We want to be a part of your smile, success, and future growth.</p>
+  <p style="color: rgb(171, 161, 161);">
+      Explore the world's best & largest Bidding marketplace with our beautiful Bidding products.
+      <br> We want to be a part of your smile, success, and future growth.
+  </p>
+
   <div class="review-section-inner">
-    {% for product in products %} 
+      {% for product in products %}
           {% if product.category == 'client-review' %}
-      <div class="card">
-          <img src="media/{{product.image}}" alt="Johan Martin">
-          <p>{{product.description}}</p>
-          <h3>{{product.title}}</h3>
-      </div>
-      {% endif %} 
-        {% endfor %}
-
+              <!-- Display client reviews -->
+              <div class="review-card card">
+                  <!-- Product image -->
+                  {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.title }}" class="profile-image">
+                  {% else %}
+                      <img src="/path/to/default/image.jpg" alt="Default Profile Image" class="profile-image">
+                  {% endif %}
+                  
+                  <!-- Review content -->
+                  <p>{{ product.description }}</p>
+                  <h3>{{ product.title }}</h3>
+              </div>
+          {% endif %}
+      {% endfor %}
   </div>
-  </div>
 
-  <a href="{% url 'add_review' %}" >Click here to add review</a>
+  <!-- Link to add a new review -->
+  <a href="{% url 'add_review' %}" class="add-review-link">Click here to add a review</a>
+</div>
 
 
 

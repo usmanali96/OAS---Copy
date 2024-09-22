@@ -65,6 +65,8 @@ def cancel(request):
 
 def index(request):
     now = timezone.now()
+    products = Product.objects.all()  # Retrieve all products
+    
 
     # Query to display all products on the page
     productsData = Product.objects.all()
@@ -119,8 +121,9 @@ def index(request):
     data = {
         "products": productsData,  # Pass all products to the template for display
     }
+   
              
-    return render(request, 'index.html', data)
+    return render(request, 'index.html', data,  {'products': products})
 
 
 
@@ -320,6 +323,7 @@ def browse_page(request):
 
 
 def add_review(request):
+    
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
