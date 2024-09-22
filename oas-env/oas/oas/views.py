@@ -198,7 +198,7 @@ def registerUser(request):
 
 
 
-def loginUser(request):
+def login(request):
     if request.method == 'POST':
         # Using Django's AuthenticationForm
         form = AuthenticationForm(request, data=request.POST)
