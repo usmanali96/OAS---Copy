@@ -1,5 +1,7 @@
 import email
 from django.conf import settings
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from products.models import Product
@@ -197,18 +199,33 @@ def registerUser(request):
 
 
 def loginUser(request):
-        uname = request.POST.get('username')
-        upassword = request.POST.get('password')
-        user = authenticate(request, username=uname, password=upassword)
-        if user is not None:
-             login(request, user)
-             print("User authenticated and logged in.")
-             return redirect('index')
+    if request.method == 'POST':
+        # Use Django's built-in AuthenticationForm for validation
+        form = AuthenticationForm(request, data=request.POST)
+        
+        if form.is_valid():
+            uname = form.cleaned_data.get('username')
+            upassword = form.cleaned_data.get('password')
+            
+            user = authenticate(request, username=uname, password=upassword)
+            
+            if user is not None:
+                login(request, user)
+                print("User authenticated and logged in.")
+                return redirect('index')
+            else:
+                # Provide feedback to the user if authentication fails
+                print("User authentication failed.")
+                return render(request, 'login.html', {'form': form, 'error': 'Invalid username or password.'})
         else:
-              print("User authentication failed.")
-             
-        return render(request, 'login.html')
-
+            # Form is not valid (e.g., fields are missing)
+            print("Form validation failed.")
+            return render(request, 'login.html', {'form': form, 'error': 'Please fill in all required fields correctly.'})
+    
+    else:
+        # Display the empty login form on GET request
+        form = AuthenticationForm()
+        return render(request, 'login.html', {'form': form})
 
              
 
