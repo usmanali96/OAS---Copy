@@ -195,7 +195,7 @@ def registerUser(request):
 
 
 
-def login(request):
+def loginUser(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         
