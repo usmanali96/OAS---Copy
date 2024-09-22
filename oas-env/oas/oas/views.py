@@ -334,7 +334,7 @@ def add_review(request):
 
 
 
-
+@login_required(login_url='login')
 def add_product_view(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)  
