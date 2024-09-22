@@ -319,7 +319,7 @@ def browse_page(request):
 
 
 
-
+@login_required(login_url='login')
 def add_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
