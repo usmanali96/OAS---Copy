@@ -369,7 +369,7 @@
                   {% if product.image %}
                       <img src="/media/{{ product.image }}" alt="{{ product.title }}" class="profile-image">
                   {% else %}
-                      <img src="/path/to/default/image.jpg" alt="Default Profile Image" class="profile-image">
+                      <img src="/media/{{ product.image }}" alt="Default Profile Image" class="profile-image">
                   {% endif %}
                   
                   
