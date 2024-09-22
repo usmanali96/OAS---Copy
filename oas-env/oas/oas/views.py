@@ -215,7 +215,7 @@ def loginUser(request):
              
 
 
-@login_required(login_url='login')
+@login_required(login_url="login")
 def contactPage(request):
     if request.method == 'POST':
         form = contactForm(request.POST)
@@ -300,6 +300,8 @@ def browse_page(request):
 
 
 
+
+
 #def review_section(request):
    # products = Product.objects.filter(category='client-review')
 
@@ -321,7 +323,7 @@ def browse_page(request):
 
 
 
-
+@login_required(login_url='login')
 def add_review(request):
     
     if request.method == 'POST':
@@ -336,7 +338,7 @@ def add_review(request):
 
 
 
-
+@login_required(login_url='login')
 def add_product_view(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)  
