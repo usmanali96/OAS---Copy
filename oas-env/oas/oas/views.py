@@ -28,6 +28,9 @@ from products.forms import ReviewForm
 from django.http import JsonResponse
 
 
+from django.contrib.auth.decorators import login_required
+
+
 
 
 
@@ -210,7 +213,7 @@ def loginUser(request):
              
 
 
-
+@login_required
 def contactPage(request):
     if request.method == 'POST':
         form = contactForm(request.POST)
