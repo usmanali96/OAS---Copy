@@ -19,7 +19,7 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['title', 'description', 'image']  # Category is omitted from the form
+        fields = ['title', 'description', 'image']
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
@@ -37,11 +37,10 @@ class ReviewForm(forms.ModelForm):
                 'required': True
             }),
         }
-        
 
     def save(self, commit=True):
         review = super().save(commit=False)
-        review.category = 'client-review'  # Set category to 'client-review' only for this form
+        review.category = 'client-review'  # Set category to 'client-review'
         if commit:
             review.save()
         return review
