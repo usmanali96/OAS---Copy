@@ -183,11 +183,10 @@ def registerUser(request):
         uname = request.POST.get('username')
         uemail = request.POST.get('email')
         upassword = request.POST.get('password')
-
-    
         User.objects.create_user(username=uname, email=uemail, password=upassword)
+        return redirect('login')
 
-        return render(request, 'register.html')
+    return render(request, 'register.html')
 
 
 
