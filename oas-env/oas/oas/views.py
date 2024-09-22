@@ -213,7 +213,7 @@ def loginUser(request):
              
 
 
-@login_required
+@login_required(login_url='login')
 def contactPage(request):
     if request.method == 'POST':
         form = contactForm(request.POST)
