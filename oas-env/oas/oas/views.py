@@ -7,7 +7,6 @@ from django.shortcuts import render, redirect
 from products.models import Product
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from django.contrib.auth import authenticate, login
 from contact.models import Contact
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
@@ -50,8 +49,6 @@ def aboutPage(request):
 def register(request):
     return render(request, 'register.html')
 
-def login(request):
-    return render(request, 'login.html')
 
 
 def success(request):
@@ -200,38 +197,27 @@ def registerUser(request):
 
 def login(request):
     if request.method == 'POST':
-        # Using Django's AuthenticationForm
         form = AuthenticationForm(request, data=request.POST)
         
         if form.is_valid():
             uname = form.cleaned_data.get('username')
             upassword = form.cleaned_data.get('password')
 
-            print(f"Username: {uname}, Password: {upassword}")  # Debugging: Check credentials
-
             user = authenticate(request, username=uname, password=upassword)
 
             if user is not None:
-                # Check if the user is active
-                if user.is_active:
-                    login(request, user)
-                    print("User authenticated and logged in.")
-                    return redirect('index')  # Make sure 'index' is defined in URLs
-                else:
-                    messages.error(request, "This account is inactive.")
-                    return render(request, 'login.html', {'form': form})
+                login(request, user)  # Correct usage
+                print("User authenticated and logged in.")
+                return redirect('index')  # Ensure 'index' URL pattern exists
             else:
-                print("Authentication failed.")
                 messages.error(request, "Invalid username or password.")
         else:
-            print("Form validation failed.")
             messages.error(request, "Please check the form fields.")
-
     else:
         form = AuthenticationForm()
 
     return render(request, 'login.html', {'form': form})
-             
+
 
 
 @login_required(login_url="login")
